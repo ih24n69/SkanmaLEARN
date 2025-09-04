@@ -6,7 +6,7 @@
 |
 */
 
-define('APP_NAME', 'Kurteyki App');
+define('APP_NAME', 'SkanmaLEARN');
 define('APP_LOGO', 'storage/assets/app/img/logo.png');
 
 /* 

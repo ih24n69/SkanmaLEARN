@@ -8,7 +8,7 @@
 				<div class="row u-pv-large">
 
 					<div class="col-lg-4 u-flex u-hidden-down@desktop">
-						<img style="width: 200px" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E" data-src="<?php echo base_url('storage/assets/lms/default-app/img/intro.svg') ?>" alt="intro"> 
+						<img title="Jadilah Pahlawan Keluarga!" style="width: 200px" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E" data-src="<?php echo base_url('storage/assets/lms/default-app/img/zerotohero.png') ?>" alt="intro"> 
 					</div>
 
 					<div class="col-lg-8">

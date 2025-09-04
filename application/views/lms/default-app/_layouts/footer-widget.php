@@ -39,7 +39,7 @@
 							<a class="u-text-large" href="<?php echo base_url('p/term-and-condition') ?>" title='Syarat dan Ketentuan'>Syarat dan Ketentuan</a>
 						</li>
 						<li class="u-mb-xsmall">
-							<a class="u-text-large" href="<?php echo base_url('p/privacy-policy') ?>" title='Kebijakan Privasi'>Kebijakan Privasi</a>
+							<a class="u-text-large" href="<?php echo base_url('p/kebijakan-privasi') ?>" title='Kebijakan Privasi'>Kebijakan Privasi</a>
 						</li>
 					</ul>
 
@@ -48,16 +48,19 @@
 
 			<div class="col-12 col-lg-4 col-md-4 col-sm-12">	
 				<div class="c-panel__widget">
-					<img style="width: 150px" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E" data-src="<?php echo base_url('storage/assets/lms/default-app/img/undraw_through_the_park_lxnl.svg') ?>" alt="footer-intro"> 
+					<img title="Berusahalah!" style="width: 150px" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E" data-src="<?php echo base_url('storage/assets/lms/default-app/img/zerotohero.png') ?>" alt="footer-intro"> 
 					<ul class="c-profile-card__social u-justify-start u-border-zero u-p-zero u-mv-small">
-						<li class="u-mr-xsmall"><a target="_blank" title="facebook" class="c-profile-card__social-icon u-bg-facebook" href="https://facebook.com/kurteyki">
-							<i class="fa fa-facebook"></i>
-						</a></li>
-						<li class="u-mr-xsmall"><a target="_blank" title="twitter" class="c-profile-card__social-icon u-bg-twitter" href="https://twitter.com/kurteyki">
-							<i class="fa fa-twitter"></i>
-						</a></li>
-						<li class="u-mr-xsmall"><a target="_blank" title="instagram" class="c-profile-card__social-icon u-bg-dribbble" href="https://instagram.com/kurteyki">
+						<li class="u-mr-xsmall"><a target="_blank" title="Instagram" class="c-profile-card__social-icon u-bg-facebook" href="https://www.instagram.com/smkn5sukoharjo">
 							<i class="fa fa-instagram"></i>
+						</a></li>
+						<li class="u-mr-xsmall"><a target="_blank" title="Youtube" class="c-profile-card__social-icon u-bg-twitter" href="https://www.youtube.com/@smknegeri5sukoharjo141">
+							<i class="fa fa-youtube-play"></i>
+						</a></li>
+						<li class="u-mr-xsmall"><a target="_blank" title="Whatsapp" class="c-profile-card__social-icon u-bg-dribbble" href="https://api.whatsapp.com/send/?phone=628112635554&text&type=phone_number&app_absent=0">
+							<i class="fa fa-whatsapp"></i>
+						</a></li>
+						<li class="u-mr-xsmall"><a target="_blank" title="Website" class="c-profile-card__social-icon u-bg-dribbble" href="http://www.sandroidteam.com/">
+							<i class="fa fa-github-square"></i>
 						</a></li>
 					</ul>
 				</div>				
@@ -74,7 +77,7 @@
 			<div class="col-12 col-lg-12">	
 				<div class="c-panel__widget">
 					<p class="u-text-center u-text-mute u-text-large u-text-bold">
-						<?php echo $this->lang->line('copyright') ?> &#169; <?php echo $site['title'].date(' 2019 -  Y').'.All rights reserved.'; ?>
+						<?php echo $this->lang->line('copyright') ?> &#169; <?php echo $site['title'].date(' 2024 -  Y').'. All rights reserved.'; ?>
 					</p>
 				</div>				
 			</div>			
