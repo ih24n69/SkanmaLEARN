@@ -1,7 +1,7 @@
-# Learning Mastery :trophy:
+# SkanmaLEARN :trophy:
 Learning Management System use CodeIgniter3
 
-![Riedayme](https://github.com/riedayme/LearningMastery/blob/main/preview.png?raw=true)
+![Ih24n69](https://raw.githubusercontent.com/ih24n69/SkanmaLEARN/refs/heads/skanma/storage/assets/lms/default-app/preview.png)
 
 ## Fitur Umum yang tersedia
 
@@ -39,7 +39,8 @@ Fitur Blog yang tersedia
 ### Persyaratan
 [CodeIgniter Server Requirements](https://codeigniter.com/userguide3/general/requirements.html)
 
-Intruksi dibawah ini akan ***mengarahkan anda untuk menjalankan project pada komputer anda (local)*** dan ditujukan hanya untuk melakukan development dan testing saja.
+* Intruksi dibawah ini akan ***mengarahkan anda untuk menjalankan project pada komputer anda (local)*** dan ditujukan hanya untuk melakukan development dan testing saja.
+* Diperlukan PHP 7.1 s/d 7.3
 
 ### Menjalankan Aplikasi Menggunakan XAMPP
 
@@ -48,24 +49,18 @@ Pastikan anda sudah menjalankan module xampp yaitu apache server dan mysql.
 ***Download Project ini dan extract*** di folder htdocs yang ada pada xampp.
 ```
 
-***Buat Database dengan nama kurteyki*** di phpmyadmin, silahkan akses url dibawah ini untuk membuka phpmyadmin :
+***Buat Database dengan nama skanmalearn*** di phpmyadmin, silahkan akses url dibawah ini untuk membuka phpmyadmin :
 
 ```
 http://localhost/phpmyadmin
 ```
 
-Kemudian ***import kurteyki.sql*** yang ada ddidalam project ini
+Kemudian ***import skanmalearn.sql*** yang ada ddidalam project ini
 
 Langkah kedua ***akses url dibawah ini*** :
 
 ```
-http://localhost/kurteyki
-```
-
-Cron untuk kirim email
-
-```
-*/2 * * * * /usr/local/bin/php /home/cpanelusername/public_html/index.php my_jobs listen
+http://localhost/skanmalearn
 ```
 
 Pengaturan .htaccess
@@ -79,16 +74,16 @@ Pengaturan .htaccess
 Informasi App
 
 ```
-Halaman Login : http://localhost/kurteyki/auth
+Halaman Login : http://localhost/SkanmaLEARN/auth
 
 Default App login
-username : kurteyki
-password: kurteyki
+username : admin@gmail.com
+password: admin
 
 ```
 
 ## Sumber Inspirasi
-
+* Riedayme Github ( Source Code )
 * CiFireCMS (module blog dan pengaturan situs)
 * Academy by Creativeitem (module lms)
 * buildwithangga.com (module pembayaran manual)
