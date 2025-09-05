@@ -55,6 +55,8 @@ $lang['password_confirm'] = 'Konfirmasi Password';
 $lang['email'] = 'Email';
 $lang['full_name'] = 'Nama Lengkap';
 $lang['no_handphone'] = 'Nomor Handphone';
+$lang['full_name_register'] = 'Username';
+$lang['nama_lengkap'] = 'Nama Lengkap';
 
 $lang['username'] = 'Username';
 $lang['password'] = 'Password';

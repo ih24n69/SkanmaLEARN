@@ -7,7 +7,7 @@ class M_Auth extends CI_Model
     public $table_jobs = 'tb_jobs';
 
     public function data_post(){
-
+		$nama_lengkap = strip_tags($this->input->post('nama_lengkap'));
         $full_name = strip_tags($this->input->post('full_name'));
         $password = strip_tags($this->input->post('password'));
         $password_confirm = strip_tags($this->input->post('password_confirm'));
@@ -16,6 +16,7 @@ class M_Auth extends CI_Model
         $csrf_code = $this->input->post('csrf_code');
 
         return [
+		'nama_lengkap' => $nama_lengkap,
         'full_name' => $full_name,
         'password' => $password,
         'password_confirm' => $password_confirm,
@@ -104,6 +105,7 @@ class M_Auth extends CI_Model
             $email_vertification = $this->site['vertification_email'];
 
             $data = array(
+				'namalengkap' => $post_data['nama_lengkap'],
                 'username' => $post_data['full_name'],
                 'password' => sha1($post_data['password']),  
                 'email' => $post_data['email'],                      
@@ -281,7 +283,7 @@ class M_Auth extends CI_Model
             [
             'field' => 'full_name',
             'label' => 'lang:full_name',
-            'rules' => 'trim|required|min_length[5]|max_length[100]|alpha',
+            'rules' => 'trim|required|min_length[5]|max_length[15]',
             'errors' => [
             'required' => '{field} '.$this->lang->line('must_filled'),
             ]
@@ -358,6 +360,14 @@ class M_Auth extends CI_Model
             'errors' => [
             'required' => '{field} '.$this->lang->line('must_filled'),
             'matches' => '{field} '.$this->lang->line('not_same')
+            ]
+            ],
+			[
+            'field' => 'nama_lengkap',
+            'label' => 'lang:nama_lengkap',
+            'rules' => 'trim|required',
+            'errors' => [
+            'required' => '{field} '.$this->lang->line('must_filled'),
             ]
             ],
             ]);

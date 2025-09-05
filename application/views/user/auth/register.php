@@ -16,8 +16,14 @@
             <?php $this->load->view('app/_layouts/alert'); ?>
 
             <div class="c-field u-mb-small">
-                <label class="c-field__label"><?php echo $this->lang->line('full_name') ?></label> 
-                <input required='' value="<?php echo set_value('full_name'); ?>" autofocus="" name='full_name' class="c-input" type="text" placeholder="<?php echo $this->lang->line('full_name') ?>">
+                <label class="c-field__label"><?php echo 'Nama Lengkap' ?></label> 
+                <input required='' value="<?php echo set_value('nama_Lengkap'); ?>" autofocus="" name='nama_lengkap' class="c-input" type="text" placeholder="<?php echo "Nama Lengkap" ?>">
+				<?php echo form_error('nama_lengkap', '<small class="c-field__message u-color-danger"><i class="fa fa-times-circle"></i>', '</small>'); ?> 
+            </div>
+			
+			<div class="c-field u-mb-small">
+                <label class="c-field__label"><?php echo $this->lang->line('full_name_register') ?></label> 
+                <input required='' value="<?php echo set_value('full_name'); ?>" autofocus="" name='full_name' class="c-input" type="text" placeholder="<?php echo $this->lang->line('full_name_register') ?>">
                 <?php echo form_error('full_name', '<small class="c-field__message u-color-danger"><i class="fa fa-times-circle"></i>', '</small>'); ?> 
             </div>  
 
