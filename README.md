@@ -76,9 +76,17 @@ Informasi App
 ```
 Halaman Login : http://localhost/SkanmaLEARN/auth
 
-Default App login
+Admin
 username : admin@gmail.com
-password: admin
+password : admin
+
+Instruktur
+username : instruktur@gmail.com
+password : instruktur
+
+User/Student
+username : userr@gmail.com
+password : userr
 
 ```
 
