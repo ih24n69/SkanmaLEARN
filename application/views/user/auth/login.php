@@ -53,7 +53,7 @@
         </div>
 
         <div class="c-login__content-image">
-            <img src="<?php echo base_url('storage/assets/lms/default-app/img/bg.svg') ?>" alt="<?php echo $site['title'] ?>">
+            <img src="<?php echo base_url('storage/assets/lms/default-app/img/zerotoheroa.png') ?>" alt="<?php echo $site['title'] ?>">
 
             <h3><?php echo $site['title'] ?></h3>
             <p class="u-text-large">
