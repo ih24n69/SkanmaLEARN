@@ -36,7 +36,7 @@ class M_Blog_Post_Category extends CI_Model
         $this->datatables->add_column('alat', '
             <button type="button" class="c-btn--custom c-btn--small c-btn c-btn--info" name="action-view"><i class="fa fa-eye"></i></button>
             <button class="c-btn--custom c-btn--small c-btn c-btn--success action-edit" type="button" data-id="$1" data-name="$2" data-title="Update" data-toggle="modal" data-target="#modal"><i class="fa fa-edit"></i></button>
-            <button type="button" data-title="are you sure ?" data-text="want to delete $2" class="c-btn c-btn--danger c-btn--custom action-delete" data-href="'. base_url('app/blog_post_category/delete/$1') .'">
+            <button type="button" data-title="apakah Anda yakin ?" data-text="ingin menghapus $2" class="c-btn c-btn--danger c-btn--custom action-delete" data-href="'. base_url('app/blog_post_category/delete/$1') .'">
             <i class="fa fa-trash"></i>
             </button>
             ', 'id,name');

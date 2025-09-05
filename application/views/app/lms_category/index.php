@@ -34,7 +34,7 @@
                                         <i class="fa fa-edit u-text-xsmall"></i>
                                     </a>
                                     <?php if (empty($data['sub_category'])): ?>
-                                        <button data-title="are you sure ?" data-text="want to delete <?php echo $data['name'] ?> category" class="c-btn--custom c-btn--small c-btn c-btn--danger single-action" data-id="$1" data-href="<?php echo base_url('app/lms_category/delete/'.$data['id']) ?>" type="button">
+                                        <button data-title="apakah Anda yakin ?" data-text="ingin menghapus <?php echo $data['name'] ?> category" class="c-btn--custom c-btn--small c-btn c-btn--danger single-action" data-id="$1" data-href="<?php echo base_url('app/lms_category/delete/'.$data['id']) ?>" type="button">
                                             <i class="fa fa-trash u-text-xsmall"></i>
                                         </button>
                                     <?php endif ?>
@@ -60,7 +60,7 @@
                                                 <a href="<?php echo base_url('app/lms_category/update/'.$sub_category['id']) ?>" class="c-btn c-btn--info c-btn--custom c-btn--small">
                                                     <i class="fa fa-edit u-text-xsmall"></i>
                                                 </a>
-                                                <button data-title="are you sure ?" data-text="want to delete <?php echo $sub_category['name'] ?> category" class="c-btn--custom c-btn--small c-btn c-btn--danger single-action" data-id="$1" data-href="<?php echo base_url('app/lms_category/delete/'.$sub_category['id']) ?>" type="button">
+                                                <button data-title="apakah Anda yakin ?" data-text="ingin menghapus <?php echo $sub_category['name'] ?> category" class="c-btn--custom c-btn--small c-btn c-btn--danger single-action" data-id="$1" data-href="<?php echo base_url('app/lms_category/delete/'.$sub_category['id']) ?>" type="button">
                                                     <i class="fa fa-trash u-text-xsmall"></i>
                                                 </button>
                                             </div>

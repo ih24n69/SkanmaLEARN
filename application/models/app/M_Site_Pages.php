@@ -55,7 +55,7 @@ class M_Site_Pages extends CI_Model
 
         $this->datatables->add_column('alat', '
             <a class="c-btn--custom c-btn--small c-btn c-btn--info" href="'.base_url('app/site_pages/').'update/$1"><i class="fa fa-edit"></i></a>
-            <button data-title="are you sure ?" data-text="want to delete $2" class="c-btn--custom c-btn--small c-btn c-btn--danger action-delete" data-id="$1" data-href="'. base_url('app/site_pages/delete/$1') .'" type="button"><i class="fa fa-trash"></i></button>
+            <button data-title="apakah Anda yakin ?" data-text="ingin menghapus $2" class="c-btn--custom c-btn--small c-btn c-btn--danger action-delete" data-id="$1" data-href="'. base_url('app/site_pages/delete/$1') .'" type="button"><i class="fa fa-trash"></i></button>
             ', 'id,title');   
 
         $this->datatables->add_column('view', '

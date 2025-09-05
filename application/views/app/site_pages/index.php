@@ -10,13 +10,13 @@
             <a class="c-btn--custom c-btn--small c-btn c-btn--success" href="<?php echo base_url('app/site_pages/create') ?>">
                 <i class="fa fa-plus"></i>
             </a>
-            <button data-title="are you sure ?" data-text="to post selected item" title="Post Multiple" value="post" class="c-btn--custom c-btn--small c-btn c-btn--info u-ml-auto u-mr-xsmall action-multiple btn-opsi">
+            <button data-title="apakah Anda yakin ?" data-text="to post selected item" title="Post Multiple" value="post" class="c-btn--custom c-btn--small c-btn c-btn--info u-ml-auto u-mr-xsmall action-multiple btn-opsi">
                 <i class="fa fa-send-o"></i>
             </button>                        
-            <button data-title="are you sure ?" data-text="to draft selected item" title="Return to Draft Multiple" value="draft" class="c-btn--custom c-btn--small c-btn c-btn--fancy u-mr-xsmall action-multiple btn-opsi">
+            <button data-title="apakah Anda yakin ?" data-text="to draft selected item" title="Return to Draft Multiple" value="draft" class="c-btn--custom c-btn--small c-btn c-btn--fancy u-mr-xsmall action-multiple btn-opsi">
                 <i class="fa fa-reply"></i>
             </button>            
-            <button data-title="are you sure ?" data-text="to delete selected item" title="Delete Multiple" value="delete" class="c-btn--custom c-btn--small c-btn c-btn--danger action-multiple btn-opsi">
+            <button data-title="apakah Anda yakin ?" data-text="to delete selected item" title="Delete Multiple" value="delete" class="c-btn--custom c-btn--small c-btn c-btn--danger action-multiple btn-opsi">
                 <i class="fa fa-trash"></i>
             </button>
         </div>

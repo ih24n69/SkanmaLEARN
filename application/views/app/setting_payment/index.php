@@ -76,7 +76,7 @@
 																<button data-type='<?php echo $transaction['type'] ?>' data-account_number='<?php echo $transaction['account_number'] ?>' data-receiver='<?php echo $transaction['receiver'] ?>' data-identity='<?php echo $transaction['identity'] ?>' type="button" class="c-btn c-btn--small c-btn--info c-btn--custom button-payment-transaction" data-toggle="modal" data-target="#form-transaction"> 
 																	<i class="fa fa-edit"></i>
 																</button>
-																<button data-title="are you sure ?" data-text="want to delete transaction  <?php echo $transaction['type'] ?>" class="c-btn--custom c-btn--small c-btn c-btn--danger single-action" data-href="<?php echo base_url('app/setting_payment/delete/transaction/'.$transaction['identity']) ?>" type="button"><i class="fa fa-trash"></i></button>
+																<button data-title="apakah Anda yakin ?" data-text="ingin menghapus transaction  <?php echo $transaction['type'] ?>" class="c-btn--custom c-btn--small c-btn c-btn--danger single-action" data-href="<?php echo base_url('app/setting_payment/delete/transaction/'.$transaction['identity']) ?>" type="button"><i class="fa fa-trash"></i></button>
 															</th>
 														</tr>
 													<?php endforeach ?>
@@ -139,7 +139,7 @@
 																<button data-type='<?php echo $confirmation['type'] ?>' data-data='<?php echo $confirmation['data'] ?>' data-identity='<?php echo $confirmation['identity'] ?>' type="button" class="c-btn c-btn--small c-btn--info c-btn--custom button-payment-confirmation" data-toggle="modal" data-target="#form-confirmation"> 
 																	<i class="fa fa-edit"></i>
 																</button>
-																<button data-title="are you sure ?" data-text="want to delete confirmation <?php echo $confirmation['type'] ?>" class="c-btn--custom c-btn--small c-btn c-btn--danger single-action" data-href="<?php echo base_url('app/setting_payment/delete/confirmation/'.$confirmation['identity']) ?>" type="button"><i class="fa fa-trash"></i></button>
+																<button data-title="apakah Anda yakin ?" data-text="ingin menghapus confirmation <?php echo $confirmation['type'] ?>" class="c-btn--custom c-btn--small c-btn c-btn--danger single-action" data-href="<?php echo base_url('app/setting_payment/delete/confirmation/'.$confirmation['identity']) ?>" type="button"><i class="fa fa-trash"></i></button>
 															</th>
 														</tr>
 													<?php endforeach ?>

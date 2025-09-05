@@ -55,7 +55,7 @@
                         <button type="button" class="c-btn c-btn--info c-btn--custom u-mr-xsmall button-section-update" data-id='<?php echo $section_data['id'] ?>' data-modaltitle='Update Section' data-title='<?php echo $section_data['title'] ?>' data-toggle="modal" data-target="#modal-section"> 
                             <i class="fa fa-edit"></i>
                         </button> 
-                        <button data-title="are you sure ?" data-text="want to delete section : <?php echo $section_data['title'] ?>" class="c-btn--custom c-btn--small c-btn c-btn--danger single-action" data-id="$1" data-href="<?php echo base_url('app/lms_courses/process_section_delete/'.$section_data['id']) ?>" type="button"><i class="fa fa-trash"></i></button>
+                        <button data-title="apakah Anda yakin ?" data-text="ingin menghapus section : <?php echo $section_data['title'] ?>" class="c-btn--custom c-btn--small c-btn c-btn--danger single-action" data-id="$1" data-href="<?php echo base_url('app/lms_courses/process_section_delete/'.$section_data['id']) ?>" type="button"><i class="fa fa-trash"></i></button>
                     </div>
                 </div>
 
@@ -82,7 +82,7 @@
                                 <a class="c-btn--custom c-btn c-btn--info u-mr-xsmall" href="<?php echo base_url('app/lms_courses/update_lesson/'.$section_data['id'].'/'.$lesson_data['id']) ?>">
                                     <i class="fa fa-edit"></i>
                                 </a>
-                                <button data-title="are you sure ?" data-text="want to delete lesson : <?php echo $lesson_data['title'] ?>" class="c-btn--custom c-btn--small c-btn c-btn--danger single-action" data-id="$1" data-href="<?php echo base_url('app/lms_courses/process_lesson_delete/'.$lesson_data['id']) ?>" type="button"><i class="fa fa-trash"></i></button>
+                                <button data-title="apakah Anda yakin ?" data-text="ingin menghapus lesson : <?php echo $lesson_data['title'] ?>" class="c-btn--custom c-btn--small c-btn c-btn--danger single-action" data-id="$1" data-href="<?php echo base_url('app/lms_courses/process_lesson_delete/'.$lesson_data['id']) ?>" type="button"><i class="fa fa-trash"></i></button>
                             </div>
                         </div>
                     <?php endforeach ?>

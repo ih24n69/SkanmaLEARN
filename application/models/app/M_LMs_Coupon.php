@@ -40,7 +40,7 @@ class M_LMS_Coupon extends CI_Model
             ', 'id');
         $this->datatables->add_column('alat', '
             <button class="c-btn--custom c-btn--small c-btn c-btn--info action-edit-coupon" type="button" data-id="$1" data-code="$2" data-type="$3" data-data="$4" data-for="$5" data-expired="$6" data-title="Update" data-toggle="modal" data-target="#modal"><i class="fa fa-edit"></i></button>
-            <button type="button" data-title="are you sure ?" data-text="want to delete $2" class="c-btn c-btn--danger c-btn--custom action-delete" data-href="'. base_url('app/lms_coupon/delete/$1') .'">
+            <button type="button" data-title="apakah Anda yakin ?" data-text="ingin menghapus $2" class="c-btn c-btn--danger c-btn--custom action-delete" data-href="'. base_url('app/lms_coupon/delete/$1') .'">
                 <i class="fa fa-trash"></i>
             </button>
             ', 'id,code,type,data,for,expired');

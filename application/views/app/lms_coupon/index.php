@@ -10,7 +10,7 @@
             <button data-title="Create" class="c-btn--custom c-btn--small c-btn c-btn--blue" id='modal-create' data-toggle="modal" data-target="#modal">
                 <i class="fa fa-plus"></i>
             </button>
-            <button data-title="are you sure ?" data-text="to delete selected item" title="Delete Multiple" value="delete" class="c-btn--custom c-btn--small c-btn c-btn--danger action-multiple btn-opsi">
+            <button data-title="apakah Anda yakin ?" data-text="to delete selected item" title="Delete Multiple" value="delete" class="c-btn--custom c-btn--small c-btn c-btn--danger action-multiple btn-opsi">
                 <i class="fa fa-trash"></i>
             </button>
         </div>

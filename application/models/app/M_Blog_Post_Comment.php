@@ -66,7 +66,7 @@ class M_Blog_Post_Comment extends CI_Model
 
         $this->datatables->add_column('alat', '
             <button type="button" class="u-mt-small c-btn--custom c-btn--small c-btn c-btn--primary" name="action-view"><i class="fa fa-eye"></i></button>
-            <button type="button" data-title="are you sure ?" data-text="want to delete $2" class="u-mt-small c-btn c-btn--danger c-btn--custom action-delete" data-href="'. base_url('app/blog_post_comment/delete/$1') .'">
+            <button type="button" data-title="apakah Anda yakin ?" data-text="ingin menghapus $2" class="u-mt-small c-btn c-btn--danger c-btn--custom action-delete" data-href="'. base_url('app/blog_post_comment/delete/$1') .'">
             <i class="fa fa-trash"></i>
             </button>
             ', 'id,name');

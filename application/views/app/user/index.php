@@ -10,13 +10,13 @@
             <a class="c-btn--custom c-btn--small c-btn c-btn--success" href="<?php echo base_url('app/user/create') ?>">
                 <i class="fa fa-plus"></i>
             </a>     
-            <button data-title="are you sure ?" data-text="actived selected user" title="Active User Multiple" value="active" class="u-ml-auto c-btn--custom c-btn--small c-btn c-btn--info u-mr-xsmall action-multiple btn-opsi">
+            <button data-title="apakah Anda yakin ?" data-text="actived selected user" title="Active User Multiple" value="active" class="u-ml-auto c-btn--custom c-btn--small c-btn c-btn--info u-mr-xsmall action-multiple btn-opsi">
                 <i class="fa fa-check"></i>
             </button>                    
-            <button data-title="are you sure ?" data-text="block selected user" title="Block User Multiple" value="block" class="c-btn--custom c-btn--small c-btn c-btn--warning u-mr-xsmall action-multiple btn-opsi">
+            <button data-title="apakah Anda yakin ?" data-text="block selected user" title="Block User Multiple" value="block" class="c-btn--custom c-btn--small c-btn c-btn--warning u-mr-xsmall action-multiple btn-opsi">
                 <i class="fa fa-ban"></i>
             </button>            
-            <button data-title="are you sure ?" data-text="to delete selected item" title="Delete Multiple" value="delete" class="c-btn--custom c-btn--small c-btn c-btn--danger action-multiple btn-opsi">
+            <button data-title="apakah Anda yakin ?" data-text="to delete selected item" title="Delete Multiple" value="delete" class="c-btn--custom c-btn--small c-btn c-btn--danger action-multiple btn-opsi">
                 <i class="fa fa-trash"></i>
             </button>
         </div>

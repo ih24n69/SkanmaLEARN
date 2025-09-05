@@ -88,7 +88,7 @@ class M_LMS_Courses extends CI_Model
 
             <a class="c-btn--custom c-btn--small c-btn c-btn--info" href="'.base_url('app/lms_courses/').'update/$1"><i class="fa fa-edit"></i></a>
 
-            <button type="button" data-title="are you sure ?" data-text="want to delete $2" class="c-btn c-btn--danger c-btn--custom action-delete" data-href="'. base_url('app/lms_courses/delete/$1') .'">
+            <button type="button" data-title="apakah Anda yakin ?" data-text="ingin menghapus $2" class="c-btn c-btn--danger c-btn--custom action-delete" data-href="'. base_url('app/lms_courses/delete/$1') .'">
             <i class="fa fa-trash"></i>
             </button>
             ', 'id,title');
