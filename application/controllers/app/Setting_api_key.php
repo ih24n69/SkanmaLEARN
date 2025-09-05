@@ -16,7 +16,7 @@ class Setting_api_key extends My_App{
 	{
 
 		$data = array(
-			'title' => 'Setting Api Key', 
+			'title' => 'Setelan Api Key', 
 			'site' => $this->M_Setting_General->read_data(),
 		);        
 

@@ -16,7 +16,7 @@ class Blog_template extends My_App{
 	{
 
 		$data = array(
-			'title' => 'Blog Template', 
+			'title' => 'Templat Blog', 
 			'templates' => $this->M_Blog_Template->read_template(),         
 		);        
 
@@ -25,7 +25,7 @@ class Blog_template extends My_App{
 
 	public function update($id){
 		$data = array(
-			'title' => 'Update Blog Template Code', 
+			'title' => 'Pembaruan Templat Blog Kode', 
 			'codemirror' => true,
 			'allfile' => $this->M_Blog_Template->read_template_update($id),         
 		);        

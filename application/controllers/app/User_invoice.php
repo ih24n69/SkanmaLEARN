@@ -21,7 +21,7 @@ class User_invoice extends My_App
     {
 
         $data = [
-        'title' => 'Invoice',
+        'title' => 'Faktur',
         ];
 
         $this->load->view($this->index, array_merge($data,$this->M_User_Invoice->datatables()));

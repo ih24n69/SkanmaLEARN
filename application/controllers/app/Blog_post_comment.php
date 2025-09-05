@@ -18,7 +18,7 @@ class Blog_post_comment extends My_App{
     {
 
         $data = [
-            'title' => 'Blog Comment',
+            'title' => 'Komentar Blog',
         ];
 
         $this->load->view($this->index, array_merge($data,$this->M_Blog_Post_Comment->datatables()));

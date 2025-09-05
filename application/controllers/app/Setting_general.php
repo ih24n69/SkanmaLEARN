@@ -15,7 +15,7 @@ class Setting_general extends My_App{
 	{
 
 		$data = array(
-			'title' => 'Setting General', 
+			'title' => 'Setelan Umum', 
 			'site' => $this->M_Setting_General->read_data(),         
 		);        
 

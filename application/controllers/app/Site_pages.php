@@ -17,7 +17,7 @@ class Site_pages extends My_App
     {
 
         $data = [
-            'title' => 'Site Pages',
+            'title' => 'Halaman Site',
         ];
 
         $this->load->view($this->index, array_merge($data,$this->M_Site_Pages->datatables()));
@@ -36,7 +36,7 @@ class Site_pages extends My_App
     {
 
         $data = array(
-            'title' => 'Create',
+            'title' => 'Buat',
             'ckeditor' => true,
             'onbeforeunload' => true,
         );
@@ -46,7 +46,7 @@ class Site_pages extends My_App
 
     public function update($id){
         $data = array(
-            'title' => 'Update',
+            'title' => 'Pembaruan',
             'ckeditor' => true,
             'onbeforeunload' => true,
             'site_pages' => $this->M_Site_Pages->data_update($id),

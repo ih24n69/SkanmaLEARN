@@ -25,7 +25,7 @@ class User_setting extends My_App
         }else{    
 
             $data = array(
-                'title' => 'Profile Setting',
+                'title' => 'Setelan Profil',
                 'user' => $this->M_User->data_update($this->session->userdata('id')),
                 );
 

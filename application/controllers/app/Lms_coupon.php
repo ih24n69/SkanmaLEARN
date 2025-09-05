@@ -15,7 +15,7 @@ class Lms_coupon extends My_App{
     {
 
         $data = [
-        'title' => 'LMS Coupon',
+        'title' => 'LMS Kupon',
         'datetimepicker' => true,
         ];
 

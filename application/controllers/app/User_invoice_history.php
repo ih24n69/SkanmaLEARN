@@ -21,7 +21,7 @@ class User_invoice_history extends My_App
     {
 
         $data = [
-        'title' => 'Invoice History',
+        'title' => 'Riwayat Faktur',
         'statistic' => $this->M_User_Invoice_History->statistic()
         ];
 

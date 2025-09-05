@@ -20,7 +20,7 @@ class Blog_widget extends My_App{
 	{
 
 		$data = array(
-			'title' => 'Blog Widget', 
+			'title' => 'Widget Blog', 
 			'widget' => $this->M_Blog_Widget->read_widget(),
 		);        
 
@@ -36,7 +36,7 @@ class Blog_widget extends My_App{
 		$ads_content = $this->M_Blog_Widget->check_ads_content($id_template);
 
 		$data = array(
-			'title' => 'Create New',
+			'title' => 'Buat Baru',
 			'ads_content' => $ads_content,
 			'id_template' => $id_template,
 		);
@@ -50,7 +50,7 @@ class Blog_widget extends My_App{
 		$ads_content = $this->M_Blog_Widget->check_ads_content($id_template);		
 
 		$data = array(
-			'title' => 'Update',
+			'title' => 'Pembaruan',
 			'ads_content' => $ads_content,
 			'id_template' => $id_template,			
 			'widget' => $this->M_Blog_Widget->data_update($id),

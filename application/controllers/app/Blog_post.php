@@ -20,7 +20,7 @@ class Blog_post extends My_App
     {
 
         $data = [
-            'title' => 'Blog Post',
+            'title' => 'Postingan Blog',
         ];
 
         $this->load->view($this->index, array_merge($data,$this->M_Blog_Post->datatables()));
@@ -38,7 +38,7 @@ class Blog_post extends My_App
     {
 
         $data = array(
-            'title' => 'Create',
+            'title' => 'Buat',
             'ckeditor' => true,
             'onbeforeunload' => false,
             'datetimepicker' => true,
@@ -49,7 +49,7 @@ class Blog_post extends My_App
 
     public function update($id){
         $data = array(
-            'title' => 'Update',
+            'title' => 'Pembaruan',
             'ckeditor' => true,
             'onbeforeunload' => false,
             'datetimepicker' => true,

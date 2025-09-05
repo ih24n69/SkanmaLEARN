@@ -16,7 +16,7 @@ class Setting_payment extends My_App{
 	{
 
 		$data = array(
-			'title' => 'Setting Payment', 
+			'title' => 'Setelan Pembayaran', 
 			'site' => $this->M_Setting_General->read_data(),			
 			'payment' => $this->M_Setting_Payment->read_data(),         
 		);        

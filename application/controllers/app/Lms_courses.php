@@ -18,7 +18,7 @@ class Lms_courses extends My_App
     {
 
         $data = [
-            'title' => 'Courses',
+            'title' => 'Kelas',
         ];
 
         $this->load->view($this->index, array_merge($data,$this->M_LMS_Courses->datatables()));
@@ -36,7 +36,7 @@ class Lms_courses extends My_App
     {
 
         $data = array(
-            'title' => 'Create Courses',
+            'title' => 'Buat Kelas',
             'ckeditor' => true,
             'onbeforeunload' => false,
             'dragula' => true,
@@ -47,7 +47,7 @@ class Lms_courses extends My_App
 
     public function update($id){
         $data = array(
-            'title' => 'Update Courses',
+            'title' => 'Pembaruan Kelas',
             'ckeditor' => true,
             'onbeforeunload' => false,
             'dragula' => true,
@@ -228,7 +228,7 @@ class Lms_courses extends My_App
     public function create_lesson($id_section){
 
         $data = array(
-            'title' => 'Create Lesson',
+            'title' => 'Buat Pelajaran',
             'ckeditor' => true,
             'data' => $this->M_LMS_Courses->required_lesson($id_section),
         );
@@ -239,7 +239,7 @@ class Lms_courses extends My_App
     public function update_lesson($id_section,$id_lesson){
 
         $data = array(
-            'title' => 'Update Lesson',
+            'title' => 'Pembaruan Pelajaran',
             'ckeditor' => true,
             'data' => $this->M_LMS_Courses->required_lesson($id_section),
             'lesson' => $this->M_LMS_Courses->data_lesson_update($id_section,$id_lesson),           

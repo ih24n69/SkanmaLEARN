@@ -16,7 +16,7 @@ class Lms_template extends My_App{
 	{
 
 		$data = array(
-			'title' => 'LMS Template', 
+			'title' => 'Templat LMS', 
 			'templates' => $this->M_LMS_Template->read_template(),         
 		);        
 
@@ -25,7 +25,7 @@ class Lms_template extends My_App{
 
 	public function update($id){
 		$data = array(
-			'title' => 'Update LMS Template Code', 
+			'title' => 'Pembaruan LMS Templat Kode', 
 			'codemirror' => true,
 			'allfile' => $this->M_LMS_Template->read_template_update($id),         
 		);        

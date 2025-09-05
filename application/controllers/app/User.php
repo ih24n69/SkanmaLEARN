@@ -19,7 +19,7 @@ class User extends My_App
     {
 
         $data = [
-        'title' => 'User',
+        'title' => 'Pengguna',
         ];
 
         $this->load->view($this->index, array_merge($data,$this->M_User->datatables()));
@@ -46,7 +46,7 @@ class User extends My_App
         }else{            
 
             $data = array(
-                'title' => 'Create',
+                'title' => 'Buat',
                 );
 
             $this->load->view($this->form, $data);
@@ -65,7 +65,7 @@ class User extends My_App
         }else{    
             
             $data = array(
-                'title' => 'Update',
+                'title' => 'Pembaruan',
                 'user' => $this->M_User->data_update($id),
                 );
 

@@ -17,7 +17,7 @@ class Lms_category extends My_App{
     {
 
         $data = [
-            'title' => 'LMS Category',
+            'title' => 'LMS Kategori',
             'category' => $this->M_LMS_Category->data()
         ];
 
@@ -28,8 +28,8 @@ class Lms_category extends My_App{
     {
 
         $data = array(
-            'title' => 'LMS Category',
-            'sub_title' => 'Create Category',
+            'title' => 'LMS Kategori',
+            'sub_title' => 'Buat Kategori',
             'fontawesomepicker' => true,
         );
 
@@ -40,8 +40,8 @@ class Lms_category extends My_App{
     {
 
         $data = array(
-            'title' => 'LMS Category',
-            'sub_title' => 'Update Category',
+            'title' => 'LMS Kategori',
+            'sub_title' => 'Pembaruan Kategori',
             'fontawesomepicker' => true,
             'data' => $this->M_LMS_Category->data_update($id),
             'parent' => $this->M_LMS_Category->check_parent($id),            
