@@ -14,6 +14,7 @@ class M_Profile extends CI_Model
 		$post = $this->input->post();
 
 		$post_data = [
+		'namalengkap' => strip_tags($post['namalengkap']),
 		'username' => strip_tags($post['full_name']),
 		'no_handphone' => strip_tags($post['no_handphone']),
 		];
@@ -52,9 +53,17 @@ class M_Profile extends CI_Model
 
 		$this->form_validation->set_rules([
 			[
+			'field' => 'namalengkap',
+			'label' => 'lang:nama_lengkap',
+			'rules' => 'required',
+			'errors' => [
+			'required' => '{field} '.$this->lang->line('must_filled'),
+			]
+			],
+			[
 			'field' => 'full_name',
 			'label' => 'lang:full_name',
-			'rules' => 'trim|required|min_length[5]|max_length[100]|alpha',
+			'rules' => 'trim|required|min_length[5]|max_length[15]',
 			'errors' => [
 			'required' => '{field} '.$this->lang->line('must_filled'),
 			]

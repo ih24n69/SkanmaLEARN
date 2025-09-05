@@ -49,7 +49,19 @@
 							<div class="row u-mb-medium">
 								<div class="col-sm-3">
 									<label class="c-field__label">								
-										<?php echo $this->lang->line('full_name') ?>
+										<?php echo $this->lang->line('nama_lengkap') ?>
+									</label>
+								</div> 
+								<div class="col-sm-9">
+									<input type="text" name="namalengkap" class="c-input" value="<?php echo (!empty($profile['namalengkap'])) ? (!empty(set_value('namalengkap')) ? set_value('namalengkap') : $profile['namalengkap'] ) : set_value('namalengkap') ?>"/>
+									<?php echo form_error('namalengkap', '<small class="c-field__message u-color-danger"><i class="fa fa-times-circle"></i>', '</small>'); ?> 
+								</div>
+							</div>
+							
+							<div class="row u-mb-medium">
+								<div class="col-sm-3">
+									<label class="c-field__label">								
+										<?php echo 'Username' ?>
 									</label>
 								</div> 
 								<div class="col-sm-9">

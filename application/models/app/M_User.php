@@ -18,7 +18,8 @@ class M_User extends CI_Model
         'datatables_data' => "
         [{'data': 'checkbox',className:'c-table__cell u-pl-small'},
         {'data': 'id',className:'c-table__cell'},
-        {'data': 'username',className:'c-table__cell',width:'100%'},         
+        {'data': 'username',className:'c-table__cell'},
+		{'data': 'namalengkap',className:'c-table__cell'},		
         {'data': 'no_handphone',className:'c-table__cell'},            
         {'data': 'status',className:'c-table__cell'},
         {'data': 'created',className:'c-table__cell'},            
@@ -37,6 +38,7 @@ class M_User extends CI_Model
         $this->datatables->select('
             id,
             photo,
+			namalengkap,
             username,
             email,
             no_handphone,
@@ -88,6 +90,7 @@ class M_User extends CI_Model
 
         $post_data = array(
             'username' => strip_tags($this->input->post('username')),
+			'namalengkap' => strip_tags($this->input->post('namalengkap')),
             'email' => strip_tags($this->input->post('email')),
             'no_handphone' => strip_tags($this->input->post('no_handphone')),
             'headline' => strip_tags($this->input->post('headline')),     
@@ -235,7 +238,7 @@ class M_User extends CI_Model
             [
             'field' => 'username',
             'label' => 'lang:username',
-            'rules' => 'trim|required|min_length[5]|max_length[100]|alpha',
+            'rules' => 'trim|required|min_length[5]|max_length[15]',
             'errors' => [
             'required' => '{field} '.$this->lang->line('must_filled'),
             ]
@@ -276,6 +279,14 @@ class M_User extends CI_Model
             'rules' => 'trim|required|numeric|min_length[10]|max_length[20]',
             'errors' => [
             'required' => '{field} '.$this->lang->line('must_filled')
+            ]
+            ],
+			[
+            'field' => 'namalengkap',
+            'label' => 'lang:nama_lengkap',
+            'rules' => 'trim|required',
+            'errors' => [
+            'required' => '{field} '.$this->lang->line('must_filled'),
             ]
             ],
             [

@@ -39,14 +39,15 @@
                                         <label class="c-choice__label" for="checkbox-all"></label>
                                     </div>
                                 </th>
-                                <th class="c-table__cell c-table__cell--head none">id</th>
-                                <th class="c-table__cell c-table__cell--head all">username</th> 
-                                <th class="c-table__cell c-table__cell--head none">no_handphone</th>
-                                <th class="c-table__cell c-table__cell--head all">status</th>                                
-                                <th class="c-table__cell c-table__cell--head none">created</th>
-                                <th class="c-table__cell c-table__cell--head none">last_login</th>                                
-                                <th class="c-table__cell c-table__cell--head no-sort all u-text-center">view</th>
-                                <th class="c-table__cell c-table__cell--head no-sort all u-text-center">tools</th>
+                                <th class="c-table__cell c-table__cell--head none">No.</th>
+                                <th class="c-table__cell c-table__cell--head all">Username</th> 
+								<th class="c-table__cell c-table__cell--head all">Nama Lengkap</th> 
+                                <th class="c-table__cell c-table__cell--head all">No.Handphone</th>
+                                <th class="c-table__cell c-table__cell--head all">Status</th>                                
+                                <th class="c-table__cell c-table__cell--head none">Dibuat</th>
+                                <th class="c-table__cell c-table__cell--head none">Terakhir Login</th>                                
+                                <th class="c-table__cell c-table__cell--head no-sort all u-text-center">Lihat</th>
+                                <th class="c-table__cell c-table__cell--head no-sort all u-text-center">Aksi</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
