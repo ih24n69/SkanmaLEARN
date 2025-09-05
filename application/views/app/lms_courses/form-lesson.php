@@ -28,20 +28,20 @@
                 <div class="row">
                     <div class="col-12 col-lg-12">                        
                         <div class="c-field u-ph-medium u-pv-small">
-                            <label class="c-field__label">title : </label>
+                            <label class="c-field__label">Judul : </label>
                             <input autofocus="" required class="c-input" name="title" type="text" placeholder="title" value="<?php echo (!empty($lesson['title']) ? $lesson['title'] : '') ?>">
                         </div>
                     </div>
 
                     <div class="col-12 col-lg-12">                        
                         <div class="c-field u-ph-medium u-pv-small u-mb-small">
-                            <label class="c-field__label">type : </label>
+                            <label class="c-field__label">Tipe : </label>
 
                             <select required name="type" class="select2-search">
                                 <option></option>
-                                <option <?php echo (!empty($lesson['type']) AND $lesson['type'] == 'Text') ? 'selected' : ''; ?> value="Text">Text</option>
+                                <option <?php echo (!empty($lesson['type']) AND $lesson['type'] == 'Text') ? 'selected' : ''; ?> value="Text">Teks</option>
                                 <option <?php echo (!empty($lesson['type']) AND $lesson['type'] == 'Video') ? 'selected' : ''; ?> value="Video">Video</option>
-                                <option <?php echo (!empty($lesson['type']) AND $lesson['type'] == 'Image') ? 'selected' : ''; ?> value="Image">Image</option>
+                                <option <?php echo (!empty($lesson['type']) AND $lesson['type'] == 'Image') ? 'selected' : ''; ?> value="Image">Gambar</option>
                             </select>
                         </div>  
                     </div>     

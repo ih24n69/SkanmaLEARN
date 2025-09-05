@@ -5,7 +5,7 @@
             <div class="c-modal__content">
                 <div class="c-modal__header">
                     <h3 class="c-modal__title">
-                        Detail Invoice
+                        Detail Faktur
                     </h3>
                     <span class="c-modal__close" data-dismiss="modal" aria-label="Close">
                         <i class="fa fa-close"></i>
@@ -18,7 +18,7 @@
                             <tbody class="c-table__head">
                                 <tr class="c-table__row">
                                     <td class="u-border-right u-pv-xsmall u-ph-small u-text-left">
-                                        Order ID
+                                        ID Pesanan
                                     </td>
                                     <td id="inv-id" class="u-border-right u-pv-xsmall u-ph-small u-text-left">
                                         ...
@@ -26,7 +26,7 @@
                                 </tr>                        
                                 <tr class="c-table__row">
                                     <td class="u-border-right u-pv-xsmall u-ph-small u-text-left">
-                                        User
+                                        Pengguna
                                     </td>
                                     <td id="inv-username" class="u-border-right u-pv-xsmall u-ph-small u-text-left">
                                         ...
@@ -34,7 +34,7 @@
                                 </tr>
                                 <tr class="c-table__row">
                                     <td class="u-border-right u-pv-xsmall u-ph-small u-text-left">
-                                        Buy
+                                        Beli
                                     </td>
                                     <td id="inv-product" class="u-border-right u-pv-xsmall u-ph-small u-text-left">
                                         ...
@@ -42,7 +42,7 @@
                                 </tr>
                                 <tr class="c-table__row">
                                     <td class="u-border-right u-pv-xsmall u-ph-small u-text-left">
-                                        Payment
+                                        Pembayaran
                                     </td>
                                     <td id="inv-payment" class="u-border-right u-pv-xsmall u-ph-small u-text-left">
                                         ...
@@ -50,7 +50,7 @@
                                 </tr>
                                 <tr class="c-table__row">
                                     <td class="u-border-right u-pv-xsmall u-ph-small u-text-left">
-                                        Amount
+                                        Total
                                     </td>
                                     <td id="inv-amount" class="u-border-right u-pv-xsmall u-ph-small u-text-left">
                                         ...
@@ -58,7 +58,7 @@
                                 </tr>
                                 <tr class="c-table__row u-bg-success">
                                     <td class="u-border-right u-pv-xsmall u-ph-small u-text-left">
-                                        Sender
+                                        Pengirim
                                     </td>
                                     <td id="inv-sender" class="u-border-right u-pv-xsmall u-ph-small u-text-left">
                                         ...
@@ -74,7 +74,7 @@
                             <tbody class="c-table__head">
                                 <tr class="c-table__row">
                                     <td class="u-border-right u-pv-xsmall u-ph-small u-text-center">
-                                        Proof
+                                        Bukti Pembayaran
                                     </td>
                                 </tr>
                                 <tr class="c-table__row">

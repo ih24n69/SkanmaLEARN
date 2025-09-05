@@ -22,7 +22,7 @@
                     <div class="c-toggle">
                         <div class="c-toggle__btn <?php echo (!empty($data['status'])) ? ($data['status'] == 'Published') ? 'is-active' : '' : ''?>">
                             <label class="c-toggle__label" for="publish">
-                                <input value="Published" class="c-toggle__input" id="publish" name="status" type="radio" <?php echo (!empty($data['status'])) ? ($data['status'] == 'Published') ? 'checked' : '' : ''?>>Publish
+                                <input value="Published" class="c-toggle__input" id="publish" name="status" type="radio" <?php echo (!empty($data['status'])) ? ($data['status'] == 'Published') ? 'checked' : '' : ''?>>Publikasi
                             </label>
                         </div>
 
@@ -40,7 +40,7 @@
                 <div class="row">
                     <div class="col-12 col-lg-12">                        
                         <div class="c-field u-ph-medium u-pt-small u-mb-medium">
-                            <label class="c-field__label">title : </label>
+                            <label class="c-field__label">Judul : </label>
                             <input required class="c-input" name="title" type="text" placeholder="title" value="<?php echo (!empty($data['title']) ? $data['title'] : '') ?>" id="title">
                         </div>
                     </div>
@@ -48,11 +48,11 @@
 
                 <ul class="c-tabs__list nav nav-tabs u-ph-zero u-pv-small" role="tablist">
                     <li>
-                        <a class="c-tabs__link u-p-small u-mr-zero u-bg-secondary active" id="nav-description-tab" data-toggle="tab" href="#nav-description" role="tab" aria-controls="nav-description" aria-selected="true">description</a>
+                        <a class="c-tabs__link u-p-small u-mr-zero u-bg-secondary active" id="nav-description-tab" data-toggle="tab" href="#nav-description" role="tab" aria-controls="nav-description" aria-selected="true">Deskripsi</a>
                     </li>
 
                     <li>
-                        <a class="c-tabs__link u-p-small u-mr-zero u-bg-secondary" id="nav-faq-tab" data-toggle="tab" href="#nav-faq" role="tab" aria-controls="nav-faq" aria-selected="false">faq</a>
+                        <a class="c-tabs__link u-p-small u-mr-zero u-bg-secondary" id="nav-faq-tab" data-toggle="tab" href="#nav-faq" role="tab" aria-controls="nav-faq" aria-selected="false">Pertanyaan Umum</a>
                     </li>
                 </ul> 
 
@@ -87,7 +87,7 @@
         <div class="c-card c-card--responsive">
             <div class="c-card__header c-card__header--transparent o-line">
                 <h5 class="c-card__title">
-                    Setting
+                    Setelan
                 </h5>
             </div>
             <div class="c-card__body u-p-zero">
@@ -105,7 +105,7 @@
                     <div data-parent="#accordion" class="c-stage__panel u-p-xsmall collapse" id="stage-permalink">
 
                         <?php if ((empty($data['status']))): ?>
-                            <label><input name="permalink_auto" value="auto" type="radio" checked="">Auto</label>
+                            <label><input name="permalink_auto" value="auto" type="radio" checked="">Otomatis</label>
                             <label><input name="permalink_auto" value="manual" type="radio">Manual</label>
 
                             <input name="permalink_old" type="hidden" value="<?php echo (!empty($data['permalink']) ? $data['permalink'] : '') ?>">
@@ -116,7 +116,7 @@
                         <?php endif ?>
                         <?php if ((!empty($data['status']))): ?>
 
-                            <label><input name="permalink_auto" value="auto" type="radio">Auto</label>
+                            <label><input name="permalink_auto" value="auto" type="radio">Otomatis</label>
                             <label><input name="permalink_auto" value="manual" type="radio" checked="">Manual</label>
 
                             <input name="permalink_old" type="hidden" value="<?php echo (!empty($data['permalink']) ? $data['permalink'] : '') ?>">
@@ -130,7 +130,7 @@
 
                     <div class="c-stage__header o-media u-justify-start collapsed u-pv-xsmall u-ph-small" data-toggle="collapse" href="#stage-category" aria-expanded="false" aria-controls="stage-category">
                         <div class="c-stage__header-title o-media__body">
-                            <h6 class="u-mb-zero">category</h6>
+                            <h6 class="u-mb-zero">Kategori</h6>
                         </div>
                         <div class="c-stage__icon o-media__img u-ml-auto u-mr-zero">
                             <i class="fa fa-info"></i>
@@ -162,7 +162,7 @@
 
                     <div class="c-stage__header o-media u-justify-start collapsed u-pv-xsmall u-ph-small" data-toggle="collapse" href="#stage-image" aria-expanded="false" aria-controls="stage-image">
                         <div class="c-stage__header-title o-media__body">
-                            <h6 class="u-mb-zero">image</h6>
+                            <h6 class="u-mb-zero">Gambar</h6>
                         </div>
                         <div class="c-stage__icon o-media__img u-ml-auto u-mr-zero">
                             <i class="fa fa-info"></i>
@@ -186,7 +186,7 @@
 
                     <div class="c-stage__header o-media u-justify-start collapsed u-pv-xsmall u-ph-small" data-toggle="collapse" href="#stage-price" aria-expanded="false" aria-controls="stage-price">
                         <div class="c-stage__header-title o-media__body">
-                            <h6 class="u-mb-zero">price</h6>
+                            <h6 class="u-mb-zero">Harga</h6>
                         </div>
                         <div class="c-stage__icon o-media__img u-ml-auto u-mr-zero">
                             <i class="fa fa-info"></i>
@@ -198,7 +198,7 @@
 
                     <div class="c-stage__header o-media u-justify-start collapsed u-pv-xsmall u-ph-small" data-toggle="collapse" href="#stage-discount" aria-expanded="false" aria-controls="stage-discount">
                         <div class="c-stage__header-title o-media__body">
-                            <h6 class="u-mb-zero">discount</h6>
+                            <h6 class="u-mb-zero">Diskon</h6>
                         </div>
                         <div class="c-stage__icon o-media__img u-ml-auto u-mr-zero">
                             <i class="fa fa-info"></i>

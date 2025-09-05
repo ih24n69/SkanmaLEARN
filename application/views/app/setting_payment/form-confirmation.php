@@ -5,7 +5,7 @@
             <div class="c-modal__content">
                 <div class="c-modal__header">
                     <h3 class="c-modal__title">
-                        Confirmation
+                        Konfirmasi
                     </h3>
                     <span class="c-modal__close" data-dismiss="modal" aria-label="Close">
                         <i class="fa fa-close"></i>
@@ -14,17 +14,17 @@
                 <div class="c-modal__body row">
 
                     <div class="c-field u-mb-small col-6">
-                        <label class="c-field__label">type : </label>
-                        <select required="" name="type" class="c-select select2 input-confirmation-type" data-placeholder='select'>
+                        <label class="c-field__label">Tipe : </label>
+                        <select required="" name="type" class="c-select select2 input-confirmation-type" data-placeholder='Pilih'>
                             <option value=""></option>
-                            <option value="whatsapp">whatsapp</option>
-                            <option value="facebook">facebook</option>
+                            <option value="whatsapp">Whatsapp</option>
+                            <option value="facebook">Facebook</option>
                         </select>
                     </div>                    
 
                     <div class="c-field u-mb-small col-12">
-                        <label class="c-field__label">data : </label>
-                        <input autocomplete="off" required class="c-input input-confirmation-data" name="data" type="text" placeholder="data">
+                        <label class="c-field__label">Data : </label>
+                        <input autocomplete="off" required class="c-input input-confirmation-data" name="data" type="text" placeholder="Data">
                     </div>
 
                 </div>

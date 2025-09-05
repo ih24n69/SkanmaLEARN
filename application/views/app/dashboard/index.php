@@ -6,19 +6,19 @@
 		<div class="row">
 			<div class="col-6 col-md-3 c-toolbar__state">
 				<h4 class="c-toolbar__state-number"><?php echo $count_courses; ?></h4>
-				<span class="c-toolbar__state-title">Courses</span>
+				<span class="c-toolbar__state-title">Kelas</span>
 			</div>		
 			<div class="col-6 col-md-3 c-toolbar__state">
 				<h4 class="c-toolbar__state-number"><?php echo $count_post; ?></h4>
-				<span class="c-toolbar__state-title">Blog Post</span>
+				<span class="c-toolbar__state-title">Postingan Blog</span>
 			</div>
 			<div class="col-6 col-md-3 c-toolbar__state">
 				<h4 class="c-toolbar__state-number"><?php echo $count_pages; ?></h4>
-				<span class="c-toolbar__state-title">Pages</span>
+				<span class="c-toolbar__state-title">Halaman</span>
 			</div>
 			<div class="col-6 col-md-3 c-toolbar__state">
 				<h4 class="c-toolbar__state-number"><?php echo $count_user; ?></h4>
-				<span class="c-toolbar__state-title">User</span>
+				<span class="c-toolbar__state-title">Pengguna</span>
 			</div>				
 		</div><!-- // .row -->
 	</div><!-- // -->
@@ -29,7 +29,7 @@
 <div class="col-lg-8 u-mb-medium">
 	<div class="c-graph-card" data-mh="secondary-graphs">
 		<div class="c-graph-card__content u-flex u-justify-between u-align-items-baseline">
-			<h3 class="c-graph-card__title u-h4">Statistic Visitor</h3>
+			<h3 class="c-graph-card__title u-h4">Statistik Pengunjung</h3>
 			<div class="u-text-right">
 				<h4 class="u-h4 u-mb-zero"><?php echo @$statistic_month; ?></h4>
 				<span <?php echo (@$statistic_percent_status == 'up' ? 'class="u-color-success"' : 'class="u-color-danger"') ?>><?php echo @$statistic_percent ?>%</span>
@@ -43,7 +43,7 @@
 	</div>
 
 	<div class="c-card u-p-medium">
-		<h4>Pageviews by Countries</h4>
+		<h4>Tampilan Halaman Berdasar Negara</h4>
 
 		<div class="c-map">
 			<div class="c-map__visual" id="vmap" style="height: 250px;"></div>
@@ -73,17 +73,17 @@
 
 	<div class="c-card u-p-medium u-mb-small">
 
-		<h3 class="u-mb-small">Log Visitor</h3>
+		<h3 class="u-mb-small">Log Pengunjung</h3>
 
 		<p class="u-mb-xsmall">
-			<i class="fa fa-circle-o u-color-info u-mr-xsmall"></i> Hits today
+			<i class="fa fa-circle-o u-color-info u-mr-xsmall"></i> Kunjungan Hari Ini
 			<span class="u-float-right u-text-mute">
 				<?php echo $hits_today; ?>
 			</span>
 		</p>
 
 		<p class="u-mb-xsmall">
-			<i class="fa fa-circle-o u-color-info u-mr-xsmall"></i> Total Visitor
+			<i class="fa fa-circle-o u-color-info u-mr-xsmall"></i> Total Pengunjung
 			<span class="u-float-right u-text-mute">
 				<?php echo $total_visitor ?>
 			</span>
@@ -93,10 +93,10 @@
 
 	<div class="c-card u-p-medium u-mb-small">
 
-		<h3 class="u-mb-small">Pageviews</h3>
+		<h3 class="u-mb-small">Tampilan Halaman</h3>
 
 		<p class="u-mb-xsmall">
-			<i class="fa fa-circle-o u-color-info u-mr-xsmall"></i> Pageviews today
+			<i class="fa fa-circle-o u-color-info u-mr-xsmall"></i> Tampilan Halaman Hari Ini
 
 			<span class="u-float-right u-text-mute">
 				<?php echo $page_view_today; ?>
@@ -105,7 +105,7 @@
 
 
 		<p class="u-mb-xsmall">
-			<i class="fa fa-circle-o u-color-info u-mr-xsmall"></i> Pageviews yesterday
+			<i class="fa fa-circle-o u-color-info u-mr-xsmall"></i> Tampilan Halaman Kemarin
 
 			<span class="u-float-right u-text-mute">
 				<?php echo $page_view_yesterday; ?>
@@ -114,7 +114,7 @@
 
 
 		<p class="u-mb-xsmall">
-			<i class="fa fa-circle-o u-color-info u-mr-xsmall"></i> Pageviews last month
+			<i class="fa fa-circle-o u-color-info u-mr-xsmall"></i> Tampilan Halaman Bulan Lalu
 
 			<span class="u-float-right u-text-mute">
 				<?php echo $page_view_last_month; ?>
@@ -123,7 +123,7 @@
 
 
 		<p class="u-mb-xsmall">
-			<i class="fa fa-circle-o u-color-info u-mr-xsmall"></i> Pageviews all time history
+			<i class="fa fa-circle-o u-color-info u-mr-xsmall"></i> Tampilan Halaman Keseluruhan
 			<span class="u-float-right u-text-mute">
 				<?php echo $page_view_all_time; ?>
 			</span>
@@ -133,7 +133,7 @@
 
 	<div class="c-card u-p-medium u-mb-small">
 
-		<h3 class="u-mb-small">Pageviews by Browsers</h3>
+		<h3 class="u-mb-small">Tampilan Berdasar Browser</h3>
 
 		<?php if ($page_view_by_browser_data): foreach ($page_view_by_browser_data as $data): ?>			
 			<p class="u-mb-xsmall">
@@ -155,7 +155,7 @@
 
 	<div class="c-card u-p-medium u-mb-small">
 
-		<h3 class="u-mb-small u-text-medium">Pageviews by OS</h3>
+		<h3 class="u-mb-small u-text-medium">Tampilan Berdasar OS</h3>
 
 
 		<?php if ($page_view_by_os_data): foreach ($page_view_by_os_data as $data): ?>			

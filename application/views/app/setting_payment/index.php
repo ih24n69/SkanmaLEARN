@@ -38,7 +38,7 @@
 										<i class="fa fa-info"></i>
 									</div>
 									<div class="c-stage__header-title o-media__body">
-										<h6 class="u-mb-zero">Transaction</h6>
+										<h6 class="u-mb-zero">Transaksi</h6>
 									</div>
 									<div class="u-ml-auto o-line">                       
 										<button type="button" class="c-btn c-btn--success c-btn--custom u-mr-xsmall button-payment-transaction-create" data-toggle="modal" data-target="#form-transaction"> 
@@ -53,10 +53,10 @@
 										<table class="c-table c-table--highlight" style="display: table">
 											<thead class="c-table__head c-table__head--slim">
 												<tr class="c-table__row">
-													<th class="c-table__cell c-table__cell--head">type</th>
-													<th class="c-table__cell c-table__cell--head">account_number</th> 
-													<th class="c-table__cell c-table__cell--head">receiver</th>
-													<th class="c-table__cell c-table__cell--head">tools</th>
+													<th class="c-table__cell c-table__cell--head">Tipe</th>
+													<th class="c-table__cell c-table__cell--head">Nomor Akun</th> 
+													<th class="c-table__cell c-table__cell--head">Penerima</th>
+													<th class="c-table__cell c-table__cell--head">Aksi</th>
 												</tr>
 											</thead>
 											<tbody>
@@ -84,7 +84,7 @@
 												<?php if (empty($payment['transaction'])): ?>
 													<tr class="c-table__row">
 														<th class="c-table__cell u-text-center" colspan="4">
-															No Data
+															Tidak ada data!
 														</th>
 													</tr>
 												<?php endif ?>
@@ -105,7 +105,7 @@
 										<i class="fa fa-info"></i>
 									</div>
 									<div class="c-stage__header-title o-media__body">
-										<h6 class="u-mb-zero">Confirmation</h6>
+										<h6 class="u-mb-zero">Konfirmasi</h6>
 									</div>
 									<div class="u-ml-auto o-line">                       
 										<button type="button" class="c-btn c-btn--success c-btn--custom u-mr-xsmall button-payment-confirmation-create" data-toggle="modal" data-target="#form-confirmation"> 
@@ -120,9 +120,9 @@
 										<table class="c-table c-table--highlight" style="display: table">
 											<thead class="c-table__head c-table__head--slim">
 												<tr class="c-table__row">
-													<th class="c-table__cell c-table__cell--head">type</th>
-													<th class="c-table__cell c-table__cell--head">data</th> 
-													<th class="c-table__cell c-table__cell--head">tools</th>
+													<th class="c-table__cell c-table__cell--head">Tipe</th>
+													<th class="c-table__cell c-table__cell--head">Data</th> 
+													<th class="c-table__cell c-table__cell--head">Aksi</th>
 												</tr>
 											</thead>
 											<tbody>
@@ -147,7 +147,7 @@
 												<?php if (empty($payment['confirmation'])): ?>
 													<tr class="c-table__row">
 														<th class="c-table__cell u-text-center" colspan="3">
-															No Data
+															Tidak ada data!
 														</th>
 													</tr>
 												<?php endif ?>

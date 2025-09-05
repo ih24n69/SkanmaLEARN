@@ -5,7 +5,7 @@
 			<i class="fa fa-info"></i>
 		</div>
 		<div class="c-stage__header-title o-media__body">
-			<h6 class="u-mb-zero">Site Information</h6>
+			<h6 class="u-mb-zero">Informasi Website</h6>
 		</div>
 	</div>
 
@@ -13,7 +13,7 @@
 
 		<div class="col-lg-6">
 			<div class="c-field u-mb-medium">
-				<label class="c-field__label">Title</label> 
+				<label class="c-field__label">Judul</label> 
 				<input class="c-input" name="title" type="text" placeholder="title" value="<?php echo (!empty($site) ? $site['title'] : '') ?>"> 
 			</div>
 
@@ -31,14 +31,14 @@
 		<div class="col-lg-12">
 
 			<div class="c-field u-mb-medium">
-				<label class="c-field__label">Description</label> 
+				<label class="c-field__label">Deskripsi</label> 
 				<textarea required="" class="c-input" name="description" placeholder="description"><?php echo (!empty($site) ? $site['description'] : '') ?></textarea>
 			</div>
 
 		</div>
 
 		<div class="c-field u-mb-medium col-md-6">
-			<label class="c-field__label">Language</label>
+			<label class="c-field__label">Bahasa</label>
 			<select required="" name="language" class="c-select select2">
 				<option></option>
 				<option value="english" <?php echo ($site['language'] == 'english') ? 'selected' : ''; ?>>English</option>
@@ -49,21 +49,21 @@
 		<?php $this->load->view('app/setting_general/part/timezone'); ?>	
 
 		<div class="c-field u-mb-medium col-md-6">
-			<label class="c-field__label">Using Cache ?</label>
+			<label class="c-field__label">Aktifkan Cache ?</label>
 			<select required="" name="cache" class="c-select select2">
 				<option></option>
-				<option value="Yes" <?php echo ($site['cache'] == 'Yes') ? 'selected' : ''; ?>>Yes</option>
-				<option value="No" <?php echo ($site['cache'] == 'No') ? 'selected' : ''; ?>>No</option>
+				<option value="Yes" <?php echo ($site['cache'] == 'Yes') ? 'selected' : ''; ?>>Ya</option>
+				<option value="No" <?php echo ($site['cache'] == 'No') ? 'selected' : ''; ?>>Tidak</option>
 			</select>
 		</div>	
 
 
 		<div class="c-field u-mb-medium col-md-6">
-			<label class="c-field__label">Cookie Notification</label>
+			<label class="c-field__label">Notifikasi Cookie?</label>
 			<select required="" name="cookie_status" class="c-select select2 select-cookie">
 				<option></option>
-				<option value="Yes" <?php echo ($site['cookie_notification']['status'] == 'Yes') ? 'selected' : ''; ?>>Yes</option>
-				<option value="No" <?php echo ($site['cookie_notification']['status'] == 'No') ? 'selected' : ''; ?>>No</option>
+				<option value="Yes" <?php echo ($site['cookie_notification']['status'] == 'Yes') ? 'selected' : ''; ?>>Ya</option>
+				<option value="No" <?php echo ($site['cookie_notification']['status'] == 'No') ? 'selected' : ''; ?>>Tisak</option>
 			</select>
 		</div>
 

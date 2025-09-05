@@ -7,7 +7,7 @@
 				<form id="form-lesson-sort-<?php echo $section['id'] ?>" action="<?php echo base_url('app/lms_courses/process_lesson_sort') ?>" method="POST">
 
 					<h3 class="modal-title">  
-						Sort lesson                      
+						Urutkan Pelajaran                      
 					</h3>
 
 					<style>.draggable-item {cursor: all-scroll;}</style>

@@ -27,7 +27,7 @@
             <form id='form-multiple' action="<?php echo base_url('app/lms_courses/process_multiple') ?>" method="post">
 
                 <div class="c-table-responsive">
-                    <table data-mysearch="Search..." data-myorder='1' data-myurl="<?php echo base_url('app/lms_courses/datatables') ?>" class="c-table c-table--highlight u-hidden" id="table">
+                    <table data-mysearch="Cari" data-myorder='1' data-myurl="<?php echo base_url('app/lms_courses/datatables') ?>" class="c-table c-table--highlight u-hidden" id="table">
                         <caption class="c-table__title cst-table">
                         </caption>
 
@@ -39,14 +39,14 @@
                                         <label class="c-choice__label" for="checkbox-all"></label>
                                     </div>
                                 </th>
-                                <th class="c-table__cell c-table__cell--head none">id</th>
-                                <th class="c-table__cell c-table__cell--head all">title</th>
-                                <th class="c-table__cell c-table__cell--head all u-text-center">category</th>
-                                <th class="c-table__cell c-table__cell--head all">user</th>
-                                <th class="c-table__cell c-table__cell--head none">time</th> 
-                                <th class="c-table__cell c-table__cell--head none">update</th>
-                                <th class="c-table__cell c-table__cell--head no-sort all u-text-center">view</th>
-                                <th class="c-table__cell c-table__cell--head no-sort all u-text-center">tools</th>
+                                <th class="c-table__cell c-table__cell--head none">No.</th>
+                                <th class="c-table__cell c-table__cell--head all">Judul</th>
+                                <th class="c-table__cell c-table__cell--head all u-text-center">Kategori</th>
+                                <th class="c-table__cell c-table__cell--head all">User</th>
+                                <th class="c-table__cell c-table__cell--head none">Waktu</th> 
+                                <th class="c-table__cell c-table__cell--head none">Diperbarui</th>
+                                <th class="c-table__cell c-table__cell--head no-sort all u-text-center">Lihat</th>
+                                <th class="c-table__cell c-table__cell--head no-sort all u-text-center">Aksi</th>
                             </tr>
                         </thead>
                         <tbody></tbody>

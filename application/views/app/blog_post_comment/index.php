@@ -31,7 +31,7 @@
             <form id='form-multiple' action="<?php echo base_url('app/blog_post_comment/process_multiple') ?>" method="post">
 
                 <div class="c-table-responsive">
-                    <table data-mysearch="Search..." data-myorder='1' data-myurl="<?php echo base_url('app/blog_post_comment/datatables') ?>" class="c-table c-table--highlight" id="table" width="100%">
+                    <table data-mysearch="Cari" data-myorder='1' data-myurl="<?php echo base_url('app/blog_post_comment/datatables') ?>" class="c-table c-table--highlight" id="table" width="100%">
                         <caption class="c-table__title cst-table">
                         </caption>
 
@@ -40,13 +40,13 @@
                                 <th class="c-table__cell c-table__cell--head text-center no-sort all">
                                     <input name="select_all" type="checkbox" id="checkbox-all">
                                 </th>
-                                <th class="c-table__cell c-table__cell--head none">id</th>
-                                <th class="c-table__cell c-table__cell--head all">content</th>
-                                <th class="c-table__cell c-table__cell--head all">date</th>
-                                <th class="c-table__cell c-table__cell--head all">status</th>
-                                <th class="c-table__cell c-table__cell--head none">email</th>
+                                <th class="c-table__cell c-table__cell--head none">No.</th>
+                                <th class="c-table__cell c-table__cell--head all">Konten</th>
+                                <th class="c-table__cell c-table__cell--head all">Tanggal</th>
+                                <th class="c-table__cell c-table__cell--head all">Status</th>
+                                <th class="c-table__cell c-table__cell--head none">E-mail</th>
                                 <th class="c-table__cell c-table__cell--head none">log</th>
-                                <th class="c-table__cell c-table__cell--head no-sort all">tools</th>
+                                <th class="c-table__cell c-table__cell--head no-sort all">Aksi</th>
                             </tr>
                         </thead>
                         <tbody></tbody>

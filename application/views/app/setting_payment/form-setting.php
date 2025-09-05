@@ -3,7 +3,7 @@
 	<div class="col-lg-12">
 
 		<div class="c-field u-mb-medium u-ph-medium">
-			<label class="c-field__label">Currency Format</label>
+			<label class="c-field__label">Mata Uang</label>
 			<select required="" name="currency_format" class="c-select select2">
 				<option></option>
 				<option value="IDR" <?php echo ($site['currency_format'] == 'IDR') ? 'selected' : ''; ?>>IDR</option>
@@ -12,7 +12,7 @@
 		</div>	
 
 		<div class="c-field u-mb-medium u-ph-medium">
-			<label class="c-field__label">Payment Method</label>
+			<label class="c-field__label">Metode Pembayaran</label>
 			<select required="" name="payment_method" class="c-select select2 select-payment">
 				<option></option>
 				<option value="Manual" <?php echo ($site['payment_method'] == 'Manual') ? 'selected' : ''; ?>>Manual</option>

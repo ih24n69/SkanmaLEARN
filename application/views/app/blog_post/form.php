@@ -28,7 +28,7 @@
                     <div class="c-toggle u-mb-small">
                         <div class="c-toggle__btn <?php echo (!empty($site_pages['status'])) ? ($site_pages['status'] == 'Published') ? 'is-active' : '' : 'is-active'?>">
                             <label class="c-toggle__label" for="publish">
-                                <input value="Published" class="c-toggle__input" id="publish" name="status" type="radio" <?php echo (!empty($site_pages['status'])) ? ($site_pages['status'] == 'Published') ? 'checked' : '' : 'checked'?>>Publish
+                                <input value="Published" class="c-toggle__input" id="publish" name="status" type="radio" <?php echo (!empty($site_pages['status'])) ? ($site_pages['status'] == 'Published') ? 'checked' : '' : 'checked'?>>Publikasi
                             </label>
                         </div>
 
@@ -46,11 +46,11 @@
                 <?php $this->load->view('app/_layouts/alert'); ?>
 
                 <div class="c-field u-mb-small u-p-small">
-                    <label class="c-field__label">title : </label>
+                    <label class="c-field__label">Judul : </label>
                     <input autofocus autocomplete="off"
                     value="<?php echo (!empty($blog_post['title']) ? $blog_post['title'] : '') ?>" required
                     class="c-input" name="title" id="title" type="text"
-                    placeholder="title">
+                    placeholder="Judul">
                 </div>
 
                 <div class="c-field">
@@ -70,7 +70,7 @@
         <div class="c-card c-card--responsive">
             <div class="c-card__header c-card__header--transparent o-line">
                 <h5 class="c-card__title">
-                    Setting
+                    Pengaturan
                 </h5>
             </div>
             <div class="c-card__body u-p-zero">
@@ -114,7 +114,7 @@
 
                     <div class="c-stage__header o-media u-justify-start collapsed u-pv-xsmall u-ph-small" data-toggle="collapse" href="#stage-category" aria-expanded="false" aria-controls="stage-category">
                         <div class="c-stage__header-title o-media__body">
-                            <h6 class="u-mb-zero">category</h6>
+                            <h6 class="u-mb-zero">Kategori</h6>
                         </div>
                         <div class="c-stage__icon o-media__img u-ml-auto u-mr-zero">
                             <i class="fa fa-info"></i>
@@ -149,7 +149,7 @@
 
                     <div class="c-stage__header o-media u-justify-start collapsed u-pv-xsmall u-ph-small" data-toggle="collapse" href="#stage-description" aria-expanded="false" aria-controls="stage-description">
                         <div class="c-stage__header-title o-media__body">
-                            <h6 class="u-mb-zero">description</h6>
+                            <h6 class="u-mb-zero">Deskripsi</h6>
                         </div>
                         <div class="c-stage__icon o-media__img u-ml-auto u-mr-zero">
                             <i class="fa fa-info"></i>
@@ -158,13 +158,13 @@
 
                     <div data-parent="#accordion" class="c-stage__panel u-p-xsmall collapse" id="stage-description">
 
-                        <textarea rows="3" class="c-input" name="description" id="description" placeholder="description"><?php echo (!empty($blog_post['description']) ? $blog_post['description'] : '') ?></textarea>
+                        <textarea rows="3" class="c-input" name="description" id="description" placeholder="Deskripsi"><?php echo (!empty($blog_post['description']) ? $blog_post['description'] : '') ?></textarea>
 
                     </div>
 
                     <div class="c-stage__header o-media u-justify-start collapsed u-pv-xsmall u-ph-small" data-toggle="collapse" href="#stage-image" aria-expanded="false" aria-controls="stage-image">
                         <div class="c-stage__header-title o-media__body">
-                            <h6 class="u-mb-zero">image</h6>
+                            <h6 class="u-mb-zero">Gambar</h6>
                         </div>
                         <div class="c-stage__icon o-media__img u-ml-auto u-mr-zero">
                             <i class="fa fa-info"></i>
@@ -194,7 +194,7 @@
 
                     <div class="c-stage__header o-media u-justify-start collapsed u-pv-xsmall u-ph-small" data-toggle="collapse" href="#stage-time" aria-expanded="false" aria-controls="stage-time">
                         <div class="c-stage__header-title o-media__body">
-                            <h6 class="u-mb-zero">time</h6>
+                            <h6 class="u-mb-zero">Waktu</h6>
                         </div>
                         <div class="c-stage__icon o-media__img u-ml-auto u-mr-zero">
                             <i class="fa fa-info"></i>
@@ -205,13 +205,13 @@
 
                         <input value="<?php echo (!empty($blog_post['time']) ? $blog_post['time'] : date('Y-m-d H:i')) ?>"
                         autocomplete="off" id="datetimepicker" class="c-input" name="time"
-                        id="time" type="text" placeholder="time">
+                        id="time" type="text" placeholder="Waktu">
 
                     </div>                 
 
                     <div class="c-stage__header o-media u-justify-start collapsed u-pv-xsmall u-ph-small" data-toggle="collapse" href="#stage-tags" aria-expanded="false" aria-controls="stage-tags">
                         <div class="c-stage__header-title o-media__body">
-                            <h6 class="u-mb-zero">tags</h6>
+                            <h6 class="u-mb-zero">Tags</h6>
                         </div>
                         <div class="c-stage__icon o-media__img u-ml-auto u-mr-zero">
                             <i class="fa fa-info"></i>

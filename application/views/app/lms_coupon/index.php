@@ -19,7 +19,7 @@
             <form id='form-multiple' action="<?php echo base_url('app/lms_coupon/process_multiple') ?>" method="post">
 
                 <div class="c-table-responsive">
-                    <table data-mysearch="Search..." data-myorder='1' data-myurl="<?php echo base_url('app/lms_coupon/datatables') ?>" class="c-table c-table--highlight u-hidden" id="table">
+                    <table data-mysearch="Cari" data-myorder='1' data-myurl="<?php echo base_url('app/lms_coupon/datatables') ?>" class="c-table c-table--highlight u-hidden" id="table">
                         <caption class="c-table__title cst-table">
                         </caption>
 
@@ -31,14 +31,14 @@
                                         <label class="c-choice__label" for="checkbox-all"></label>
                                     </div>
                                 </th>
-                                <th class="c-table__cell c-table__cell--head none">id</th>
-                                <th class="c-table__cell c-table__cell--head all">code</th>
-                                <th class="c-table__cell c-table__cell--head all">type</th>
-                                <th class="c-table__cell c-table__cell--head all">data</th>
-                                <th class="c-table__cell c-table__cell--head all">for</th>
-                                <th class="c-table__cell c-table__cell--head all">expired</th>
-                                <th class="c-table__cell c-table__cell--head no-sort all">view</th>
-                                <th class="c-table__cell c-table__cell--head no-sort all">tools</th>
+                                <th class="c-table__cell c-table__cell--head none">No.</th>
+                                <th class="c-table__cell c-table__cell--head all">Kode</th>
+                                <th class="c-table__cell c-table__cell--head all">Tipe</th>
+                                <th class="c-table__cell c-table__cell--head all">Data</th>
+                                <th class="c-table__cell c-table__cell--head all">Produk</th>
+                                <th class="c-table__cell c-table__cell--head all">Kadaluarsa</th>
+                                <th class="c-table__cell c-table__cell--head no-sort all">Lihat</th>
+                                <th class="c-table__cell c-table__cell--head no-sort all">Aksi</th>
                             </tr>
                         </thead>
                         <tbody></tbody>

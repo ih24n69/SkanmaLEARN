@@ -10,7 +10,7 @@
 				<i class="fa fa-check"></i>
 			</div>
 			<div class="c-stage__header-title o-media__body">
-				<h6 class="u-mb-zero">Template List</h6>
+				<h6 class="u-mb-zero">Daftar Templat</h6>
 			</div>
 		</div>
 
@@ -33,13 +33,13 @@
 
 							<?php if ($data['template']['status'] == 'Active'): ?><div class="c-candidate__status u-color-success o-line">
 								<i class="fa fa-check u-mr-xsmall"></i>
-								Actived
+								Diaktifkan
 
-								<a href="<?php echo base_url('app/lms_template/update/'.$data['template']['id']) ?>" class="c-btn c-btn--fancy u-ml-auto"><i class="fa fa-code"></i> Edit</a>
+								<a href="<?php echo base_url('app/lms_template/update/'.$data['template']['id']) ?>" class="c-btn c-btn--fancy u-ml-auto"><i class="fa fa-code"></i> Ubah</a>
 							</div>
 							<?php else: ?>                                        
 								<button value="<?php echo $data['template']['id'] ?>" name="id" class="c-btn c-btn--info" type="submit">
-									<i class="fa fa-check u-mr-xsmall u-opacity-heavy"></i>Apply
+									<i class="fa fa-check u-mr-xsmall u-opacity-heavy"></i>Terapkan
 								</button>
 							<?php endif ?>
 						</div>

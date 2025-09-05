@@ -4,7 +4,7 @@
         <div class="modal-content">
             <header class="c-modal__header">
                 <h1 class="c-modal__title">
-                    About Application
+                    Tentang Aplikasi
                 </h1>
                 <span class="c-modal__close" data-dismiss="modal" aria-label="Close">
                     <i class="fa fa-close"></i>
@@ -17,28 +17,35 @@
                     <table class="c-table c-table--highlight" style="display: table;">
                         <tbody>
                             <tr class="c-table__row">
-                            <td class="c-table__cell u-text-bold u-width-25">Name
+                            <td class="c-table__cell u-text-bold u-width-25">Nama
                                 </td>
                                 <td class="c-table__cell">
                                     <?php echo APP_NAME ?>                                
                                 </td>
                             </tr>
                             <tr class="c-table__row">
-                                <td class="c-table__cell u-text-bold">Version
+                                <td class="c-table__cell u-text-bold">Versi
                                 </td>
                                 <td class="c-table__cell">
                                     <?php echo APP_VERSION ?>                                     
                                 </td>
                             </tr>
                             <tr class="c-table__row">
-                                <td class="c-table__cell u-text-bold">Creator
+                                <td class="c-table__cell u-text-bold">Pembuat
                                 </td>
                                 <td class="c-table__cell">
                                     <?php echo APP_CREATOR ?>                                                  
                                 </td>
                             </tr>
+							<tr class="c-table__row">
+                                <td class="c-table__cell u-text-bold">Modifikator
+                                </td>
+                                <td class="c-table__cell">
+                                    <?php echo APP_MODIF ?>                                                  
+                                </td>
+                            </tr>
                             <tr class="c-table__row">
-                                <td class="c-table__cell u-text-bold">Social Media / Website
+                                <td class="c-table__cell u-text-bold">Media Sosial / Website
                                 </td>
                                 <td class="c-table__cell">
                                     <a target="_blank" href="<?php echo APP_CREATOR_URL ?>">

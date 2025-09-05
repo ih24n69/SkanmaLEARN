@@ -39,7 +39,7 @@
 
 			<div class="c-modal__header">
 				<h3 class="c-modal__title">
-					Select File Template
+					Pilih Berkas Templat
 				</h3>
 				<span class="c-modal__close" data-dismiss="modal" aria-label="Close">
 					<i class="fa fa-close"></i>

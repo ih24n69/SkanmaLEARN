@@ -23,30 +23,30 @@
 			<div class="c-stage__panel u-p-medium" >
 
 				<div class="c-field u-mb-small">
-					<label class="c-field__label">Name : </label>
-					<input value="<?php echo (!empty($widget) ? $widget['name'] : '') ?>" required="" class="c-input" name="name" type="text" placeholder="Name">
+					<label class="c-field__label">Nama : </label>
+					<input value="<?php echo (!empty($widget) ? $widget['name'] : '') ?>" required="" class="c-input" name="name" type="text" placeholder="Nama">
 				</div>
 
 				<div class="c-field u-mb-small">
-					<label class="c-field__label">Variable : </label>
-					<input value="<?php echo (!empty($widget) ? $widget['var'] : '') ?>" required="" class="c-input" name="var" type="text" placeholder="Variable">
+					<label class="c-field__label">Variabel : </label>
+					<input value="<?php echo (!empty($widget) ? $widget['var'] : '') ?>" required="" class="c-input" name="var" type="text" placeholder="Variabel">
 				</div>
 
 				<div class="c-field u-mb-small">
-					<label class="c-field__label">Type</label>
+					<label class="c-field__label">Tipe</label>
 					<select required="" name="type" class="c-select select2 has-search">
-						<option <?php echo (!empty($widget['type']) AND $widget['type'] == 'text') ? 'selected' : ''; ?> value="text">text</option>
+						<option <?php echo (!empty($widget['type']) AND $widget['type'] == 'text') ? 'selected' : ''; ?> value="text">Teks</option>
 						<option <?php echo (!empty($widget['type']) AND $widget['type'] == 'link') ? 'selected' : ''; ?> value="link">link</option>
-						<option <?php echo (!empty($widget['type']) AND $widget['type'] == 'pages') ? 'selected' : ''; ?> value="pages">pages</option>
-						<option <?php echo (!empty($widget['type']) AND $widget['type'] == 'ads') ? 'selected' : ''; ?> value="ads">ads</option>
+						<option <?php echo (!empty($widget['type']) AND $widget['type'] == 'pages') ? 'selected' : ''; ?> value="pages">Halaman</option>
+						<option <?php echo (!empty($widget['type']) AND $widget['type'] == 'ads') ? 'selected' : ''; ?> value="ads">Iklan</option>
 						<?php if (!$ads_content OR $widget['type'] == 'ads-content'): ?>
-							<option <?php echo (!empty($widget['type']) AND $widget['type'] == 'ads-content') ? 'selected' : ''; ?> value="ads-content">ads-content</option>
+							<option <?php echo (!empty($widget['type']) AND $widget['type'] == 'ads-content') ? 'selected' : ''; ?> value="ads-content">Konten Iklan</option>
 						<?php endif ?>
-						<option <?php echo (!empty($widget['type']) AND $widget['type'] == 'image') ? 'selected' : ''; ?> value="image">image</option>
-						<option <?php echo (!empty($widget['type']) AND $widget['type'] == 'featured-post') ? 'selected' : ''; ?> value="featured-post">featured post</option>
-						<option <?php echo (!empty($widget['type']) AND $widget['type'] == 'popular-post') ? 'selected' : ''; ?> value="popular-post">popular post</option>
-						<option <?php echo (!empty($widget['type']) AND $widget['type'] == 'category') ? 'selected' : ''; ?> value="category">category</option>
-						<option <?php echo (!empty($widget['type']) AND $widget['type'] == 'tags') ? 'selected' : ''; ?> value="tags">tags</option>
+						<option <?php echo (!empty($widget['type']) AND $widget['type'] == 'image') ? 'selected' : ''; ?> value="image">Gambar</option>
+						<option <?php echo (!empty($widget['type']) AND $widget['type'] == 'featured-post') ? 'selected' : ''; ?> value="featured-post">Postingan Unggulan</option>
+						<option <?php echo (!empty($widget['type']) AND $widget['type'] == 'popular-post') ? 'selected' : ''; ?> value="popular-post">Postingan Populer</option>
+						<option <?php echo (!empty($widget['type']) AND $widget['type'] == 'category') ? 'selected' : ''; ?> value="category">Kategori</option>
+						<option <?php echo (!empty($widget['type']) AND $widget['type'] == 'tags') ? 'selected' : ''; ?> value="tags">Tags</option>
 					</select>
 				</div>				
 

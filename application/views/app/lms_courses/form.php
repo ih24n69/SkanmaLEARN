@@ -8,9 +8,9 @@
         <?php $this->load->view('app/_layouts/alert'); ?>
 
         <ul class="c-tabs__list c-tabs__list--splitted nav nav-tabs" role="tablist">
-            <li class="c-tabs__item"><a id='tab-courses' class="c-tabs__link u-pv-xsmall u-ph-small u-text-small <?php echo (empty($this->input->get('tab')) OR $this->input->get('tab') == 'courses') ? 'active show' : '' ?>" id="nav-courses-tab" data-toggle="tab" href="#nav-courses" role="tab" aria-controls="nav-courses" aria-selected="false">Courses</a></li>
+            <li class="c-tabs__item"><a id='tab-courses' class="c-tabs__link u-pv-xsmall u-ph-small u-text-small <?php echo (empty($this->input->get('tab')) OR $this->input->get('tab') == 'courses') ? 'active show' : '' ?>" id="nav-courses-tab" data-toggle="tab" href="#nav-courses" role="tab" aria-controls="nav-courses" aria-selected="false">Kelas</a></li>
             <?php if (!empty($data)): ?>
-                <li class="c-tabs__item"><a id='tab-material' class="c-tabs__link u-pv-xsmall u-ph-small u-text-small <?php echo (!empty($this->input->get('tab')) AND $this->input->get('tab') == 'material') ? 'active show' : '' ?>" id="nav-material-tab" data-toggle="tab" href="#nav-material" role="tab" aria-controls="nav-material" aria-selected="false">Material</a></li>
+                <li class="c-tabs__item"><a id='tab-material' class="c-tabs__link u-pv-xsmall u-ph-small u-text-small <?php echo (!empty($this->input->get('tab')) AND $this->input->get('tab') == 'material') ? 'active show' : '' ?>" id="nav-material-tab" data-toggle="tab" href="#nav-material" role="tab" aria-controls="nav-material" aria-selected="false">Materi</a></li>
             <?php endif ?>
         </ul>
 

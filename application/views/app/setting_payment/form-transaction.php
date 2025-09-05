@@ -5,7 +5,7 @@
             <div class="c-modal__content">
                 <div class="c-modal__header">
                     <h3 class="c-modal__title">
-                        Transaction
+                        Transaksi
                     </h3>
                     <span class="c-modal__close" data-dismiss="modal" aria-label="Close">
                         <i class="fa fa-close"></i>
@@ -14,24 +14,24 @@
                 <div class="c-modal__body row">
 
                     <div class="c-field u-mb-small col-6">
-                        <label class="c-field__label">type : </label>
-                        <select required="" name="type" class="c-select select2 input-transaction-type" data-placeholder='select'>
+                        <label class="c-field__label">Tipe : </label>
+                        <select required="" name="type" class="c-select select2 input-transaction-type" data-placeholder='Pilih'>
                             <option value=""></option>
-                            <option value="bca">bca</option>
-                            <option value="bni">bni</option>
-                            <option value="bri">bri</option>
-                            <option value="mandiri">mandiri</option>
+                            <option value="bca">BCA</option>
+                            <option value="bni">BNI</option>
+                            <option value="bri">BRI</option>
+                            <option value="mandiri">Mandiri</option>
                         </select>
                     </div>
 
                     <div class="c-field u-mb-small col-6">
-                        <label class="c-field__label">account_number : </label>
-                        <input autocomplete="off" required class="c-input input-transaction-account_number" name="account_number" type="text" placeholder="account_number">
+                        <label class="c-field__label">Nomor Akun : </label>
+                        <input autocomplete="off" required class="c-input input-transaction-account_number" name="account_number" type="text" placeholder="Nomor Akun">
                     </div>
 
                     <div class="c-field u-mb-small col-12">
-                        <label class="c-field__label">receiver : </label>
-                        <input autocomplete="off" required class="c-input input-transaction-receiver" name="receiver" type="text" placeholder="receiver">
+                        <label class="c-field__label">Penerima : </label>
+                        <input autocomplete="off" required class="c-input input-transaction-receiver" name="receiver" type="text" placeholder="Penerima">
                     </div>
 
                 </div>

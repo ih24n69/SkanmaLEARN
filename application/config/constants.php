@@ -14,11 +14,13 @@ BRO LU RUBAH INI DAN SEOLAH INI BUATAN LU ? GABAKALAN TENANG HIDUP LU BRO...
 APALAGI SAMPE DIJUAL BISA SENGSARA HIDUP LU BRO... 
 SAMPE DIAPUS TULISAN YANG GUA TULIS INI ? GUA SIH OW AJA...
 */
+
 define('APP_DESC', 'CMS Teyki');
 define('APP_VERSION', 'v1.6');
 define('APP_CREATOR', 'Faanteyki');
-define('APP_CREATOR_URL', 'https://instagram.com/faanteyki');
-define('APP_CREATOR_WEBSITE', 'https://www.kurteyki.com');
+define('APP_MODIF', 'Muhammad Ihsan');
+define('APP_CREATOR_URL', 'https://instagram.com/muhammadih24n');
+define('APP_CREATOR_WEBSITE', 'https://ih24n69.github.io/');
 
 
 /*

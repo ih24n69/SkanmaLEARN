@@ -6,16 +6,16 @@
                 <i class="fa fa-info"></i>
             </div>
             <div class="c-stage__header-title o-media__body">
-                <h6 class="u-mb-zero">Curriculum</h6>
+                <h6 class="u-mb-zero">Kurikulum</h6>
             </div>
         </div>
         <div class="u-ml-auto o-line">                       
             <button type="button" data-modaltitle='Create Section' class="c-btn c-btn--fancy c-btn--custom u-mr-xsmall button-section-create" data-toggle="modal" data-target="#modal-section"> 
-                Section
+                Bagian
             </button>           
             <?php if (!empty($section)): ?>   
                 <button type="button" class="c-btn c-btn--primary c-btn--custom u-mr-xsmall" data-toggle="modal" data-target="#modal-section-sort"> 
-                    Sort Section
+                    Urutkan Bagian
                 </button>
             <?php endif ?>
         </div>
@@ -25,7 +25,7 @@
 
         <?php if (empty($section)): ?>
             <div class="c-alert c-alert--info">
-                No section found. Create first
+                Bagian tidak ditemukan. Buat Bagian
             </div>
         <?php endif ?>
 
@@ -41,15 +41,15 @@
 
                 <div class="c-stage__header o-media u-justify-start cursor-default u-bg-primary">
                     <div class="c-stage__header-title o-media__body">
-                        <h6 class="u-mb-zero u-color-white">Section <?php echo $no_section++; ?> : <?php echo $section_data['title'] ?></h6>
+                        <h6 class="u-mb-zero u-color-white">Bagian <?php echo $no_section++; ?> : <?php echo $section_data['title'] ?></h6>
                     </div>
                     <div class="u-ml-auto o-line">                       
                         <a class="c-btn--custom c-btn c-btn--success u-mr-xsmall" href="<?php echo base_url('app/lms_courses/create_lesson/'.$section_data['id']) ?>">
-                            Lesson
+                            Pelajaran
                         </a>
                         <?php if (!empty($lesson)): ?>   
                             <button type="button" class="c-btn c-btn--primary c-btn--custom u-mr-xsmall" data-toggle="modal" data-target="#modal-lesson-sort-<?php echo $section_data['id'] ?>"> 
-                                Sort Lesson
+                                Urutkan Pelajaran
                             </button>
                         <?php endif ?>
                         <button type="button" class="c-btn c-btn--info c-btn--custom u-mr-xsmall button-section-update" data-id='<?php echo $section_data['id'] ?>' data-modaltitle='Update Section' data-title='<?php echo $section_data['title'] ?>' data-toggle="modal" data-target="#modal-section"> 
@@ -62,7 +62,7 @@
                 <?php if (empty($lesson)): ?>
                     <div class="c-stage__panel u-p-xsmall" >
                         <div class="c-alert c-alert--success">
-                            Create lesson first.
+                            Buat pelajaran terlebih dahulu.
                         </div>
                     </div>
                 <?php endif ?>
@@ -75,7 +75,7 @@
                         <div class="c-stage__header o-media u-justify-start u-border-top u-border-left u-border-right u-mb-xsmall cursor-default">
                             <div class="c-stage__header-title o-media__body">
                                 <h6 class="u-mb-zero">
-                                    Lesson <?php echo $no_lesson++ ?> : <?php echo $lesson_data['title'] ?>
+                                    Pelajaran <?php echo $no_lesson++ ?> : <?php echo $lesson_data['title'] ?>
                                 </h6>
                             </div>
                             <div class="u-ml-auto o-line">  

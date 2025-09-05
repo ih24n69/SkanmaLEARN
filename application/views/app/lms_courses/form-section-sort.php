@@ -6,7 +6,7 @@
 				<div class="c-modal__body" data-plugin="dragula" data-containers='["section-list"]'>
 
 					<h3 class="modal-title">  
-						Sort Section                      
+						Urutkan Bagian                      
 					</h3>
 
 					<style>.draggable-item {cursor: all-scroll;}</style>

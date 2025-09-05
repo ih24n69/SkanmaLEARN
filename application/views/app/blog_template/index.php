@@ -10,7 +10,7 @@
 				<i class="fa fa-check"></i>
 			</div>
 			<div class="c-stage__header-title o-media__body">
-				<h6 class="u-mb-zero">Template List</h6>
+				<h6 class="u-mb-zero">Pilihan Template</h6>
 			</div>
 		</div>
 
@@ -33,13 +33,13 @@
 
 							<?php if ($data['template']['status'] == 'Active'): ?><div class="c-candidate__status u-color-success o-line">
 								<i class="fa fa-check u-mr-xsmall"></i>
-								Actived
+								Aktifkan
 
 								<a href="<?php echo base_url('app/blog_template/update/'.$data['template']['id']) ?>" class="c-btn c-btn--fancy u-ml-auto"><i class="fa fa-code"></i> Edit</a>
 							</div>
 							<?php else: ?>                                        
 								<button value="<?php echo $data['template']['id'] ?>" name="id" class="c-btn c-btn--info" type="submit">
-									<i class="fa fa-check u-mr-xsmall u-opacity-heavy"></i>Apply
+									<i class="fa fa-check u-mr-xsmall u-opacity-heavy"></i>Terapkan
 								</button>
 							<?php endif ?>
 						</div>
@@ -58,7 +58,7 @@
 						<i class="fa fa-check"></i>
 					</div>
 					<div class="c-stage__header-title o-media__body">
-						<h6 class="u-mb-zero">Style Index</h6>
+						<h6 class="u-mb-zero">Indek Gaya</h6>
 					</div>
 				</div>
 
@@ -79,14 +79,14 @@
 
 									<?php if ($style['status'] == 'Active'): ?><div class="c-candidate__status u-color-success">
 										<i class="fa fa-check u-mr-xsmall"></i>
-										Active
+										Aktifkan
 									</div>
 									<?php else: ?>      
 
 										<input type="hidden" name="id_template" value="<?php echo $style['id_template'] ?>">  
 										
 										<button value="<?php echo $style['id'] ?>" name="id" class="c-btn c-btn--info" type="submit">
-											<i class="fa fa-code u-mr-xsmall u-opacity-heavy"></i>Apply
+											<i class="fa fa-code u-mr-xsmall u-opacity-heavy"></i>Terapkan
 										</button>
 									<?php endif ?>
 								</div>
@@ -94,7 +94,7 @@
 						<?php endif ?>
 					<?php endforeach ?>	
 					<?php else: ?>
-						<div class="col-12">No Style Index Initial.</div>
+						<div class="col-12">Tidak ada gaya postingan.</div>
 					<?php endif ?>
 
 				</form>
@@ -106,7 +106,7 @@
 					<i class="fa fa-check"></i>
 				</div>
 				<div class="c-stage__header-title o-media__body">
-					<h6 class="u-mb-zero">Style Post</h6>
+					<h6 class="u-mb-zero">Gaya Postingan</h6>
 				</div>
 			</div>
 
@@ -127,13 +127,13 @@
 
 								<?php if ($style['status'] == 'Active'): ?><div class="c-candidate__status u-color-success">
 									<i class="fa fa-check u-mr-xsmall"></i>
-									Active
+									Aktifkan
 								</div>
 								<?php else: ?>         
 
 									<input type="hidden" name="id_template" value="<?php echo $style['id_template'] ?>">                               
 									<button value="<?php echo $style['id'] ?>" name="id" class="c-btn c-btn--info" type="submit">
-										<i class="fa fa-code u-mr-xsmall u-opacity-heavy"></i>Apply
+										<i class="fa fa-code u-mr-xsmall u-opacity-heavy"></i>Terapkan
 									</button>
 								<?php endif ?>
 							</div>
@@ -141,7 +141,7 @@
 					<?php endif ?>
 				<?php endforeach ?>	
 				<?php else: ?>
-					<div class="col-12">No Style Index Initial.</div>
+					<div class="col-12">Tidak ada gaya postingan..</div>
 				<?php endif ?>
 
 			</form>

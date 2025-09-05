@@ -91,12 +91,12 @@
 					<?php endforeach ?>
 					<div class="c-stage__panel u-p-medium u-bg-secondary">
 						<button type="submit" class="c-btn c-btn--primary c-btn--custom"> 
-							Save
+							Simpan
 						</button>
 					</div>
 					<?php else: ?>
 						<div class="c-stage__panel u-p-medium">
-							No Widget Initial.
+							Tidak ada widget.
 						</div>
 					<?php endif ?>
 

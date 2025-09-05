@@ -21,28 +21,28 @@
 				<div class="c-card__body">   
 
 					<div class="c-field u-mb-medium">
-						<label class="c-field__label">protocol</label> 
-						<input onclick='select()' class="c-input" name="protocol" type="text" placeholder="protocol" value="<?php echo (!empty($site) ? $site['smtp']['protocol'] : '') ?>"> 
+						<label class="c-field__label">Protokol</label> 
+						<input onclick='select()' class="c-input" name="protocol" type="text" placeholder="Protokol" value="<?php echo (!empty($site) ? $site['smtp']['protocol'] : '') ?>"> 
 					</div>
 
 					<div class="c-field u-mb-medium">
-						<label class="c-field__label">smtp_host</label> 
-						<input onclick='select()' class="c-input" name="smtp_host" type="text" placeholder="smtp_host" value="<?php echo (!empty($site) ? $site['smtp']['smtp_host'] : '') ?>"> 
+						<label class="c-field__label">SMTP Host</label> 
+						<input onclick='select()' class="c-input" name="smtp_host" type="text" placeholder="SMTP Host" value="<?php echo (!empty($site) ? $site['smtp']['smtp_host'] : '') ?>"> 
 					</div>
 
 					<div class="c-field u-mb-medium">
-						<label class="c-field__label">smtp_port</label> 
-						<input onclick='select()' class="c-input" name="smtp_port" type="text" placeholder="smtp_port" value="<?php echo (!empty($site) ? $site['smtp']['smtp_port'] : '') ?>"> 
+						<label class="c-field__label">SMTP Port</label> 
+						<input onclick='select()' class="c-input" name="smtp_port" type="text" placeholder="SMTP Port" value="<?php echo (!empty($site) ? $site['smtp']['smtp_port'] : '') ?>"> 
 					</div>
 
 					<div class="c-field u-mb-medium">
-						<label class="c-field__label">smtp_user</label> 
-						<input onclick='select()' class="c-input" name="smtp_user" type="text" placeholder="smtp_user" value="<?php echo (!empty($site) ? $site['smtp']['smtp_user'] : '') ?>"> 
+						<label class="c-field__label">SMTP User</label> 
+						<input onclick='select()' class="c-input" name="smtp_user" type="text" placeholder="SMTP User" value="<?php echo (!empty($site) ? $site['smtp']['smtp_user'] : '') ?>"> 
 					</div>
 
 					<div class="c-field u-mb-medium">
-						<label class="c-field__label">smtp_pass</label> 
-						<input autocomplete="new-password" onclick='select()' class="c-input" name="smtp_pass" type="password" placeholder="smtp_pass" value="<?php echo (!empty($site) ? $site['smtp']['smtp_pass'] : '') ?>"> 
+						<label class="c-field__label">SMTP Password</label> 
+						<input autocomplete="new-password" onclick='select()' class="c-input" name="smtp_pass" type="password" placeholder="SMTP Password" value="<?php echo (!empty($site) ? $site['smtp']['smtp_pass'] : '') ?>"> 
 					</div>
 
 				</div>

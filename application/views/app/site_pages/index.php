@@ -39,12 +39,12 @@
                                         <label class="c-choice__label" for="checkbox-all"></label>
                                     </div>
                                 </th>
-                                <th class="c-table__cell c-table__cell--head none">id</th>
-                                <th class="c-table__cell c-table__cell--head all">title</th>
-                                <th class="c-table__cell c-table__cell--head none">time</th> 
-                                <th class="c-table__cell c-table__cell--head none">updated</th>                            
-                                <th class="c-table__cell c-table__cell--head no-sort all u-text-center">view</th>
-                                <th class="c-table__cell c-table__cell--head no-sort all u-text-center">tools</th>
+                                <th class="c-table__cell c-table__cell--head none">No.</th>
+                                <th class="c-table__cell c-table__cell--head all">Judul</th>
+                                <th class="c-table__cell c-table__cell--head none">Waktu</th> 
+                                <th class="c-table__cell c-table__cell--head none">Pembaruan</th>                            
+                                <th class="c-table__cell c-table__cell--head no-sort all u-text-center">Lihat</th>
+                                <th class="c-table__cell c-table__cell--head no-sort all u-text-center">Aksi</th>
                             </tr>
                         </thead>
                         <tbody></tbody>

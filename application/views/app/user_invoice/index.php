@@ -17,7 +17,7 @@
             <form id='form-multiple' action="<?php echo base_url('app/user_invoice/process_multiple') ?>" method="post">
 
                 <div class="c-table-responsive">
-                    <table data-mysearch="Search..." data-myorder='5' data-myurl="<?php echo base_url('app/user_invoice/datatables') ?>" class="c-table c-table--highlight u-hidden" id="table">
+                    <table data-mysearch="Cari" data-myorder='5' data-myurl="<?php echo base_url('app/user_invoice/datatables') ?>" class="c-table c-table--highlight u-hidden" id="table">
                         <caption class="c-table__title cst-table">
                         </caption>
 
@@ -29,12 +29,12 @@
                                         <label class="c-choice__label" for="checkbox-all"></label>
                                     </div>
                                 </th>
-                                <th class="c-table__cell c-table__cell--head all">id</th>
-                                <th class="c-table__cell c-table__cell--head no-sort all">invoice</th> 
-                                <th class="c-table__cell c-table__cell--head all">transaction</th>
-                                <th class="c-table__cell c-table__cell--head all">amount</th>
-                                <th class="c-table__cell c-table__cell--head all">created</th>
-                                <th class="c-table__cell c-table__cell--head no-sort all u-text-center">tools</th>
+                                <th class="c-table__cell c-table__cell--head all">No.</th>
+                                <th class="c-table__cell c-table__cell--head no-sort all">Faktur</th> 
+                                <th class="c-table__cell c-table__cell--head all">Transaksi</th>
+                                <th class="c-table__cell c-table__cell--head all">Jumlah</th>
+                                <th class="c-table__cell c-table__cell--head all">Pembuatan</th>
+                                <th class="c-table__cell c-table__cell--head no-sort all u-text-center">Aksi</th>
                             </tr>
                         </thead>
                         <tbody></tbody>

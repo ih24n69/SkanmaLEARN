@@ -23,13 +23,13 @@
             <div class="c-stage__panel u-p-medium" >
 
                 <div class="c-field u-mb-small">
-                    <label class="c-field__label">name : </label>
+                    <label class="c-field__label">Nama : </label>
                     <input autofocus="" autocomplete="off" required class="c-input" name="name" type="text" placeholder="name" value="<?php echo (!empty($data['name'])) ? $data['name'] : '' ?>">
                 </div>
 
                 <?php if (!empty($parent) AND $parent < 1 or empty($parent)): ?>
                 <div class="c-field u-mb-medium">
-                    <label class="c-field__label">parent : </label>
+                    <label class="c-field__label">Parent : </label>
 
                     <select name="parent" class="has-search select2 category-parent">
                         <option value="None" selected="">None</option>
@@ -47,12 +47,12 @@
             <?php endif ?>
 
             <div class="c-field u-mb-small">
-                <label class="c-field__label">icon : </label>
+                <label class="c-field__label">Ikon : </label>
                 <input required class="c-input icon-picker" name="icon" type="text" placeholder="icon" value="<?php echo (!empty($data['icon'])) ? $data['icon'] : '' ?>">
             </div>
 
             <div class="c-field u-mb-small input-parent" style='<?php echo (!empty($data['parent'])) ? 'display:none' : '' ?>'>
-                <label class="c-field__label">Image : </label>
+                <label class="c-field__label">Gambar : </label>
                 <div class="c-field has-addon-right">
                     <input value="<?php echo (!empty($data['image']) ? $data['image'] : '') ?>" require name="image" class="c-input" id="image" type="text">
                     <span class="u-ml-auto c-field__addon">

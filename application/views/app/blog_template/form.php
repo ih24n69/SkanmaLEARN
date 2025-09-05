@@ -9,7 +9,7 @@
 
 				<div class="c-field has-addon-right">
 
-					<input value="<?php echo (!empty($this->input->get('filename')) ? $this->input->get('filename') : '') ?>" required="" name="filename" id='button-templatefile' data-toggle="modal" data-target="#modal-templatefile" type="text" class="c-input" placeholder="select file" readonly="">
+					<input value="<?php echo (!empty($this->input->get('filename')) ? $this->input->get('filename') : '') ?>" required="" name="filename" id='button-templatefile' data-toggle="modal" data-target="#modal-templatefile" type="text" class="c-input" placeholder="Pilih berkas" readonly="">
 
 					<span class="c-field__addon" style="margin-left: 10px;background: none;border: none">
 						<button class="c-btn--custom c-btn c-btn--info" type="submit">
@@ -39,7 +39,7 @@
 
 			<div class="c-modal__header">
 				<h3 class="c-modal__title">
-					Select File Template
+					Pilih Berkas Template
 				</h3>
 				<span class="c-modal__close" data-dismiss="modal" aria-label="Close">
 					<i class="fa fa-close"></i>

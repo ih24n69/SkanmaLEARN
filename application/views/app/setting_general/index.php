@@ -29,10 +29,10 @@
 							<div class="c-tabs">
 
 								<ul class="c-tabs__list c-tabs__list--splitted nav nav-tabs u-ph-medium" id="myTab" role="tablist">
-									<li class="c-tabs__item"><a class="c-tabs__link u-pv-xsmall u-ph-small u-text-small active show" id="nav-general-tab" data-toggle="tab" href="#nav-general" role="tab" aria-controls="nav-general" aria-selected="false">General</a></li>
-									<li class="c-tabs__item"><a class="c-tabs__link u-pv-xsmall u-ph-small u-text-small" id="nav-lms-tab" data-toggle="tab" href="#nav-lms" role="tab" aria-controls="nav-lms" aria-selected="false">Lms</a></li>
+									<li class="c-tabs__item"><a class="c-tabs__link u-pv-xsmall u-ph-small u-text-small active show" id="nav-general-tab" data-toggle="tab" href="#nav-general" role="tab" aria-controls="nav-general" aria-selected="false">Umum</a></li>
+									<li class="c-tabs__item"><a class="c-tabs__link u-pv-xsmall u-ph-small u-text-small" id="nav-lms-tab" data-toggle="tab" href="#nav-lms" role="tab" aria-controls="nav-lms" aria-selected="false">LMS</a></li>
 									<li class="c-tabs__item"><a class="c-tabs__link u-pv-xsmall u-ph-small u-text-small" id="nav-blog-tab" data-toggle="tab" href="#nav-blog" role="tab" aria-controls="nav-blog" aria-selected="false">Blog</a></li>
-									<li class="c-tabs__item"><a class="c-tabs__link u-pv-xsmall u-ph-small u-text-small" id="nav-user-tab" data-toggle="tab" href="#nav-user" role="tab" aria-controls="nav-user" aria-selected="false">User</a></li>
+									<li class="c-tabs__item"><a class="c-tabs__link u-pv-xsmall u-ph-small u-text-small" id="nav-user-tab" data-toggle="tab" href="#nav-user" role="tab" aria-controls="nav-user" aria-selected="false">Pengguna</a></li>
 								</ul>
 
 								<div class="c-tabs__content tab-content" id="nav-tabContent">

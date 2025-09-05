@@ -1,5 +1,5 @@
 <div class="c-field u-mb-medium col-md-6">
-	<label class="c-field__label">Set Timezone</label>
+	<label class="c-field__label">Setelan Zona Waktu</label>
 	<select required="" name="time_zone" class="c-select select2 has-search">
 		<option <?php echo ($site['time_zone'] == 'Pacific/Midway') ? 'selected' : ''; ?> value="Pacific/Midway">(UTC-11:00) Midway Island</option>
 		<option <?php echo ($site['time_zone'] == 'Pacific/Samoa') ? 'selected' : ''; ?> value="Pacific/Samoa">(UTC-11:00) Samoa</option>

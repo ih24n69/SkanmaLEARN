@@ -6,11 +6,11 @@
         <div class="row">
             <div class="col-6 col-md-6 c-toolbar__state">
                 <h4 class="c-toolbar__state-number"><?php echo $statistic['total_amount']; ?></h4>
-                <span class="c-toolbar__state-title">Total Amount</span>
+                <span class="c-toolbar__state-title">Jumlah Total</span>
             </div>
             <div class="col-6 col-md-6 c-toolbar__state">
                 <h4 class="c-toolbar__state-number"><?php echo $statistic['total_invoice']; ?></h4>
-                <span class="c-toolbar__state-title">Total Invoice</span>
+                <span class="c-toolbar__state-title">Jumlah Faktur</span>
             </div>
         </div><!-- // .row -->
     </div><!-- // -->
@@ -28,7 +28,7 @@
             <form id='form-multiple' action="<?php echo base_url('app/user_invoice_history/process_multiple') ?>" method="post">
 
                 <div class="c-table-responsive">
-                    <table data-mysearch="Search..." data-myorder='5' data-myurl="<?php echo base_url('app/user_invoice_history/datatables') ?>" class="c-table c-table--highlight u-hidden" id="table">
+                    <table data-mysearch="Cari" data-myorder='5' data-myurl="<?php echo base_url('app/user_invoice_history/datatables') ?>" class="c-table c-table--highlight u-hidden" id="table">
                         <caption class="c-table__title cst-table">
                         </caption>
 
@@ -40,11 +40,11 @@
                                         <label class="c-choice__label" for="checkbox-all"></label>
                                     </div>
                                 </th>
-                                <th class="c-table__cell c-table__cell--head all">id</th>
-                                <th class="c-table__cell c-table__cell--head no-sort all">invoice</th> 
-                                <th class="c-table__cell c-table__cell--head all">transaction</th>
-                                <th class="c-table__cell c-table__cell--head all">amount</th>
-                                <th class="c-table__cell c-table__cell--head all">time</th>
+                                <th class="c-table__cell c-table__cell--head all">No.</th>
+                                <th class="c-table__cell c-table__cell--head no-sort all">Faktur</th> 
+                                <th class="c-table__cell c-table__cell--head all">Transaksi</th>
+                                <th class="c-table__cell c-table__cell--head all">Total</th>
+                                <th class="c-table__cell c-table__cell--head all">Waktu</th>
                             </tr>
                         </thead>
                         <tbody></tbody>

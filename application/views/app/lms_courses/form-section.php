@@ -9,7 +9,7 @@
                     </h3>
 
                     <div class="c-field u-mb-small">
-                        <label class="c-field__label">section title : </label>
+                        <label class="c-field__label">Bagian Judul : </label>
                         <input autocomplete="off" required class="c-input input-section-title" name="title"
                         type="text" placeholder="title">
                     </div>

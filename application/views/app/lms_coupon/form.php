@@ -12,36 +12,36 @@
                 <div class="c-modal__body row">
 
                     <div class="c-field u-mb-small col-6">
-                        <label class="c-field__label">code : </label>
-                        <input autocomplete="off" required class="c-input" name="code" type="text" placeholder="code">
+                        <label class="c-field__label">Kode : </label>
+                        <input autocomplete="off" required class="c-input" name="code" type="text" placeholder="Kode">
                     </div>
 
                     <div class="c-field u-mb-small col-6">
-                        <label class="c-field__label">expired : </label>
-                        <input id="datetimepicker" autocomplete="off" required class="c-input" name="expired" type="text" placeholder="expired">
+                        <label class="c-field__label">Kadaluarsa : </label>
+                        <input id="datetimepicker" autocomplete="off" required class="c-input" name="expired" type="text" placeholder="Kadaluarsa">
                     </div>
 
                     <div class="c-field u-mb-small col-6">
-                        <label class="c-field__label">type : </label>
-                        <select id="coupon-type" required name="type" class="select2" data-placeholder='select type'>
+                        <label class="c-field__label">Tipe : </label>
+                        <select id="coupon-type" required name="type" class="select2" data-placeholder='Pilih tipe'>
                             <option></option>
-                            <option value="Price">Price</option>                            
-                            <option value="Percent">Percent</option>
+                            <option value="Price">Harga</option>                            
+                            <option value="Percent">Persentase Diskon</option>
                         </select>
                     </div>
 
                     <div class="c-field u-mb-small col-6">
-                        <label class="c-field__label">for : </label>
-                        <select id="coupon-for" required name="for" class="select2" data-placeholder='select for'>
+                        <label class="c-field__label">Produk : </label>
+                        <select id="coupon-for" required name="for" class="select2" data-placeholder='Pilih produk'>
                             <option></option>
-                            <option value="all-product">all-product</option>
+                            <option value="all-product">Semua Produk</option>
                         </select>
                     </div>
 
 
                     <div class="c-field u-mb-small col-12">
-                        <label class="c-field__label">data : </label>
-                        <input autocomplete="off" required class="c-input" name="data" type="text" placeholder="data" onkeyup="FormatCurrency(this)">
+                        <label class="c-field__label">Data : </label>
+                        <input autocomplete="off" required class="c-input" name="data" type="text" placeholder="Data" onkeyup="FormatCurrency(this)">
                     </div>
 
                 </div>

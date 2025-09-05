@@ -73,7 +73,7 @@
                                     <div class="u-flex u-justify-between u-align-items-center u-border-bottom u-ph-small u-pv-xsmall">
 
                                         <span class="u-text-small u-color-primary">
-                                            No Sub Category.
+                                            Tidak ada sub kategori.
                                         </span>
                                     </div>
                                 <?php endif ?>
@@ -89,7 +89,7 @@
 
                 <div class="col-12 ">                
                     <div class="c-alert c-alert--info">
-                        No Category.
+                        Tidak ada kategori.
                     </div>
                 </div>
 

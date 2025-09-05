@@ -44,11 +44,11 @@
                     <?php $this->load->view('app/_layouts/alert'); ?>
 
                     <div class="c-field u-mb-small u-p-small">
-                        <label class="c-field__label">title : </label>
+                        <label class="c-field__label">Judul : </label>
                         <input autofocus autocomplete="off"
                         value="<?php echo (!empty($site_pages['title']) ? $site_pages['title'] : '') ?>" required
                         class="c-input" name="title" id="title" type="text"
-                        placeholder="title">
+                        placeholder="Judul">
                     </div>
 
                     <div class="c-field">
@@ -68,7 +68,7 @@
             <div class="c-card c-card--responsive">
                 <div class="c-card__header c-card__header--transparent o-line">
                     <h5 class="c-card__title">
-                        Setting
+                        Setelan
                     </h5>
                 </div>
                 <div class="c-card__body u-p-small">

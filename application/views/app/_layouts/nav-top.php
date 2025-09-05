@@ -13,15 +13,15 @@
 	<div class="c-dropdown__menu dropdown-menu dropdown-menu-right" aria-labelledby="dropdwonMenuAvatar">
 		<a class="c-dropdown__item dropdown-item" href="<?php echo base_url('app/user_setting') ?>">
 			<i class="fa fa-user-circle u-mr-xsmall"></i>
-			Profile
+			Profil
 		</a>
 		<a class="c-dropdown__item dropdown-item" href="javascript" data-toggle="modal" data-target="#app-about">
 			<i class="fa fa-info-circle u-mr-xsmall"></i>
-			About
+			Tentang
 		</a>
 		<a class="c-dropdown__item dropdown-item" href="<?php echo base_url('auth/process_logout') ?>">
 			<i class="fa fa-sign-out u-mr-xsmall"></i>
-			Logout
+			Keluar
 		</a>
 	</div>
 </div>
