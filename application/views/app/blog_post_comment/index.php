@@ -8,15 +8,15 @@
     <div class="c-card c-card--responsive h-100vh u-p-zero">
         <div class="c-card__header c-card__header--transparent o-line">
             
-            <button data-title="apakah Anda yakin ?" data-text="to approve selected comment" title="Approved Multiple" value="approved" class="c-btn--custom c-btn--small c-btn c-btn--info u-mr-xsmall  action-multiple btn-opsi">
+            <button data-title="apakah Anda yakin ?" data-text="Menyetujui komentar yang ditandai" title="Approved Multiple" value="approved" class="c-btn--custom c-btn--small c-btn c-btn--info u-mr-xsmall  action-multiple btn-opsi">
                 <i class="fa fa-check"></i>
             </button>                
 
-            <button data-title="apakah Anda yakin ?" data-text="to block selected comment" title="Block Multiple" value="blocked" class="c-btn--custom c-btn--small c-btn c-btn--warning u-mr-xsmall  action-multiple btn-opsi">
+            <button data-title="apakah Anda yakin ?" data-text="Meblokir komentar yang ditandai" title="Block Multiple" value="blocked" class="c-btn--custom c-btn--small c-btn c-btn--warning u-mr-xsmall  action-multiple btn-opsi">
                 <i class="fa fa fa-ban"></i>
             </button>            
 
-            <button data-title="apakah Anda yakin ?" data-text="to delete selected comment" title="Delete Multiple" value="delete" class="c-btn--custom c-btn--small c-btn c-btn--danger action-multiple btn-opsi">
+            <button data-title="apakah Anda yakin ?" data-text="Menghapus komentar yang ditandai" title="Delete Multiple" value="delete" class="c-btn--custom c-btn--small c-btn c-btn--danger action-multiple btn-opsi">
                 <i class="fa fa-trash"></i>
             </button>
 

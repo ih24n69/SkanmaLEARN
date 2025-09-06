@@ -92,10 +92,10 @@
 
                 <div class="c-modal__footer">
                     <input type="hidden" name="id">
-                    <button data-title="apakah Anda yakin ?" data-text="approve this invoice" title="Active User Multiple" class="c-btn c-btn--info c-btn--custom invoice-button" name="action" type="button" value="approve">
+                    <button data-title="apakah Anda yakin ?" data-text="menyetujui pembayaran" title="Active User Multiple" class="c-btn c-btn--info c-btn--custom invoice-button" name="action" type="button" value="approve">
                         <i class="fa fa-check"></i>
                     </button>
-                    <button data-title="apakah Anda yakin ?" data-text="disapproved this invoice" title="Active User Multiple" class="c-btn c-btn--danger c-btn--custom invoice-button" name="action" type="button" value="disapproved">
+                    <button data-title="apakah Anda yakin ?" data-text="menolak pembayaran" title="Active User Multiple" class="c-btn c-btn--danger c-btn--custom invoice-button" name="action" type="button" value="disapproved">
                         <i class="fa fa-ban"></i>
                     </button>
                 </div>
