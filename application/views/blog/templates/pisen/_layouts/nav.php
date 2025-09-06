@@ -7,42 +7,45 @@
                         <a class="logo" href="<?php echo base_url() ?>">
                             <img
                             style="max-width: 180px"
-                            src="<?php echo $widget['logo']['content'] ?>" alt="logo"
-                            title='logo'>
+                            src="<?php echo isset($widget['logo']['content']) ? $widget['logo']['content'] : base_url('storage/uploads/site/default-logo.png'); ?>" 
+                            alt="logo"
+                            title="logo">
                         </a>
                     </div>
                     <div class="col-8 col-md-8">
                         <div class="mobile-menu">
                             <span id="search">
                                 <a class="search-btn" href="javascript:;">
-                                    <i class="fa fa-search">
-                                    </i>
+                                    <i class="fa fa-search"></i>
                                 </a>
                             </span>
                             <a href="javascript:;" id="showMenu">
-                                <i class="fa fa-bars">
-                                </i>
+                                <i class="fa fa-bars"></i>
                             </a>
                         </div>
                         <nav class="navigation">
                             <ul>
                                 <li class="nav-item">
-                                    <a title='Home' class="pisen-nav-link" href="<?php echo base_url() ?>"><?php echo $this->lang->line('home') ?></a>
+                                    <a title="Home" class="pisen-nav-link" href="<?php echo base_url() ?>">
+                                        <?php echo $this->lang->line('home') ?>
+                                    </a>
                                 </li>
-                                 <li class="nav-item">
-                                    <a title='Home' class="pisen-nav-link <?php if($this->uri->segment(1)=="blog"){echo "active";}?>" href="<?php echo base_url('blog') ?>"><?php echo $this->lang->line('blog') ?></a>
+                                <li class="nav-item">
+                                    <a title="Blog" class="pisen-nav-link <?php if($this->uri->segment(1)=="blog"){echo "active";}?>" href="<?php echo base_url('blog') ?>">
+                                        <?php echo $this->lang->line('blog') ?>
+                                    </a>
                                 </li>
                                 <?php  
-                                if ($widget['menu_header']['content']) {
+                                if (isset($widget['menu_header']['content']) && is_array($widget['menu_header']['content'])) {
                                     foreach ($widget['menu_header']['content'] as $link) {
                                         ?>
-
                                         <li class="nav-item">
-                                            <a class="pisen-nav-link <?php if($this->uri->segment(2)==$link['text']){echo "active";}?>" href="<?php echo $link['url'] ?>" title='<?php echo $link['text'] ?>'>
+                                            <a class="pisen-nav-link <?php if($this->uri->segment(2)==$link['text']){echo "active";}?>" 
+                                               href="<?php echo $link['url'] ?>" 
+                                               title="<?php echo $link['text'] ?>">
                                                 <?php echo $link['text'] ?>
                                             </a>
                                         </li>
-
                                         <?php
                                     }
                                 }
@@ -54,8 +57,7 @@
                         <div class="menu-function">
                             <div id="search">
                                 <a class="search-btn" href="#">
-                                    <i class="fa fa-search">
-                                    </i>
+                                    <i class="fa fa-search"></i>
                                 </a>
                             </div>
                         </div>
