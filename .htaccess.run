@@ -1,30 +1,12 @@
 Options -Indexes
 
 # setup codeigniter remove index.php
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php/$1 [L]
-
-# setup redirect to www 
-RewriteCond %{HTTP_HOST} !^www\.
-RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# setup access origin for font in css
-<FilesMatch ".(eot|ttf|otf|woff)">
-    Header set Access-Control-Allow-Origin "*"
-</FilesMatch>
-
-# setup no index assets template
-<Files ~ "\.(css|js|[ot]tf|eot|woff2?|svg)$">
-Header set X-Robots-Tag "noindex"
-</Files>
-
-# remove header
-Header unset X-Powered-By
-
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>
 # setup no index page
 <IfModule mod_headers.c>
 
@@ -56,7 +38,9 @@ Header set X-Robots-Tag "noindex, follow" env=NO_INDEX_FOLLOW
 
 # setup caching assets static
 <filesMatch ".(css|jpg|jpeg|png|gif|js|ico)$">
-Header set Cache-Control "max-age=2592000, public"
+	<ifModule mod_headers.c>
+		Header set Cache-Control "max-age=2592000, public"
+	</ifModule>
 </filesMatch>
 
 <IfModule mod_expires.c>
