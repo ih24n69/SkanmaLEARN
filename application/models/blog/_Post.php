@@ -270,24 +270,31 @@ class _Post extends CI_Model
 
 	public function read_user($id)
 	{
-		$this->db
-		->select("
-			photo, 
-			username, 			
-			")
-		->from($this->table_user)
-		->where("id",$id);
-		$query = $this->db->get();
+    $this->db
+        ->select("photo, username")
+        ->from($this->table_user)
+        ->where("id", $id);
+    $query = $this->db->get();
 
-		$read = $query->row_array();
+    $read = $query->row_array();
 
-		$data = [
-		'name' => $read['username'],
-		'photo' => (!empty($read['photo']) ?  base_url('storage/uploads/user/photo/'.$read['photo']) : base_url('storage/uploads/user/photo/default.png')),
-		];
+    if (empty($read)) {
+        // fallback jika user tidak ditemukan
+        return [
+            'name'  => 'Unknown',
+            'photo' => base_url('storage/uploads/user/photo/default.png'),
+        ];
+    }
 
-		return $data;
-	}		
+    $data = [
+        'name'  => $read['username'],
+        'photo' => (!empty($read['photo']) 
+            ? base_url('storage/uploads/user/photo/' . $read['photo']) 
+            : base_url('storage/uploads/user/photo/default.png')),
+    ];
+
+    return $data;
+}		
 
 	public function read_category($id)
 	{
