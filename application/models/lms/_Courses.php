@@ -305,7 +305,7 @@ class _Courses extends CI_Model
 		$this->db
 		->select("
 			photo, 
-			username, 	
+			namalengkap, 	
 			headline, 			
 			")
 		->from($this->table_user)
@@ -315,7 +315,7 @@ class _Courses extends CI_Model
 		$read = $query->row_array();
 
 		$data = [
-		'name' => $read['username'],
+		'name' => $read['namalengkap'],
 		'photo' => (!empty($read['photo']) ?  base_url('storage/uploads/user/photo/'.$read['photo']) : base_url('storage/uploads/user/photo/default.png')),
 		'headline' => $read['headline']
 		];
