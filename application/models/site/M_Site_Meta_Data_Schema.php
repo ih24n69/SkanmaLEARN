@@ -65,27 +65,30 @@ class M_Site_Meta_Data_Schema extends CI_Model
 			}</script>';
 		}
 
-		if ($breadcrumb) {
-
-			$json_data[] = '   
-			<script type="application/ld+json">
-				{
-					"@context": "https://schema.org",
-					"@type": "BreadcrumbList",
-					"itemListElement": [{
-						"@type": "ListItem",
-						"position": 1,
-						"name": "'.$breadcrumb['category']['name'].'",
-						"item": "'.$breadcrumb['category']['url'].'"
-					},{
-						"@type": "ListItem",
-						"position": 2,
-						"name": "'.$breadcrumb['title'].'",
-						"item": "'.base_url(uri_string()).'"
-					}]
-				}
-			</script>';
-		}
+		if ($breadcrumb && isset($breadcrumb['category']) && is_array($breadcrumb['category'])) {
+            $category_name = $breadcrumb['category']['name'] ?? '';
+            $category_url  = $breadcrumb['category']['url'] ?? '';
+            $breadcrumb_title = $breadcrumb['title'] ?? '';
+        
+            $json_data[] = '   
+            <script type="application/ld+json">
+                {
+                    "@context": "https://schema.org",
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [{
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "'.$category_name.'",
+                        "item": "'.$category_url.'"
+                    },{
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "'.$breadcrumb_title.'",
+                        "item": "'.base_url(uri_string()).'"
+                    }]
+                }
+            </script>';
+        }
 
 
 		if ($courses) {
