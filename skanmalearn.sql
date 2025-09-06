@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 11, 2022 at 11:49 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.3
+-- Generation Time: Sep 05, 2025 at 03:21 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `kurteyki`
+-- Database: `skanmalearn2`
 --
 
 -- --------------------------------------------------------
@@ -42,14 +41,14 @@ CREATE TABLE `tb_blog_post` (
   `description` varchar(255) NOT NULL,
   `views` int(11) NOT NULL,
   `status` enum('Published','Draft') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `tb_blog_post`
 --
 
 INSERT INTO `tb_blog_post` (`id`, `id_user`, `title`, `permalink`, `image`, `time`, `updated`, `id_category`, `id_tags`, `content`, `description`, `views`, `status`) VALUES
-(1, 0, 'Konten Baru dan Rencana Kedepannya Situs ini', 'konten-baru-dan-rencana-kedepannya-situs-ini', 'images/banner.png', '2020-03-21 18:44:00', '2020-05-03 11:57:11', '1', '1', '&lt;p&gt;kini saya akan mengaktifkan situs ini menjadi sebuah blog. situs ini nantinya akan dipenuhi dengan tulisan tentang pengembangan diri.&lt;/p&gt;\r\n\r\n&lt;p&gt;alasan saya menuliskan tentang pengembangan diri di situs ini adalah untuk mencatat apa saja yang telah saya pelajari tentang pengembangan diri dan mungkin bisa berguna untuk para pembaca sekalian.&lt;/p&gt;\r\n\r\n&lt;p&gt;sedikit gambaran tentang pengembangan diri, jadi pengembangan diri menurut saya itu seperti mengasah kemampuan diri untuk menjalani hidup ini. dengan adanya pemahaman tentang skill hidup maka untuk menjalani kehidupan ini juga kita akan selalu merasa mudah.&lt;/p&gt;\r\n', '', 72, 'Published');
+(2, 0, 'Sisi lain bisa digunakan untuk penyampaian informasi', 'sisi-lain-bisa-digunakan-untuk-penyampaian-informasi', 'images/zero_to_hero.png', '2025-08-31 18:02:00', '2025-08-31 18:05:01', '0', '0', '&lt;p style=&quot;text-align: justify;&quot;&gt;Melalui fitur blog ini, SkanmaLEARN selain sebagai sarana pembelajaran jarak jauh, juga bisa digunakan untuk penyampaian informasi yang dibutukanterkait pembelajaran dll.&lt;/p&gt;\r\n', '', 1, 'Published');
 
 -- --------------------------------------------------------
 
@@ -61,14 +60,7 @@ CREATE TABLE `tb_blog_post_category` (
   `id` int(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `slug` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `tb_blog_post_category`
---
-
-INSERT INTO `tb_blog_post_category` (`id`, `name`, `slug`) VALUES
-(1, 'news', 'news');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -87,7 +79,7 @@ CREATE TABLE `tb_blog_post_comment` (
   `log` varchar(255) NOT NULL,
   `status` enum('Approved','Blocked','Pending') NOT NULL,
   `status_read` enum('Read','Unread') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -99,14 +91,7 @@ CREATE TABLE `tb_blog_post_tags` (
   `id` int(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `slug` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `tb_blog_post_tags`
---
-
-INSERT INTO `tb_blog_post_tags` (`id`, `name`, `slug`) VALUES
-(1, 'berita', 'berita');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -119,7 +104,7 @@ CREATE TABLE `tb_blog_template` (
   `name` varchar(255) NOT NULL,
   `path` varchar(255) NOT NULL,
   `status` enum('Active','No') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `tb_blog_template`
@@ -142,7 +127,7 @@ CREATE TABLE `tb_blog_template_style` (
   `name` varchar(255) NOT NULL,
   `file` varchar(255) NOT NULL,
   `status` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `tb_blog_template_style`
@@ -171,7 +156,7 @@ CREATE TABLE `tb_blog_template_widget` (
   `var` varchar(255) NOT NULL,
   `type` varchar(255) NOT NULL,
   `data_json` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `tb_blog_template_widget`
@@ -207,19 +192,21 @@ INSERT INTO `tb_blog_template_widget` (`id`, `id_template`, `name`, `var`, `type
 CREATE TABLE `tb_jobs` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(45) NOT NULL,
-  `payload` text COMMENT 'JSON payload',
-  `response` text,
+  `payload` text DEFAULT NULL COMMENT 'JSON payload',
+  `response` text DEFAULT NULL,
   `status` enum('running','queued','done') NOT NULL DEFAULT 'queued',
   `run_time` double DEFAULT NULL,
   `created` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `tb_jobs`
 --
 
 INSERT INTO `tb_jobs` (`id`, `name`, `payload`, `response`, `status`, `run_time`, `created`) VALUES
-(1, 'sendEmail', '{\"to\":\"programmer.irfaan@gmail.com\",\"subject\":\"Vertifikasi Email\",\"message\":\"Terima kasih telah mendaftar,\\r\\n            <br\\/><br\\/>\\r\\n            Silahkan klik link dibawah ini untuk mengaktifkan akun anda :\\r\\n            <br\\/><br\\/>\\r\\n            <a href=\'http:\\/\\/localhost\\/kurteyki\\/auth\\/confirm\\/b69b245dd7a7166b1c9d52fffb00cfc2\'>http:\\/\\/localhost\\/kurteyki\\/auth\\/confirm\\/b69b245dd7a7166b1c9d52fffb00cfc2<\\/a>\\r\\n            <br\\/><br\\/>\\r\\n            \"}', NULL, 'queued', NULL, '2020-05-03 20:01:58');
+(1, 'sendEmail', '{\"to\":\"programmer.irfaan@gmail.com\",\"subject\":\"Vertifikasi Email\",\"message\":\"Terima kasih telah mendaftar,\\r\\n            <br\\/><br\\/>\\r\\n            Silahkan klik link dibawah ini untuk mengaktifkan akun anda :\\r\\n            <br\\/><br\\/>\\r\\n            <a href=\'http:\\/\\/localhost\\/kurteyki\\/auth\\/confirm\\/b69b245dd7a7166b1c9d52fffb00cfc2\'>http:\\/\\/localhost\\/kurteyki\\/auth\\/confirm\\/b69b245dd7a7166b1c9d52fffb00cfc2<\\/a>\\r\\n            <br\\/><br\\/>\\r\\n            \"}', NULL, 'queued', NULL, '2020-05-03 20:01:58'),
+(2, 'sendEmail', '{\"to\":\"ihsan@gmail.com\",\"subject\":\"Vertifikasi Email\",\"message\":\"Terima kasih telah mendaftar,\\n            <br\\/><br\\/>\\n            Silahkan klik link dibawah ini untuk mengaktifkan akun anda :\\n            <br\\/><br\\/>\\n            <a href=\'http:\\/\\/localhost:8074\\/kurteyki\\/auth\\/confirm\\/fda7ea761dbc278535e6bba2bd1f7b78\'>http:\\/\\/localhost:8074\\/kurteyki\\/auth\\/confirm\\/fda7ea761dbc278535e6bba2bd1f7b78<\\/a>\\n            <br\\/><br\\/>\\n            \"}', NULL, 'queued', NULL, '2025-08-30 13:01:51'),
+(3, 'sendEmail', '{\"to\":\"yusuf@gmail.com\",\"subject\":\"Vertifikasi Email\",\"message\":\"Terima kasih telah mendaftar,\\n            <br\\/><br\\/>\\n            Silahkan klik link dibawah ini untuk mengaktifkan akun anda :\\n            <br\\/><br\\/>\\n            <a href=\'http:\\/\\/localhost:8072\\/SkanmaLEARN\\/auth\\/confirm\\/30b4b52da6a2ba656088081fff66b45c\'>http:\\/\\/localhost:8072\\/SkanmaLEARN\\/auth\\/confirm\\/30b4b52da6a2ba656088081fff66b45c<\\/a>\\n            <br\\/><br\\/>\\n            \"}', NULL, 'queued', NULL, '2025-08-30 16:13:32');
 
 -- --------------------------------------------------------
 
@@ -236,7 +223,7 @@ CREATE TABLE `tb_lms_category` (
   `updated` datetime NOT NULL,
   `icon` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `tb_lms_category`
@@ -260,7 +247,7 @@ CREATE TABLE `tb_lms_coupon` (
   `type` enum('Price','Percent') NOT NULL,
   `data` varchar(255) NOT NULL,
   `for` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -284,16 +271,16 @@ CREATE TABLE `tb_lms_courses` (
   `discount` int(255) NOT NULL,
   `views` int(11) NOT NULL,
   `status` enum('Published','Draft') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `tb_lms_courses`
 --
 
 INSERT INTO `tb_lms_courses` (`id`, `id_user`, `title`, `permalink`, `image`, `description`, `faq`, `id_category`, `id_sub_category`, `time`, `updated`, `price`, `discount`, `views`, `status`) VALUES
-(1, 2, 'Dummy Course 2', 'dummy-course-2', 'images/1911368.jpg', '&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;\r\n\r\n&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;\r\n\r\n&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;\r\n\r\n&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;\r\n', '&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;\r\n', '1', '3', '2020-04-11 16:53:44', '2022-02-11 17:06:52', 0, 0, 219, 'Published'),
-(2, 2, 'Dummy Course 1', 'dummy-course-1', 'images/1911368.jpg', '&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;\r\n\r\n&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;\r\n\r\n&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;\r\n\r\n&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;\r\n', '&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;\r\n', '1', '2', '2020-04-11 22:19:25', '2022-02-11 17:06:44', 0, 0, 245, 'Published'),
-(3, 1, 'Dummy Course 3', 'dummy-course-3', 'images/1911368.jpg', '&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;\r\n\r\n&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;\r\n\r\n&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;\r\n\r\n&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;\r\n', '', '1', '2', '2022-02-11 17:03:54', '2022-02-11 17:04:05', 0, 0, 1, 'Published');
+(4, 1, 'Percobaan Course 1', 'percobaan-course', 'images/zero_to_hero.png', '&lt;p&gt;Selamat Datang di Kursus 1&lt;/p&gt;\r\n\r\n&lt;ol&gt;\r\n	&lt;li&gt;Mikrotik&lt;/li&gt;\r\n	&lt;li&gt;Jaringan LAN&lt;/li&gt;\r\n	&lt;li&gt;Jaringan Wireless&lt;/li&gt;\r\n	&lt;li&gt;Perakitan&lt;/li&gt;\r\n&lt;/ol&gt;\r\n', '', '1', '3', '2025-08-30 12:59:22', '2025-09-05 07:51:28', 0, 0, 3, 'Published'),
+(5, 1, 'Percobaan Course 2', 'percobaan-course-2', 'images/zero_to_hero.png', '&lt;p&gt;Selamat Datang di Kursus 2&lt;/p&gt;\r\n\r\n&lt;ol&gt;\r\n	&lt;li&gt;Mikrotik&lt;/li&gt;\r\n	&lt;li&gt;Jaringan LAN&lt;/li&gt;\r\n	&lt;li&gt;Jaringan Wireless&lt;/li&gt;\r\n	&lt;li&gt;Perakitan&lt;/li&gt;\r\n&lt;/ol&gt;\r\n', '', '1', '2', '2025-09-05 07:53:25', '2025-09-05 07:54:39', 0, 0, 0, 'Published'),
+(6, 1, 'Percobaan Course 3', 'percobaan-course-3', 'images/zero_to_hero.png', '', '', '1', '3', '2025-09-05 07:55:01', NULL, 0, 0, 0, 'Published');
 
 -- --------------------------------------------------------
 
@@ -309,25 +296,16 @@ CREATE TABLE `tb_lms_courses_lesson` (
   `type` varchar(255) NOT NULL,
   `content` longtext NOT NULL,
   `order` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `tb_lms_courses_lesson`
 --
 
 INSERT INTO `tb_lms_courses_lesson` (`id`, `id_courses`, `id_section`, `title`, `type`, `content`, `order`) VALUES
-(1, 1, 1, 'Kenapa harus memiliki tujuan', 'Text', '', 1),
-(2, 1, 2, 'Meyakinkan diri', 'Video', '', 2),
-(3, 1, 2, 'Kenapa harus yakin ?', 'Video', '', 1),
-(4, 1, 1, 'Memiliki tujuan besar', 'Video', '', 2),
-(5, 1, 5, 'emosi dapat mempengaruhi tindakan', 'Text', '', 0),
-(6, 1, 6, 'Penundaan adalah rintangan utama kesuksesan', 'Text', '', 0),
-(7, 1, 3, 'Waktu yang diberikan sama apa yang membedakannya ?', 'Text', '', 0),
-(8, 1, 4, 'Tujuan Hidupmu ? ', 'Text', '', 0),
-(9, 2, 7, 'Material 1', 'Text', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', 0),
-(10, 2, 8, 'Material 2', 'Text', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', 0),
-(11, 3, 9, 'Good 1', 'Video', '', 0),
-(12, 3, 10, 'Good 2', 'Image', '', 0);
+(13, 4, 11, 'Membaca dan Memahami', 'Video', '<p><a href=\"https://www.youtube.com/watch?v=VmoO3LOulCA&amp;list=RDVmoO3LOulCA&amp;start_radio=1&amp;pp=oAcB\" target=\"Youtube\">Yoitube</a></p>\r\n', 0),
+(14, 5, 12, 'Mikrotik Sebuah Perusahaan', 'Text', '', 0),
+(15, 6, 13, 'Pengenalan Pemakaian', 'Text', '', 0);
 
 -- --------------------------------------------------------
 
@@ -340,23 +318,16 @@ CREATE TABLE `tb_lms_courses_section` (
   `id_courses` int(255) NOT NULL,
   `title` varchar(255) NOT NULL,
   `order` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `tb_lms_courses_section`
 --
 
 INSERT INTO `tb_lms_courses_section` (`id`, `id_courses`, `title`, `order`) VALUES
-(1, 1, 'Mempunyai Tujuan', 1),
-(2, 1, 'Yakin dengan Diri Sendiri', 2),
-(3, 1, 'Mengatur Waktu', 4),
-(4, 1, 'Merancang Tujuan Hidup', 3),
-(5, 1, 'Emosi adalah sumber Motivasi', 6),
-(6, 1, 'Meninggalkan Penundaan', 5),
-(7, 2, 'Dummy Section', 0),
-(8, 2, 'Dummy Section 2', 0),
-(9, 3, 'Section 1', 0),
-(10, 3, 'Section 2', 0);
+(11, 4, 'Pengenalan', 0),
+(12, 5, 'Pengertian', 0),
+(13, 6, 'Pengenalan', 0);
 
 -- --------------------------------------------------------
 
@@ -369,7 +340,7 @@ CREATE TABLE `tb_lms_template` (
   `name` varchar(255) NOT NULL,
   `path` varchar(255) NOT NULL,
   `status` enum('Active','No') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `tb_lms_template`
@@ -391,7 +362,7 @@ CREATE TABLE `tb_lms_template_widget` (
   `var` varchar(255) NOT NULL,
   `type` varchar(255) NOT NULL,
   `data_json` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -404,7 +375,15 @@ CREATE TABLE `tb_lms_user_courses` (
   `id_user` int(255) NOT NULL,
   `id_courses` int(255) NOT NULL,
   `time` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `tb_lms_user_courses`
+--
+
+INSERT INTO `tb_lms_user_courses` (`id`, `id_user`, `id_courses`, `time`) VALUES
+(1, 4, 3, '2025-08-30 13:05:39'),
+(2, 4, 4, '2025-08-30 13:06:28');
 
 -- --------------------------------------------------------
 
@@ -417,7 +396,15 @@ CREATE TABLE `tb_lms_user_lesson` (
   `id_user` int(255) NOT NULL,
   `id_courses` int(255) NOT NULL,
   `data` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `tb_lms_user_lesson`
+--
+
+INSERT INTO `tb_lms_user_lesson` (`id`, `id_user`, `id_courses`, `data`) VALUES
+(1, 4, 3, '[{\"id_lesson\":\"11\",\"status\":true},{\"id_lesson\":\"12\",\"status\":true}]'),
+(2, 4, 4, '[{\"id_lesson\":\"13\",\"status\":true}]');
 
 -- --------------------------------------------------------
 
@@ -438,7 +425,7 @@ CREATE TABLE `tb_lms_user_payment` (
   `time` datetime NOT NULL,
   `updated` datetime NOT NULL,
   `status` enum('Purchased','Pending','Checking','Failed') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -453,7 +440,7 @@ CREATE TABLE `tb_lms_user_review` (
   `rating` varchar(10) NOT NULL,
   `review` text NOT NULL,
   `time` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -466,7 +453,7 @@ CREATE TABLE `tb_lms_user_wishlist` (
   `id_user` int(255) NOT NULL,
   `id_courses` int(255) NOT NULL,
   `time` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -477,7 +464,7 @@ CREATE TABLE `tb_lms_user_wishlist` (
 CREATE TABLE `tb_site` (
   `type` varchar(255) NOT NULL,
   `data` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `tb_site`
@@ -485,12 +472,12 @@ CREATE TABLE `tb_site` (
 
 INSERT INTO `tb_site` (`type`, `data`) VALUES
 ('ads_txt', ''),
-('blog_comment', '{\"type\":\"disable\",\"disqus_shortname\":\"kurteyki\",\"disqus_developer\":\"1\",\"moderate\":\"true\",\"message\":\"Komentar diblokir\"}'),
+('blog_comment', '{\"type\":\"disable\",\"disqus_shortname\":\"ih24n\",\"disqus_developer\":\"1\",\"moderate\":\"true\",\"message\":\"Komentar diblokir\"}'),
 ('blog_limit_post', '1'),
 ('cache', 'No'),
 ('cookie_notification', '{\"status\":\"Yes\",\"message\":\"Situs web ini menggunakan cookie untuk mempersonalisasi konten dan menganalisis lalu lintas untuk menawarkan pengalaman yang lebih baik kepada Anda.\"}'),
 ('currency_format', 'IDR'),
-('description', 'Ilmu Pengembangan Diri untuk Hidup yang lebih baik.'),
+('description', 'Belajar Mudah, Kapan Saja, Di Mana Saja. Satu Klik, Seribu Ilmu'),
 ('fb_app', '{\"facebook_app_id\":\"\",\"facebook_app_secret\":\"\"}'),
 ('google_api', '{\"client_id\":\"\",\"client_secret\":\"\"}'),
 ('google_recaptcha', '{\"status\":\"No\",\"site_key\":\"\",\"secret_key\":\"\"}'),
@@ -499,20 +486,20 @@ INSERT INTO `tb_site` (`type`, `data`) VALUES
 ('language', 'indonesia'),
 ('lms_free_courses_readable', 'No'),
 ('lms_limit_post', '6'),
-('meta_open_graph', '{\"app_id\":\"\",\"publisher\":\"https:\\/\\/www.facebook.com\\/kurteyki\",\"author\":\"https:\\/\\/www.facebook.com\\/kurteyki\",\"default_image\":\"open_graph_default_image_20200415181017.png\"}'),
-('meta_schema', '{\"type\":\"Person\",\"content\":{\"person_name\":\"Faanteyki\",\"person_alternateName\":\"Faan\",\"person_gender\":\"male\",\"person_height\":\"163 centimetre\",\"person_birthDate\":\"1999-08-30\",\"person_birthPlace\":\"Bogor, Jawabarat\",\"person_nationality\":\"Indonesia\",\"person_alumniOf\":\"Bobobib\",\"person_memberOf\":\"Kurteyki\",\"person_streetAddress\":\"RT.05 RW.04 NO.C23\",\"person_addressLocality\":\"Cibinong\",\"person_addressRegion\":\"Indonesia\",\"person_postalCode\":\"16916\",\"person_email\":\"life.irfaan@gmail.com\",\"person_telephone\":\"+62 813 8921 5100\",\"person_url\":\"https:\\/\\/faanteyki.blogspot.com\",\"person_sameAs\":\"https:\\/\\/facebook.com\\/faanteyki\",\"person_jobTitle\":\"Bobobib\",\"person_worksFor_name\":\"Bobobib\",\"person_worksFor_sameAs\":\"https:\\/\\/facebook.com\\/kurteyki\",\"organization_name\":\"Kurteyki\",\"organization_url\":\"https:\\/\\/www.kurteyki.com\\/\",\"organization_contactPoint_telephone\":\"+62 813 8921 5100\",\"organization_contactPoint_contactType\":\"customer service\",\"organization_sameAs\":\"https:\\/\\/facebook.com\\/kurteyki\",\"organization_logo_url\":\"organization_logo_url_20200424151642.png\",\"person_image\":\"person_image_20200415181017.png\"}}'),
-('meta_twitter_card', '{\"publisher\":\"@kurteyki\",\"default_image\":\"twitter_card_default_image_20200415181017.png\"}'),
+('meta_open_graph', '{\"app_id\":\"\",\"publisher\":\"https:\\/\\/www.facebook.com\\/muhammad.ihsanpasker\",\"author\":\"https:\\/\\/www.facebook.com\\/muhammad.ihsanpasker\",\"default_image\":\"open_graph_default_image_20200415181017.png\"}'),
+('meta_schema', '{\"type\":\"Person\",\"content\":{\"person_name\":\"Muhammad Ihsan\",\"person_alternateName\":\"Ih24n\",\"person_gender\":\"male\",\"person_height\":\"175 centimetre\",\"person_birthDate\":\"1996-05-24\",\"person_birthPlace\":\"Sukoharjo, Jawa Tengah\",\"person_nationality\":\"Indonesia\",\"person_alumniOf\":\"Universitas Sebelas Maret\",\"person_memberOf\":\"SandroidTeam\",\"person_streetAddress\":\"Banyuripan, Cabeyan, Bendosari\",\"person_addressLocality\":\"Sukoharjo\",\"person_addressRegion\":\"Indonesia\",\"person_postalCode\":\"57572\",\"person_email\":\"ih24n@smkn5sukoharjo.sch.id\",\"person_telephone\":\"+62 87812892770\",\"person_url\":\"sandroidteam.com\",\"person_sameAs\":\"https:\\/\\/github.com\\/ih24n69\",\"person_jobTitle\":\"Guru\",\"person_worksFor_name\":\"SMK Negeri 5 Sukoharjo\",\"person_worksFor_sameAs\":\"https:\\/\\/github.com\\/ih24n69\",\"organization_name\":\"SandroidTeam\",\"organization_url\":\"sandroidteam.com\",\"organization_contactPoint_telephone\":\"+62 87812892770\",\"organization_contactPoint_contactType\":\"customer service\",\"organization_sameAs\":\"sandroidteam.com\",\"organization_logo_url\":\"organization_logo_url_20250830160700.png\",\"person_image\":\"person_image_20250830160801.png\"}}'),
+('meta_twitter_card', '{\"publisher\":\"@muhammadih24n\",\"default_image\":\"twitter_card_default_image_20200415181017.png\"}'),
 ('no_image', 'no_image_20200408075727.jpg'),
 ('payment_method', 'Manual'),
 ('payment_midtrans', '{\"status_production\":\"No\",\"client_key\":\"\",\"server_key\":\"\"}'),
 ('robots_txt', 'User-agent: *\r\nAllow: /\r\n\r\nSitemap: [sitemap_url]'),
-('slogan', 'Belajar pengembangan diri.'),
+('slogan', 'Berpusing sekarang, Riang akan Datang.'),
 ('smtp', '{\"protocol\":\"smtp\",\"smtp_host\":\"smtp.googlemail.com\",\"smtp_port\":\"465\",\"smtp_user\":\"\",\"smtp_pass\":\"\"}'),
 ('time_zone', 'Asia/Jakarta'),
-('title', 'Kurteyki'),
-('updated', '2022-02-11 16:57:44'),
+('title', 'SkanmaLEARN'),
+('updated', '2025-08-30 20:29:01'),
 ('user_limit_data', '5'),
-('vertification_email', 'Yes');
+('vertification_email', 'No');
 
 -- --------------------------------------------------------
 
@@ -528,18 +515,18 @@ CREATE TABLE `tb_site_pages` (
   `updated` datetime DEFAULT NULL,
   `content` longtext NOT NULL,
   `status` enum('Published','Draft') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `tb_site_pages`
 --
 
 INSERT INTO `tb_site_pages` (`id`, `title`, `permalink`, `time`, `updated`, `content`, `status`) VALUES
-(1, 'Kebijakan Privasi', 'kebijakan-privasi', '2020-03-21 18:36:40', '2022-02-11 16:56:53', '&lt;p&gt;Di Kurteyki, dapat diakses dari kurteyki.com, salah satu prioritas utama kami adalah privasi pengunjung kami. Dokumen Kebijakan Privasi ini berisi jenis informasi yang dikumpulkan dan dicatat oleh Kurteyki dan bagaimana kami menggunakannya.&lt;/p&gt;\r\n\r\n&lt;p&gt;Jika Anda memiliki pertanyaan tambahan atau memerlukan informasi lebih lanjut tentang Kebijakan Privasi kami, jangan ragu untuk menghubungi kami.&lt;/p&gt;\r\n\r\n&lt;h2&gt;File Log&lt;/h2&gt;\r\n\r\n&lt;p&gt;Kurteyki mengikuti prosedur standar menggunakan file log. File-file ini mencatat pengunjung ketika mereka mengunjungi situs web. Semua perusahaan hosting melakukan ini dan bagian dari analisis layanan hosting. Informasi yang dikumpulkan oleh file log termasuk alamat protokol internet (IP), tipe browser, Penyedia Layanan Internet (ISP), cap tanggal dan waktu, halaman rujukan / keluar, dan mungkin jumlah klik. Ini tidak terkait dengan informasi apa pun yang dapat diidentifikasi secara pribadi. Tujuan dari informasi ini adalah untuk menganalisis tren, mengelola situs, melacak pergerakan pengguna di situs web, dan mengumpulkan informasi demografis.&lt;/p&gt;\r\n\r\n&lt;h2&gt;Cookie dan Beacon Web&lt;/h2&gt;\r\n\r\n&lt;p&gt;Seperti situs web lainnya, Kurteyki menggunakan &amp;#39;cookies&amp;#39;. Cookie ini digunakan untuk menyimpan informasi termasuk preferensi pengunjung, dan halaman-halaman di situs web yang diakses atau dikunjungi pengunjung. Informasi ini digunakan untuk mengoptimalkan pengalaman pengguna dengan menyesuaikan konten halaman web kami berdasarkan jenis browser pengunjung dan / atau informasi lainnya.&lt;/p&gt;\r\n\r\n&lt;h2&gt;Google DoubleClick Cookie DART&lt;/h2&gt;\r\n\r\n&lt;p&gt;Google adalah salah satu vendor pihak ketiga di situs kami. Itu juga menggunakan cookie, yang dikenal sebagai cookie DART, untuk menayangkan iklan kepada pengunjung situs kami berdasarkan kunjungan mereka ke www.website.com dan situs lain di internet. Namun, pengunjung dapat memilih untuk menolak penggunaan cookie DART dengan mengunjungi iklan Google dan jaringan konten Kebijakan Privasi di URL berikut - https://policies.google.com/technologies/ads&lt;/p&gt;\r\n\r\n&lt;h2&gt;Mitra Iklan Kami&lt;/h2&gt;\r\n\r\n&lt;p&gt;Beberapa pengiklan di situs kami mungkin menggunakan cookie dan suar web. Mitra iklan kami tercantum di bawah ini. Setiap mitra periklanan kami memiliki Kebijakan Privasi sendiri untuk kebijakan mereka tentang data pengguna. Untuk akses yang lebih mudah, kami hyperlink ke Kebijakan Privasi mereka di bawah ini.&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Google\r\n	&lt;ul&gt;\r\n		&lt;li&gt;https://policies.google.com/technologies/ads&lt;/li&gt;\r\n	&lt;/ul&gt;\r\n	&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;h2&gt;Kebijakan Privasi&lt;/h2&gt;\r\n\r\n&lt;p&gt;Anda dapat berkonsultasi daftar ini untuk menemukan Kebijakan Privasi untuk masing-masing mitra periklanan Kurteyki. Kebijakan Privasi kami dibuat dengan bantuan Generator Kebijakan Privasi Gratis dan Generator Kebijakan Privasi Online.&lt;/p&gt;\r\n\r\n&lt;p&gt;Server iklan pihak ketiga atau jaringan iklan menggunakan teknologi seperti cookie, JavaScript, atau Web Beacon yang digunakan dalam iklan masing-masing dan tautan yang muncul di Kurteyki, yang dikirim langsung ke browser pengguna. Mereka secara otomatis menerima alamat IP Anda ketika ini terjadi. Teknologi ini digunakan untuk mengukur efektivitas kampanye iklan mereka dan / atau untuk mempersonalisasi konten iklan yang Anda lihat di situs web yang Anda kunjungi.&lt;/p&gt;\r\n\r\n&lt;p&gt;Perhatikan bahwa Kurteyki tidak memiliki akses ke atau kontrol terhadap cookie ini yang digunakan oleh pengiklan pihak ketiga.&lt;/p&gt;\r\n\r\n&lt;h2&gt;Kebijakan Privasi Pihak Ketiga&lt;/h2&gt;\r\n\r\n&lt;p&gt;Kebijakan Privasi Kurteyki tidak berlaku untuk pengiklan atau situs web lain. Karenanya, kami menyarankan Anda untuk berkonsultasi dengan masing-masing Kebijakan Privasi dari server iklan pihak ketiga ini untuk informasi yang lebih terperinci. Ini mungkin termasuk praktik dan instruksi mereka tentang cara menyisih dari opsi tertentu. Anda dapat menemukan daftar lengkap Kebijakan Privasi ini dan tautannya di sini: Tautan Kebijakan Privasi.&lt;/p&gt;\r\n\r\n&lt;p&gt;Anda dapat memilih untuk menonaktifkan cookie melalui opsi peramban individual. Untuk mengetahui informasi lebih rinci tentang manajemen cookie dengan browser web tertentu, dapat ditemukan di situs web masing-masing browser. Apa Itu Cookie?&lt;/p&gt;\r\n\r\n&lt;h2&gt;Informasi Anak&lt;/h2&gt;\r\n\r\n&lt;p&gt;Bagian lain dari prioritas kami adalah menambahkan perlindungan untuk anak-anak saat menggunakan internet. Kami mendorong orang tua dan wali untuk mengamati, berpartisipasi, dan / atau memantau dan membimbing aktivitas online mereka.&lt;/p&gt;\r\n\r\n&lt;p&gt;Kurteyki tidak secara sadar mengumpulkan Informasi Identifikasi Pribadi apa pun dari anak-anak di bawah usia 13. Jika Anda berpikir bahwa anak Anda memberikan informasi semacam ini di situs web kami, kami sangat menganjurkan Anda untuk menghubungi kami segera dan kami akan melakukan upaya terbaik kami untuk segera menghapus informasi tersebut dari catatan kami.&lt;/p&gt;\r\n\r\n&lt;h2&gt;Hanya Kebijakan Privasi Online&lt;/h2&gt;\r\n\r\n&lt;p&gt;Kebijakan Privasi ini hanya berlaku untuk aktivitas online kami dan berlaku untuk pengunjung situs web kami sehubungan dengan informasi yang mereka bagikan dan / atau kumpulkan di Kurteyki. Kebijakan ini tidak berlaku untuk informasi apa pun yang dikumpulkan secara offline atau melalui saluran selain dari situs web ini.&lt;/p&gt;\r\n\r\n&lt;h2&gt;Persetujuan&lt;/h2&gt;\r\n\r\n&lt;p&gt;Dengan menggunakan situs web kami, Anda dengan ini menyetujui Kebijakan Privasi kami dan menyetujui Syarat dan Ketentuannya.&lt;/p&gt;\r\n', 'Published'),
-(2, 'Bantuan', 'help', '2020-04-14 07:52:45', '2020-04-16 08:22:28', '&lt;meta name=&quot;robots&quot; content=&quot;noindex&quot;&gt;\r\n&lt;p&gt;Belum ada konten untuk dibuat.&lt;/p&gt;\r\n', 'Published'),
-(3, 'Kontak', 'contact', '2020-04-14 07:53:12', '2020-04-16 08:24:26', '&lt;p&gt;Anda dapat menghubungi tim melalui kontak dibawah ini&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;Email : kurteyki@gmail.com&lt;/p&gt;\r\n\r\n&lt;p&gt;Facebook : &lt;a href=&quot;https://facebook.com/kurteyki&quot;&gt;facebook.com/kurteyki&lt;/a&gt;&lt;/p&gt;\r\n', 'Published'),
-(4, 'Tentang Kurteyki', 'about', '2020-04-14 07:53:19', '2020-04-16 08:20:59', '&lt;p&gt;kurteyki.com situs belajar pengembangan diri, situs dibuat pada tahun 2019.&lt;/p&gt;\r\n', 'Published'),
-(5, 'Syarat dan Ketentuan', 'term-and-condition', '2020-04-14 07:54:26', '2020-04-14 08:39:27', '&lt;p&gt;Selamat datang di Kurteyki!&lt;/p&gt;\r\n\r\n&lt;p&gt;Syarat dan ketentuan ini menguraikan aturan dan peraturan untuk penggunaan Situs Web Kurteyki, yang terletak di kurteyki.com.&lt;/p&gt;\r\n\r\n&lt;p&gt;Dengan mengakses situs web ini, kami menganggap Anda menerima syarat dan ketentuan ini. Jangan terus menggunakan Kurteyki jika Anda tidak setuju untuk mengambil semua syarat dan ketentuan yang tercantum di halaman ini.&lt;/p&gt;\r\n\r\n&lt;p&gt;Terminologi berikut ini berlaku untuk Syarat dan Ketentuan ini, Pernyataan Privasi dan Pemberitahuan Sangkalan dan semua Perjanjian: &amp;quot;Klien&amp;quot;, &amp;quot;Anda&amp;quot; dan &amp;quot;Anda&amp;quot; mengacu pada Anda, orang yang masuk ke situs web ini dan mematuhi persyaratan dan ketentuan Perusahaan. &amp;quot;Perusahaan&amp;quot;, &amp;quot;Diri Kami&amp;quot;, &amp;quot;Kami&amp;quot;, &amp;quot;Kami&amp;quot; dan &amp;quot;Kami&amp;quot;, mengacu pada Perusahaan kami. &amp;quot;Pihak&amp;quot;, &amp;quot;Pihak&amp;quot;, atau &amp;quot;Kami&amp;quot;, mengacu pada Klien dan diri kami sendiri. Semua istilah mengacu pada penawaran, penerimaan, dan pertimbangan pembayaran yang diperlukan untuk melakukan proses bantuan kami kepada Klien dengan cara yang paling tepat untuk tujuan yang jelas dalam memenuhi kebutuhan Klien sehubungan dengan penyediaan layanan yang dinyatakan Perusahaan, sesuai dengan dan tunduk pada, hukum Belanda yang berlaku. Setiap penggunaan terminologi di atas atau kata-kata lain dalam bentuk tunggal, jamak, huruf besar dan / atau dia, dianggap sebagai dapat dipertukarkan dan karena itu merujuk pada yang sama.&lt;/p&gt;\r\n\r\n&lt;h2&gt;Cookies&lt;/h2&gt;\r\n\r\n&lt;p&gt;Kami menggunakan penggunaan cookie. Dengan mengakses Kurteyki, Anda setuju untuk menggunakan cookie sesuai dengan Kebijakan Privasi Kurteyki.&lt;/p&gt;\r\n\r\n&lt;p&gt;Sebagian besar situs web interaktif menggunakan cookie untuk memungkinkan kami mengambil detail pengguna untuk setiap kunjungan. Cookie digunakan oleh situs web kami untuk mengaktifkan fungsionalitas area tertentu agar lebih mudah bagi orang yang mengunjungi situs web kami. Beberapa mitra afiliasi / iklan kami juga dapat menggunakan cookie.&lt;/p&gt;\r\n\r\n&lt;h2&gt;Lisensi&lt;/h2&gt;\r\n\r\n&lt;p&gt;Kecuali dinyatakan sebaliknya, Kurteyki dan / atau pemberi lisensinya memiliki hak kekayaan intelektual untuk semua materi tentang Kurteyki. Semua hak kekayaan intelektual dilindungi. Anda dapat mengakses ini dari Kurteyki untuk penggunaan pribadi Anda dengan batasan yang diatur dalam syarat dan ketentuan ini.&lt;/p&gt;\r\n\r\n&lt;p&gt;Anda tidak harus:&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n &lt;li&gt;Publikasikan ulang materi dari Kurteyki&lt;/li&gt;\r\n  &lt;li&gt;Menjual, menyewakan atau mensublisensikan materi dari Kurteyki&lt;/li&gt;\r\n &lt;li&gt;Mereproduksi, menggandakan atau menyalin materi dari Kurteyki&lt;/li&gt;\r\n  &lt;li&gt;Mendistribusikan kembali konten dari Kurteyki&lt;/li&gt;\r\n  &lt;li&gt;Perjanjian ini akan dimulai pada tanggal perjanjian ini.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;Bagian dari situs web ini menawarkan kesempatan bagi pengguna untuk memposting dan bertukar pendapat dan informasi di area situs web tertentu. Kurteyki tidak memfilter, mengedit, menerbitkan atau meninjau Komentar sebelum kehadiran mereka di situs web. Komentar tidak mencerminkan pandangan dan pendapat Kurteyki, agen dan / atau afiliasinya. Komentar mencerminkan pandangan dan pendapat orang yang memposting pandangan dan pendapat mereka. Sejauh diizinkan oleh undang-undang yang berlaku, Kurteyki tidak akan bertanggung jawab atas Komentar atau untuk setiap kewajiban, kerusakan atau biaya yang disebabkan dan / atau diderita sebagai akibat dari penggunaan dan / atau pengeposan dan / atau penampilan Komentar mengenai hal ini. situs web.&lt;/p&gt;\r\n\r\n&lt;p&gt;Kurteyki berhak untuk memantau semua Komentar dan menghapus Komentar yang dapat dianggap tidak pantas, menyinggung, atau menyebabkan pelanggaran terhadap Syarat dan Ketentuan ini.&lt;/p&gt;\r\n\r\n&lt;p&gt;Anda menjamin dan menyatakan bahwa:&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n  &lt;li&gt;Anda berhak memposting Komentar di situs web kami dan memiliki semua lisensi dan persetujuan yang diperlukan untuk melakukannya;&lt;/li&gt;\r\n &lt;li&gt;Komentar tidak melanggar hak kekayaan intelektual apa pun, termasuk tanpa batasan hak cipta, paten, atau merek dagang pihak ketiga mana pun;&lt;/li&gt;\r\n &lt;li&gt;Komentar tidak mengandung materi yang memfitnah, memfitnah, menyinggung, tidak senonoh, atau melanggar hukum yang merupakan pelanggaran privasi&lt;/li&gt;\r\n  &lt;li&gt;Komentar tidak akan digunakan untuk meminta atau mempromosikan bisnis atau kebiasaan atau menyajikan kegiatan komersial atau kegiatan yang melanggar hukum.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;Anda dengan ini memberi Kurteyki lisensi non-eksklusif untuk menggunakan, mereproduksi, mengedit, dan memberi otorisasi kepada orang lain untuk menggunakan, mereproduksi, dan mengedit komentar Anda dalam segala bentuk, format, atau media.&lt;/p&gt;\r\n\r\n&lt;h2&gt;Hyperlink ke Konten kami&lt;/h2&gt;\r\n\r\n&lt;p&gt;Organisasi berikut dapat menautkan ke situs web kami tanpa persetujuan tertulis sebelumnya:&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n &lt;li&gt;Agensi pemerintahan;&lt;/li&gt;\r\n &lt;li&gt;Mesin pencari;&lt;/li&gt;\r\n &lt;li&gt;Organisasi berita;&lt;/li&gt;\r\n &lt;li&gt;Distributor direktori online dapat menautkan ke situs web kami dengan cara yang sama seperti mereka hyperlink ke situs web bisnis terdaftar lainnya; dan&lt;/li&gt;\r\n &lt;li&gt;Bisnis Terakreditasi di seluruh sistem kecuali meminta organisasi nirlaba, pusat perbelanjaan amal, dan kelompok penggalangan dana amal yang mungkin tidak hyperlink ke situs Web kami.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;Organisasi-organisasi ini dapat menautkan ke beranda kami, ke publikasi atau ke informasi situs web lainnya selama tautan: (a) tidak menipu dengan cara apa pun; (B) tidak secara tidak langsung menyiratkan sponsor, dukungan atau persetujuan dari pihak yang menghubungkan dan produk dan / atau layanannya; dan (c) sesuai dengan konteks situs pihak yang menghubungkan.&lt;/p&gt;\r\n\r\n&lt;p&gt;Kami dapat mempertimbangkan dan menyetujui permintaan tautan lain dari jenis organisasi berikut:&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n  &lt;li&gt;sumber informasi konsumen dan / atau bisnis yang umum dikenal;&lt;/li&gt;\r\n &lt;li&gt;situs komunitas dot.com;&lt;/li&gt;\r\n &lt;li&gt;asosiasi atau kelompok lain yang mewakili badan amal;&lt;/li&gt;\r\n  &lt;li&gt;distributor direktori online;&lt;/li&gt;\r\n  &lt;li&gt;portal internet;&lt;/li&gt;\r\n &lt;li&gt;perusahaan akuntansi, hukum dan konsultasi; dan&lt;/li&gt;\r\n  &lt;li&gt;lembaga pendidikan dan asosiasi perdagangan.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;Kami akan menyetujui permintaan tautan dari organisasi-organisasi ini jika kami memutuskan bahwa: (a) tautan tersebut tidak akan membuat kami terlihat tidak menguntungkan bagi diri kami sendiri atau untuk bisnis terakreditasi kami; (B) organisasi tidak memiliki catatan negatif dengan kami; (c) manfaat bagi kami dari visibilitas hyperlink mengkompensasi ketiadaan Kurteyki; dan (d) tautannya ada dalam konteks informasi sumber daya umum.&lt;/p&gt;\r\n\r\n&lt;p&gt;Organisasi-organisasi ini dapat menautkan ke beranda kami selama tautan tersebut: (a) sama sekali tidak menipu; (B) tidak secara tidak langsung menyiratkan sponsor, dukungan atau persetujuan dari pihak yang menghubungkan dan produk atau layanannya; dan (c) sesuai dengan konteks situs pihak yang menghubungkan.&lt;/p&gt;\r\n\r\n&lt;p&gt;Jika Anda salah satu organisasi yang tercantum dalam paragraf 2 di atas dan tertarik untuk menautkan ke situs web kami, Anda harus memberi tahu kami dengan mengirim email ke Kurteyki. Harap sertakan nama Anda, nama organisasi Anda, informasi kontak serta URL situs Anda, daftar URL apa pun yang ingin Anda tautkan ke Situs web kami, dan daftar URL di situs kami yang ingin Anda kunjungi tautan. Tunggu 2-3 minggu untuk tanggapan.&lt;/p&gt;\r\n\r\n&lt;p&gt;Organisasi yang disetujui dapat hyperlink ke Situs web kami sebagai berikut:&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n &lt;li&gt;Dengan menggunakan nama perusahaan kami; atau&lt;/li&gt;\r\n  &lt;li&gt;Dengan menggunakan pencari sumber daya seragam yang ditautkan ke; atau&lt;/li&gt;\r\n &lt;li&gt;Dengan menggunakan uraian lain apa pun dari Situs Web kami yang ditautkan dengan yang masuk akal dalam konteks dan format konten di situs pihak yang menautkan.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;Penggunaan logo Kurteyki atau karya seni lainnya tidak akan diizinkan untuk menghubungkan tidak adanya perjanjian lisensi merek dagang.&lt;/p&gt;\r\n\r\n&lt;h2&gt;iFrames&lt;/h2&gt;\r\n\r\n&lt;p&gt;Tanpa persetujuan sebelumnya dan izin tertulis, Anda tidak boleh membuat bingkai di sekitar Halaman Web kami yang mengubah cara tampilan visual atau tampilan Situs Web kami.&lt;/p&gt;\r\n\r\n&lt;h2&gt;Pertanggungjawaban Konten&lt;/h2&gt;\r\n\r\n&lt;p&gt;Kami tidak akan bertanggung jawab atas konten yang muncul di Situs Web Anda. Anda setuju untuk melindungi dan membela kami terhadap semua klaim yang muncul di Situs Web Anda. Tidak ada tautan yang muncul di Situs web mana pun yang dapat ditafsirkan sebagai fitnah, cabul atau kriminal, atau yang melanggar, jika tidak melanggar, atau menganjurkan pelanggaran atau pelanggaran lain terhadap, hak pihak ketiga.&lt;/p&gt;\r\n\r\n&lt;h2&gt;Reservasi Hak&lt;/h2&gt;\r\n\r\n&lt;p&gt;Kami berhak meminta Anda menghapus semua tautan atau tautan tertentu apa pun ke Situs Web kami. Anda menyetujui untuk segera menghapus semua tautan ke Situs web kami berdasarkan permintaan. Kami juga berhak mengubah syarat dan ketentuan ini dan ini menautkan kebijakan kapan saja. Dengan terus menautkan ke Situs web kami, Anda setuju untuk terikat dan mengikuti syarat dan ketentuan tautan ini.&lt;/p&gt;\r\n\r\n&lt;h2&gt;Penghapusan tautan dari situs web kami&lt;/h2&gt;\r\n\r\n&lt;p&gt;Jika Anda menemukan tautan apa pun di Situs Web kami yang menyinggung karena alasan apa pun, Anda bebas untuk menghubungi dan memberi tahu kami kapan saja. Kami akan mempertimbangkan permintaan untuk menghapus tautan tetapi kami tidak berkewajiban untuk menanggapi Anda secara langsung.&lt;/p&gt;\r\n\r\n&lt;p&gt;Kami tidak memastikan bahwa informasi di situs web ini benar, kami tidak menjamin kelengkapan atau keakuratannya; kami juga tidak berjanji untuk memastikan bahwa situs web tetap tersedia atau bahwa materi di situs web tetap terbaru.&lt;/p&gt;\r\n\r\n&lt;h2&gt;Penolakan&lt;/h2&gt;\r\n\r\n&lt;p&gt;Sejauh diizinkan oleh hukum yang berlaku, kami mengecualikan semua representasi, jaminan, dan ketentuan yang berkaitan dengan situs web kami dan penggunaan situs web ini. Tidak ada dalam penafian ini yang akan:&lt;/p&gt;\r\n\r\n&lt;p&gt;membatasi atau mengecualikan tanggung jawab kami atau Anda atas kematian atau cedera pribadi;&lt;br /&gt;\r\nmembatasi atau mengecualikan tanggung jawab kami atau Anda untuk penipuan atau penggambaran yang salah;&lt;br /&gt;\r\nbatasi salah satu dari kewajiban kami atau Anda dengan cara apa pun yang tidak diizinkan berdasarkan hukum yang berlaku; atau&lt;br /&gt;\r\nmengecualikan salah satu dari kewajiban kami atau Anda yang mungkin tidak dikecualikan berdasarkan hukum yang berlaku.&lt;br /&gt;\r\nBatasan dan larangan tanggung jawab yang diatur dalam Bagian ini dan di tempat lain dalam penafian ini: (a) tunduk pada paragraf sebelumnya; dan (b) mengatur semua kewajiban yang timbul berdasarkan penafian, termasuk kewajiban yang timbul dalam kontrak, dalam gugatan hukum dan untuk pelanggaran kewajiban hukum.&lt;/p&gt;\r\n\r\n&lt;p&gt;Selama situs web dan informasi serta layanan di situs web disediakan secara gratis, kami tidak akan bertanggung jawab atas kehilangan atau kerusakan apa pun.&lt;/p&gt;\r\n', 'Published');
+(1, 'Kebijakan Privasi', 'kebijakan-privasi', '2020-03-21 18:36:40', '2025-08-31 17:54:51', '&lt;p&gt;&lt;strong&gt;Kebijakan Privasi SkanmaLEARN&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;text-align: justify;&quot;&gt;Kebijakan Privasi ini menjelaskan bagaimana SkanmaLEARN, platform pembelajaran digital milik SMK Negeri 5 Sukoharjo, mengumpulkan, menggunakan, menyimpan, dan melindungi data pribadi pengguna. Dengan menggunakan layanan SkanmaLEARN, pengguna dianggap telah membaca, memahami, dan menyetujui kebijakan privasi ini.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Informasi yang Dikumpulkan&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;SkanmaLEARN dapat mengumpulkan data pribadi berikut:&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Data identitas pengguna (nama, NIS/NIP, alamat email, nomor induk siswa/guru).&lt;/li&gt;\r\n	&lt;li&gt;Informasi akun (username, kata sandi).&lt;/li&gt;\r\n	&lt;li&gt;Aktivitas pembelajaran (materi yang diakses, tugas yang diunggah, nilai, forum diskusi).&lt;/li&gt;\r\n	&lt;li&gt;Data teknis (alamat IP, jenis perangkat, riwayat akses).&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Penggunaan Data&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;Data pribadi yang dikumpulkan akan digunakan untuk:&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Memberikan akses ke fitur pembelajaran jarak jauh.&lt;/li&gt;\r\n	&lt;li&gt;Memfasilitasi komunikasi antara guru dan siswa.&lt;/li&gt;\r\n	&lt;li&gt;Meningkatkan kualitas layanan pembelajaran digital.&lt;/li&gt;\r\n	&lt;li&gt;Menyimpan rekam jejak akademik siswa.&lt;/li&gt;\r\n	&lt;li&gt;Keperluan administrasi sekolah.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Perlindungan Data&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;SkanmaLEARN berkomitmen menjaga keamanan data pengguna dengan:&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Menggunakan sistem autentikasi dan enkripsi.&lt;/li&gt;\r\n	&lt;li&gt;Membatasi akses data hanya untuk pihak yang berwenang.&lt;/li&gt;\r\n	&lt;li&gt;Melakukan pengawasan berkala terhadap sistem keamanan.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;Namun, pengguna juga bertanggung jawab menjaga kerahasiaan akun dan kata sandi masing-masing.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Berbagi Data kepada Pihak Ketiga&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;SkanmaLEARN tidak akan menjual atau menyebarkan data pribadi pengguna kepada pihak ketiga di luar kepentingan pembelajaran, kecuali:&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Dengan persetujuan pengguna.&lt;/li&gt;\r\n	&lt;li&gt;Diperlukan oleh ketentuan hukum yang berlaku.&lt;/li&gt;\r\n	&lt;li&gt;Untuk kepentingan administrasi resmi pendidikan di SMK Negeri 5 Sukoharjo.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Hak Pengguna&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;Pengguna memiliki hak untuk:&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Mengakses dan memperbarui informasi pribadi mereka.&lt;/li&gt;\r\n	&lt;li&gt;Meminta penghapusan data tertentu sesuai kebijakan sekolah.&lt;/li&gt;\r\n	&lt;li&gt;Menolak penggunaan data di luar konteks pembelajaran.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Perubahan Kebijakan&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;text-align: justify;&quot;&gt;Kebijakan privasi ini dapat diperbarui sewaktu-waktu sesuai kebutuhan. Setiap perubahan akan diinformasikan melalui platform SkanmaLEARN.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Kontak&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;text-align: justify;&quot;&gt;Jika ada pertanyaan terkait kebijakan privasi ini, pengguna dapat menghubungi administrator SkanmaLEARN melalui pihak sekolah SMK Negeri 5 Sukoharjo.&lt;/p&gt;\r\n', 'Published'),
+(2, 'Bantuan', 'help', '2020-04-14 07:52:45', '2025-08-31 18:13:07', '&lt;meta name=&quot;robots&quot; content=&quot;noindex&quot;&gt;\r\n&lt;p data-end=&quot;233&quot; data-start=&quot;204&quot;&gt;Selamat datang di halaman &lt;strong data-end=&quot;284&quot; data-start=&quot;261&quot;&gt;Bantuan SkanmaLEARN&lt;/strong&gt;.&lt;br data-end=&quot;288&quot; data-start=&quot;285&quot; /&gt;\r\nHalaman ini dirancang untuk memandu Anda dalam menggunakan sistem pembelajaran digital.&lt;/p&gt;\r\n\r\n&lt;hr data-end=&quot;382&quot; data-start=&quot;379&quot; /&gt;\r\n&lt;h2 data-end=&quot;406&quot; data-start=&quot;384&quot;&gt;&lt;strong data-end=&quot;404&quot; data-start=&quot;387&quot;&gt;1. Cara Login&lt;/strong&gt;&lt;/h2&gt;\r\n\r\n&lt;ul data-end=&quot;566&quot; data-start=&quot;407&quot;&gt;\r\n	&lt;li data-end=&quot;442&quot; data-start=&quot;407&quot;&gt;\r\n	&lt;p data-end=&quot;442&quot; data-start=&quot;409&quot;&gt;Buka halaman utama SkanmaLEARN.&lt;/p&gt;\r\n	&lt;/li&gt;\r\n	&lt;li data-end=&quot;514&quot; data-start=&quot;443&quot;&gt;\r\n	&lt;p data-end=&quot;514&quot; data-start=&quot;445&quot;&gt;Masukkan &lt;strong data-end=&quot;466&quot; data-start=&quot;454&quot;&gt;username&lt;/strong&gt; dan &lt;strong data-end=&quot;483&quot; data-start=&quot;471&quot;&gt;password&lt;/strong&gt; yang diberikan oleh sekolah.&lt;/p&gt;\r\n	&lt;/li&gt;\r\n	&lt;li data-end=&quot;566&quot; data-start=&quot;515&quot;&gt;\r\n	&lt;p data-end=&quot;566&quot; data-start=&quot;517&quot;&gt;Klik tombol &lt;strong data-end=&quot;538&quot; data-start=&quot;529&quot;&gt;Login&lt;/strong&gt; untuk masuk ke akun Anda.&lt;/p&gt;\r\n	&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;blockquote data-end=&quot;631&quot; data-start=&quot;567&quot;&gt;\r\n&lt;p data-end=&quot;631&quot; data-start=&quot;569&quot;&gt;Jika lupa kata sandi, hubungi administrator/guru wali kelas.&lt;/p&gt;\r\n&lt;/blockquote&gt;\r\n\r\n&lt;hr data-end=&quot;636&quot; data-start=&quot;633&quot; /&gt;\r\n&lt;h2 data-end=&quot;679&quot; data-start=&quot;638&quot;&gt;&lt;strong data-end=&quot;677&quot; data-start=&quot;641&quot;&gt;2. Mengakses Materi Pembelajaran&lt;/strong&gt;&lt;/h2&gt;\r\n\r\n&lt;ul data-end=&quot;811&quot; data-start=&quot;680&quot;&gt;\r\n	&lt;li data-end=&quot;710&quot; data-start=&quot;680&quot;&gt;\r\n	&lt;p data-end=&quot;710&quot; data-start=&quot;682&quot;&gt;Pilih menu &lt;strong data-end=&quot;707&quot; data-start=&quot;693&quot;&gt;Kelas Saya&lt;/strong&gt;.&lt;/p&gt;\r\n	&lt;/li&gt;\r\n	&lt;li data-end=&quot;745&quot; data-start=&quot;711&quot;&gt;\r\n	&lt;p data-end=&quot;745&quot; data-start=&quot;713&quot;&gt;Klik pada nama mata pelajaran.&lt;/p&gt;\r\n	&lt;/li&gt;\r\n	&lt;li data-end=&quot;811&quot; data-start=&quot;746&quot;&gt;\r\n	&lt;p data-end=&quot;811&quot; data-start=&quot;748&quot;&gt;Buka materi, video, atau modul yang sudah diunggah oleh guru.&lt;/p&gt;\r\n	&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;hr data-end=&quot;816&quot; data-start=&quot;813&quot; /&gt;\r\n&lt;h2 data-end=&quot;848&quot; data-start=&quot;818&quot;&gt;&lt;strong data-end=&quot;846&quot; data-start=&quot;821&quot;&gt;3. Mengumpulkan Tugas&lt;/strong&gt;&lt;/h2&gt;\r\n\r\n&lt;ul data-end=&quot;1047&quot; data-start=&quot;849&quot;&gt;\r\n	&lt;li data-end=&quot;895&quot; data-start=&quot;849&quot;&gt;\r\n	&lt;p data-end=&quot;895&quot; data-start=&quot;851&quot;&gt;Masuk ke kelas mata pelajaran yang sesuai.&lt;/p&gt;\r\n	&lt;/li&gt;\r\n	&lt;li data-end=&quot;921&quot; data-start=&quot;896&quot;&gt;\r\n	&lt;p data-end=&quot;921&quot; data-start=&quot;898&quot;&gt;Pilih menu &lt;strong data-end=&quot;918&quot; data-start=&quot;909&quot;&gt;Tugas&lt;/strong&gt;.&lt;/p&gt;\r\n	&lt;/li&gt;\r\n	&lt;li data-end=&quot;983&quot; data-start=&quot;922&quot;&gt;\r\n	&lt;p data-end=&quot;983&quot; data-start=&quot;924&quot;&gt;Klik &lt;strong data-end=&quot;945&quot; data-start=&quot;929&quot;&gt;Upload Tugas&lt;/strong&gt;, lalu unggah file sesuai instruksi.&lt;/p&gt;\r\n	&lt;/li&gt;\r\n	&lt;li data-end=&quot;1047&quot; data-start=&quot;984&quot;&gt;\r\n	&lt;p data-end=&quot;1047&quot; data-start=&quot;986&quot;&gt;Pastikan Anda menekan tombol &lt;strong data-end=&quot;1024&quot; data-start=&quot;1015&quot;&gt;Kirim&lt;/strong&gt; sebelum batas waktu.&lt;/p&gt;\r\n	&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', 'Published'),
+(3, 'Kontak', 'contact', '2020-04-14 07:53:12', '2025-08-31 18:10:41', '&lt;p&gt;Anda dapat menghubungi tim melalui kontak dibawah ini&lt;/p&gt;\r\n\r\n&lt;p&gt;E-mail&amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; :&amp;nbsp;&lt;a href=&quot;mailto:info@smkn5sukoharjo.sch.id&quot;&gt;&lt;strong&gt;info@smkn5sukoharjo.sch.id&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;Instagram&amp;nbsp;: &lt;a href=&quot;https://www.instagram.com/smkn5sukoharjo&quot;&gt;&lt;b&gt;@smkn5sukoharjo&lt;/b&gt;&amp;nbsp;&lt;/a&gt;&lt;/p&gt;\r\n', 'Published'),
+(4, 'Tentang SkanmaLEARN', 'about', '2020-04-14 07:53:19', '2025-08-31 17:45:39', '&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong&gt;SkanmaLEARN &lt;/strong&gt;adalah sebuah Learning Management System (LMS) yang dimodifikasi oleh Muhammad Ihsan dari SMK Negeri 5 Sukoharjo pada tahun 2025 sebagai solusi pembelajaran digital yang modern, interaktif, dan fleksibel. Platform ini dirancang untuk mendukung pembelajaran jarak jauh, pengumpulan tugas, pembelajaran mandiri, serta komunikasi efektif antara guru dan siswa.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Kegunaan&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Menyediakan materi pembelajaran secara online yang dapat diakses kapan saja dan di mana saja.&lt;/li&gt;\r\n	&lt;li&gt;Mempermudah pengumpulan tugas, kuis, dan ujian secara digital.&lt;/li&gt;\r\n	&lt;li&gt;Meningkatkan interaksi antara guru dan siswa melalui forum diskusi dan fitur komunikasi daring.&lt;/li&gt;\r\n	&lt;li&gt;Memberikan akses arsip materi sehingga siswa bisa belajar mandiri sesuai kebutuhan.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Keuntungan&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Fleksibilitas tinggi: siswa bisa belajar tanpa dibatasi ruang dan waktu.&lt;/li&gt;\r\n	&lt;li&gt;Efisiensi: guru lebih mudah mengelola kelas, materi, dan penilaian.&lt;/li&gt;\r\n	&lt;li&gt;Transparansi: nilai, progres, dan tugas tercatat rapi dalam sistem.&lt;/li&gt;\r\n	&lt;li&gt;Inovasi digital: mendukung siswa terbiasa dengan teknologi, selaras dengan kompetensi abad 21.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Slogan SkanmaLEARN&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;ldquo;&lt;strong&gt;Belajar Mudah, Kapan Saja, Di Mana Saja. Satu Klik, Seribu Ilmu&lt;/strong&gt;&amp;rdquo;&lt;/p&gt;\r\n', 'Published'),
+(5, 'Syarat dan Ketentuan', 'term-and-condition', '2020-04-14 07:54:26', '2025-08-31 17:41:01', '&lt;p&gt;Selamat datang di &lt;strong&gt;SkanmaLEARN&lt;/strong&gt;...&lt;/p&gt;\r\n\r\n&lt;h2&gt;&lt;strong&gt;Syarat dan Ketentuan Penggunaan SkanmaLEARN.&lt;/strong&gt;&lt;/h2&gt;\r\n\r\n&lt;p&gt;Dengan mengakses dan menggunakan SkanmaLEARN, setiap pengguna setuju untuk mematuhi syarat dan ketentuan berikut:&lt;/p&gt;\r\n\r\n&lt;ol&gt;\r\n	&lt;li&gt;Platform ini disediakan oleh SMK Negeri 5 Sukoharjo sebagai sarana pembelajaran jarak jauh dan pengelolaan tugas.&amp;nbsp;&lt;/li&gt;\r\n	&lt;li&gt;Pengguna diwajibkan menggunakan akun yang sah serta menjaga kerahasiaan data pribadi dan kata sandi masing-masing.&amp;nbsp;&lt;/li&gt;\r\n	&lt;li&gt;Segala bentuk penyalahgunaan, seperti penyebaran konten yang tidak sesuai dengan tujuan pendidikan, tindakan plagiarisme, atau penggunaan yang merugikan pihak lain, dilarang keras.&amp;nbsp;&lt;/li&gt;\r\n	&lt;li&gt;Materi pembelajaran, tugas, maupun informasi yang terdapat di dalam sistem hanya boleh digunakan untuk kepentingan belajar dan tidak diperkenankan untuk diperjualbelikan atau disebarkan tanpa izin resmi dari pemilik/kreator materi tersebut.&lt;/li&gt;\r\n	&lt;li&gt;Administrator berhak melakukan penangguhan atau penghentian akun pengguna yang melanggar aturan.&lt;/li&gt;\r\n&lt;/ol&gt;\r\n\r\n&lt;h2&gt;&lt;strong&gt;Kebijakan Cookie SkanmaLEARN&lt;/strong&gt;&lt;/h2&gt;\r\n\r\n&lt;p&gt;SkanmaLEARN menggunakan cookie untuk meningkatkan pengalaman pengguna dalam mengakses layanan pembelajaran digital. Cookie adalah file kecil yang disimpan di perangkat Anda ketika menggunakan platform ini. Cookie membantu kami mengingat preferensi pengguna, menjaga keamanan akun, mempersonalisasi tampilan, serta memantau kinerja sistem agar layanan tetap optimal.&lt;/p&gt;\r\n\r\n&lt;p&gt;Dengan menggunakan platform ini, pengguna menyatakan telah membaca, memahami, dan menyetujui seluruh syarat, ketentuan dan kebijakan yang berlaku.&lt;/p&gt;\r\n', 'Published');
 
 -- --------------------------------------------------------
 
@@ -558,43 +545,16 @@ CREATE TABLE `tb_site_visitor` (
   `hits` int(255) NOT NULL,
   `url` varchar(255) NOT NULL,
   `referrer` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `tb_site_visitor`
 --
 
 INSERT INTO `tb_site_visitor` (`id`, `ip`, `date`, `browser`, `os`, `country_name`, `country_code`, `hits`, `url`, `referrer`) VALUES
-(1, '::1', '2020-05-03 11:49:04', 'Chrome', 'Windows 7', 'Other', 'Other', 78, 'http://localhost/kurteyki/', ''),
-(2, '::1', '2020-05-03 11:49:12', 'Chrome', 'Windows 7', 'Other', 'Other', 13, 'http://localhost/kurteyki/blog', ''),
-(3, '::1', '2020-05-03 11:49:22', 'Chrome', 'Windows 7', 'Other', 'Other', 21, 'http://localhost/kurteyki/courses-filter', ''),
-(4, '::1', '2020-05-03 11:49:32', 'Chrome', 'Windows 7', 'Other', 'Other', 1, 'http://localhost/kurteyki/blog-search', ''),
-(5, '::1', '2020-05-03 11:56:13', 'Chrome', 'Windows 7', 'Other', 'Other', 9, 'http://localhost/kurteyki/blog-post/konten-baru-dan-rencana-kedepannya-situs-ini', ''),
-(6, '::1', '2020-05-03 11:56:45', 'Chrome', 'Windows 7', 'Other', 'Other', 2, 'http://localhost/kurteyki/blog-category/news', ''),
-(7, '::1', '2020-05-03 11:57:14', 'Chrome', 'Windows 7', 'Other', 'Other', 2, 'http://localhost/kurteyki/blog-tags/berita', ''),
-(8, '::1', '2020-05-03 12:01:06', 'Chrome', 'Windows 7', 'Other', 'Other', 15, 'http://localhost/kurteyki/courses-detail/ilmu-dari-building-the-dream', ''),
-(9, '::1', '2020-05-03 12:02:03', 'Chrome', 'Windows 7', 'Other', 'Other', 14, 'http://localhost/kurteyki/courses-detail/ilmu-dari-adam-khoo', ''),
-(10, '::1', '2020-05-03 15:47:23', 'Chrome', 'Windows 10', 'Other', 'Other', 3, 'http://localhost/kurteyki/p/term-and-condition', ''),
-(11, '::1', '2020-05-03 15:47:26', 'Chrome', 'Windows 10', 'Other', 'Other', 3, 'http://localhost/kurteyki/p/about', ''),
-(12, '::1', '2020-05-03 15:47:32', 'Chrome', 'Windows 10', 'Other', 'Other', 2, 'http://localhost/kurteyki/p/privacy-policy', ''),
-(13, '::1', '2020-05-03 15:47:33', 'Chrome', 'Windows 10', 'Other', 'Other', 3, 'http://localhost/kurteyki/p/contact', ''),
-(14, '::1', '2020-05-03 15:47:34', 'Chrome', 'Windows 10', 'Other', 'Other', 2, 'http://localhost/kurteyki/p/help', ''),
-(15, '::1', '2020-05-04 15:15:17', 'Chrome', 'Windows 7', 'Other', 'Other', 2, 'http://localhost/kurteyki/', ''),
-(16, '::1', '2022-02-11 16:48:36', 'Chrome', 'Windows 7', 'Other', 'Other', 3, 'http://localhost/w/p/help', ''),
-(17, '::1', '2022-02-11 16:48:39', 'Chrome', 'Windows 7', 'Other', 'Other', 30, 'http://localhost/w/', ''),
-(18, '::1', '2022-02-11 16:48:43', 'Chrome', 'Windows 7', 'Other', 'Other', 2, 'http://localhost/w/p/contact', ''),
-(19, '::1', '2022-02-11 16:48:44', 'Chrome', 'Windows 7', 'Other', 'Other', 3, 'http://localhost/w/blog', ''),
-(20, '::1', '2022-02-11 16:49:43', 'Chrome', 'Windows 7', 'Other', 'Other', 7, 'http://localhost/w/courses-filter', ''),
-(21, '::1', '2022-02-11 16:49:45', 'Chrome', 'Windows 7', 'Other', 'Other', 3, 'http://localhost/w/courses-detail/ilmu-dari-adam-khoo', ''),
-(22, '::1', '2022-02-11 16:49:50', 'Chrome', 'Windows 7', 'Other', 'Other', 2, 'http://localhost/w/courses-detail/ilmu-dari-building-the-dream', ''),
-(23, '::1', '2022-02-11 16:57:17', 'Chrome', 'Windows 7', 'Other', 'Other', 3, 'http://localhost/w/blog-post/konten-baru-dan-rencana-kedepannya-situs-ini', ''),
-(24, '::1', '2022-02-11 16:57:22', 'Chrome', 'Windows 7', 'Other', 'Other', 1, 'http://localhost/w/blog-tags/berita', ''),
-(25, '::1', '2022-02-11 16:57:23', 'Chrome', 'Windows 7', 'Other', 'Other', 1, 'http://localhost/w/blog-category/news', ''),
-(26, '::1', '2022-02-11 17:00:39', 'Chrome', 'Windows 7', 'Other', 'Other', 12, 'http://localhost/w/courses-detail/dummy-course-1', ''),
-(27, '::1', '2022-02-11 17:04:08', 'Chrome', 'Windows 7', 'Other', 'Other', 7, 'http://localhost/w/courses-detail/dummy-course-3', ''),
-(28, '::1', '2022-02-11 17:05:17', 'Chrome', 'Windows 7', 'Other', 'Other', 3, 'http://localhost/w/courses-detail/dummy-course-2', ''),
-(29, '::1', '2022-02-11 17:07:15', 'Chrome', 'Windows 7', 'Other', 'Other', 1, 'http://localhost/w/p/about', ''),
-(30, '::1', '2022-02-11 17:07:16', 'Chrome', 'Windows 7', 'Other', 'Other', 1, 'http://localhost/w/p/term-and-condition', '');
+(67, '::1', '2025-09-05 07:40:35', 'Chrome', 'Windows 10', 'Other', 'Other', 6, 'http://localhost:8073/smkn5skh/SkanmaLEARN/', ''),
+(68, '::1', '2025-09-05 07:40:41', 'Chrome', 'Windows 10', 'Other', 'Other', 1, 'http://localhost:8073/smkn5skh/SkanmaLEARN/blog', ''),
+(69, '::1', '2025-09-05 07:52:35', 'Chrome', 'Windows 10', 'Other', 'Other', 1, 'http://localhost:8073/smkn5skh/SkanmaLEARN/courses-detail/percobaan-course', '');
 
 -- --------------------------------------------------------
 
@@ -614,17 +574,18 @@ CREATE TABLE `tb_user` (
   `payment` text NOT NULL,
   `created` datetime NOT NULL,
   `last_login` datetime NOT NULL,
-  `status` enum('Active','Blocked','UnActive') NOT NULL DEFAULT 'UnActive'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `status` enum('Active','Blocked','UnActive') NOT NULL DEFAULT 'UnActive',
+  `namalengkap` mediumtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `tb_user`
 --
 
-INSERT INTO `tb_user` (`id`, `username`, `password`, `headline`, `email`, `no_handphone`, `photo`, `grade`, `payment`, `created`, `last_login`, `status`) VALUES
-(1, 'kurteyki', '1a5651f74beaa02c5e5fc380875d23a66e4549bd', 'Owner', 'kurteyki@gmail.com', '081389215100', 'user_photo_20200503125412.png', 'App', '{\"transaction\":[{\"identity\":\"bri20200425130634\",\"type\":\"bri\",\"account_number\":\"1923892138192\",\"receiver\":\"irfan\"},{\"identity\":\"bca20200426162016\",\"type\":\"bca\",\"account_number\":\"12321321\",\"receiver\":\"troffle\"}],\"confirmation\":[{\"identity\":\"whatsapp20200425130641\",\"type\":\"whatsapp\",\"data\":\"6285280815735\"},{\"identity\":\"facebook20200501131607\",\"type\":\"facebook\",\"data\":\"https:\\/\\/www.facebook.com\\/riedayme\"}]}', '0000-00-00 00:00:00', '2022-02-11 16:52:25', 'Active'),
-(2, 'Faaan', '42989f964d45b1bba335241a4b5b7292be4d1079', 'Pengembangan Diri', 'he.irfaan@gmail.com', '081389215100', 'user_photo_20200504151502.png', 'Instructor', '', '2020-05-03 12:58:26', '0000-00-00 00:00:00', 'Active'),
-(3, 'Riedayme', 'cfd5acd586398229e9229ee327a0c2bf6a379658', 'test', 'programmer.irfaan@gmail.com', '21321321321', '', 'User', '', '2020-05-03 20:01:58', '0000-00-00 00:00:00', 'Active');
+INSERT INTO `tb_user` (`id`, `username`, `password`, `headline`, `email`, `no_handphone`, `photo`, `grade`, `payment`, `created`, `last_login`, `status`, `namalengkap`) VALUES
+(1, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Owner', 'admin@gmail.com', '111111111111', 'user_photo_20250830161155.png', 'App', '{\"transaction\":null,\"confirmation\":null}', '0000-00-00 00:00:00', '2025-09-05 08:11:09', 'Active', 'Muhammad Ihsan'),
+(4, 'Userr', '42c210dd2fc552605570713f041ea175463086d8', 'Student', 'userr@gmail.com', '111111111111', '', 'User', '', '2025-08-30 13:01:51', '2025-09-05 08:10:52', 'Active', 'Muhammad Ihsan'),
+(5, 'Instruktur', '795a6fe8e1aef6a7f07786156a150e2be1553e5c', 'Instructor', 'instruktur@gmail.com', '11111111111', '', 'Instructor', '', '2025-08-30 16:13:32', '2025-09-05 08:10:29', 'Active', 'Muhammad Yusuf');
 
 --
 -- Indexes for dumped tables
@@ -820,7 +781,7 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT for table `tb_blog_post`
 --
 ALTER TABLE `tb_blog_post`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tb_blog_post_category`
@@ -862,7 +823,7 @@ ALTER TABLE `tb_blog_template_widget`
 -- AUTO_INCREMENT for table `tb_jobs`
 --
 ALTER TABLE `tb_jobs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tb_lms_category`
@@ -874,25 +835,25 @@ ALTER TABLE `tb_lms_category`
 -- AUTO_INCREMENT for table `tb_lms_coupon`
 --
 ALTER TABLE `tb_lms_coupon`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tb_lms_courses`
 --
 ALTER TABLE `tb_lms_courses`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tb_lms_courses_lesson`
 --
 ALTER TABLE `tb_lms_courses_lesson`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `tb_lms_courses_section`
 --
 ALTER TABLE `tb_lms_courses_section`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `tb_lms_template`
@@ -910,13 +871,13 @@ ALTER TABLE `tb_lms_template_widget`
 -- AUTO_INCREMENT for table `tb_lms_user_courses`
 --
 ALTER TABLE `tb_lms_user_courses`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tb_lms_user_lesson`
 --
 ALTER TABLE `tb_lms_user_lesson`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tb_lms_user_review`
@@ -940,13 +901,13 @@ ALTER TABLE `tb_site_pages`
 -- AUTO_INCREMENT for table `tb_site_visitor`
 --
 ALTER TABLE `tb_site_visitor`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
