@@ -57,7 +57,7 @@
 	</div>
 
 	<div class="c-field u-mb-small col-md-6">
-		<label class="c-field__label">Alamat : </label>
+		<label class="c-field__label">Panggilan : </label>
 		<input required="" class="c-input" name="person_alternateName" type="text" value="<?php echo $meta['schema']['content']['person_alternateName'] ?>">
 	</div>
 

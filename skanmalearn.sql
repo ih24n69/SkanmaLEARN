@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 05, 2025 at 03:21 AM
+-- Generation Time: Sep 06, 2025 at 02:03 AM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- PHP Version: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -48,7 +48,7 @@ CREATE TABLE `tb_blog_post` (
 --
 
 INSERT INTO `tb_blog_post` (`id`, `id_user`, `title`, `permalink`, `image`, `time`, `updated`, `id_category`, `id_tags`, `content`, `description`, `views`, `status`) VALUES
-(2, 0, 'Sisi lain bisa digunakan untuk penyampaian informasi', 'sisi-lain-bisa-digunakan-untuk-penyampaian-informasi', 'images/zero_to_hero.png', '2025-08-31 18:02:00', '2025-08-31 18:05:01', '0', '0', '&lt;p style=&quot;text-align: justify;&quot;&gt;Melalui fitur blog ini, SkanmaLEARN selain sebagai sarana pembelajaran jarak jauh, juga bisa digunakan untuk penyampaian informasi yang dibutukanterkait pembelajaran dll.&lt;/p&gt;\r\n', '', 1, 'Published');
+(2, 0, 'Sisi lain bisa digunakan untuk penyampaian informasi', 'sisi-lain-bisa-digunakan-untuk-penyampaian-informasi', 'images/zero_to_hero.png', '2025-08-31 18:02:00', '2025-08-31 18:05:01', '0', '0', '&lt;p style=&quot;text-align: justify;&quot;&gt;Melalui fitur blog ini, SkanmaLEARN selain sebagai sarana pembelajaran jarak jauh, juga bisa digunakan untuk penyampaian informasi yang dibutukanterkait pembelajaran dll.&lt;/p&gt;\r\n', '', 3, 'Published');
 
 -- --------------------------------------------------------
 
@@ -134,10 +134,10 @@ CREATE TABLE `tb_blog_template_style` (
 --
 
 INSERT INTO `tb_blog_template_style` (`id`, `id_template`, `type`, `name`, `file`, `status`) VALUES
-(1, 1, 'homepage', 'List with Sidebar', 'list_with_sidebar', 'Active'),
+(1, 1, 'homepage', 'List with Sidebar', 'list_with_sidebar', 'No'),
 (2, 1, 'post', 'Post Center', 'post_center', 'No'),
 (3, 1, 'homepage', 'Grid Two Column', 'grid_two_column', 'No'),
-(4, 1, 'homepage', 'Clasic', 'clasic', 'No'),
+(4, 1, 'homepage', 'Clasic', 'clasic', 'Active'),
 (5, 1, 'post', 'Post Center Full', 'post_center_full', 'No'),
 (6, 1, 'post', 'Post Sidebar', 'post_sidebar', 'Active'),
 (7, 2, 'homepage', 'Default', 'default', 'Active'),
@@ -163,15 +163,15 @@ CREATE TABLE `tb_blog_template_widget` (
 --
 
 INSERT INTO `tb_blog_template_widget` (`id`, `id_template`, `name`, `var`, `type`, `data_json`) VALUES
-(1, 1, 'Footer 1', 'link1_footer', 'pages', '{\"status\":\"active\",\"title\":\"Pages\",\"id\":[\"1\"]}'),
-(2, 1, 'Footer 2', 'link2_footer', 'link', '{\"status\":\"active\",\"title\":\"Other Site\",\"content\":[{\"text\":\"Riedayme\",\"url\":\"https:\\/\\/riedayme.kurteyki.com\\/\"},{\"text\":\"Shinmu\",\"url\":\"https:\\/\\/shinmu.kurteyki.com\\/\"}]}'),
-(3, 1, 'Contact Footer', 'contact_footer', 'text', '{\"status\":\"active\",\"title\":\"Contact Us\",\"content\":\"Bogor, Indonesia \\r\\nkurteyki@gmail.com\\r\\n<div class=\\\"social-contact\\\"> <a title=\\\"Facebook\\\" target=\\\"_blank\\\" class=\\\"icon-btn\\\" href=\\\"https:\\/\\/facebook.com\\/kurteyki\\\" style=\'background:#fff\'><i class=\\\"fa fa-facebook\\\"><\\/i><\\/a> <\\/div>\"}'),
+(1, 1, 'Footer 1', 'link1_footer', 'pages', '{\"status\":\"active\",\"title\":\"Halaman\",\"id\":[\"1\",\"2\",\"4\",\"5\"]}'),
+(2, 1, 'Footer 2', 'link2_footer', 'link', '{\"status\":\"active\",\"title\":\"Website\",\"content\":[{\"text\":\"SkanmaLearn\",\"url\":\"#\"},{\"text\":\"Github\",\"url\":\"#\"}]}'),
+(3, 1, 'Contact Footer', 'contact_footer', 'text', '{\"status\":\"active\",\"title\":\"Hubungi Kami\",\"content\":\"Disini\\r\\nDisini\"}'),
 (4, 1, 'Logo Template', 'logo', 'image', '{\"status\":\"active\",\"content\":\"image4_20200411172145.png\"}'),
 (5, 1, 'Ads Content Top', 'ads_content_top', 'ads', '{\"status\":\"nonactive\",\"content\":\"<a href=\\\"https:\\/\\/placeholder.com\\\"><img src=\\\"https:\\/\\/via.placeholder.com\\/768x120\\\"><\\/a>\"}'),
 (6, 1, 'Ads Content Bottom', 'ads_content_bottom', 'ads', '{\"status\":\"nonactive\",\"content\":\"<div><a href=\\\"https:\\/\\/placeholder.com\\\"><img src=\\\"https:\\/\\/via.placeholder.com\\/768x120\\\"><\\/a><\\/div>\"}'),
 (7, 1, 'Ads Content Middle', 'ads_content_middle', 'ads-content', '{\"status\":\"nonactive\",\"content\":\"<a href=\\\"https:\\/\\/placeholder.com\\\"><img src=\\\"https:\\/\\/via.placeholder.com\\/768x120\\\"><\\/a>\",\"loop_ads\":\"2\"}'),
 (8, 1, 'Ads Sidebar', 'ads_sidebar', 'ads', '{\"status\":\"nonactive\",\"content\":\"<a href=\\\"https:\\/\\/placeholder.com\\\"><img src=\\\"https:\\/\\/via.placeholder.com\\/150\\\"><\\/a>\"}'),
-(9, 1, 'Navigation Header', 'menu_header', 'category', '{\"status\":\"active\",\"title\":\"Header\",\"id\":[\"1\"]}'),
+(9, 1, 'Navigation Header', 'menu_header', 'category', '{\"status\":\"active\",\"title\":\"Header\",\"id\":null}'),
 (10, 1, 'Popular Post Sidebar', 'popular_post', 'popular-post', '{\"status\":\"active\",\"title\":\"Dilihat paling banyak\",\"max_result\":\"5\"}'),
 (11, 1, 'Category Sidebar', 'category_sidebar', 'category', '{\"status\":\"active\",\"title\":\"Kategori\",\"id\":null}'),
 (12, 1, 'Tags Sidebar', 'tags_sidebar', 'tags', '{\"status\":\"active\",\"title\":\"Sub Kategori\",\"id\":null}'),
@@ -232,7 +232,10 @@ CREATE TABLE `tb_lms_category` (
 INSERT INTO `tb_lms_category` (`id`, `name`, `slug`, `parent`, `time`, `updated`, `icon`, `image`) VALUES
 (1, 'Pengembangan Diri', 'pengembangan-diri', 0, '2020-04-11 16:51:46', '0000-00-00 00:00:00', 'fa-globe', ''),
 (2, 'Skill Hidup', 'skill-hidup', 1, '2020-04-11 16:52:14', '0000-00-00 00:00:00', 'fa-hand-grab-o', ''),
-(3, 'Karakter', 'karakter', 1, '2020-04-11 19:37:18', '2020-04-11 19:37:40', 'fa-star-o', '');
+(3, 'Karakter', 'karakter', 1, '2020-04-11 19:37:18', '2020-04-11 19:37:40', 'fa-star-o', ''),
+(4, 'Kompetensi Keahlian', 'kompetensi-keahlian', 0, '2025-09-06 07:34:11', '0000-00-00 00:00:00', 'fa-institution', 'images/server-client_30785.png'),
+(5, 'Mikrotik', 'mikrotik', 4, '2025-09-06 07:36:05', '0000-00-00 00:00:00', 'fa-clipboard', ''),
+(6, 'Administrasi Server', 'administrasi-server', 4, '2025-09-06 07:37:04', '0000-00-00 00:00:00', 'fa-cloud', '');
 
 -- --------------------------------------------------------
 
@@ -280,7 +283,7 @@ CREATE TABLE `tb_lms_courses` (
 INSERT INTO `tb_lms_courses` (`id`, `id_user`, `title`, `permalink`, `image`, `description`, `faq`, `id_category`, `id_sub_category`, `time`, `updated`, `price`, `discount`, `views`, `status`) VALUES
 (4, 1, 'Percobaan Course 1', 'percobaan-course', 'images/zero_to_hero.png', '&lt;p&gt;Selamat Datang di Kursus 1&lt;/p&gt;\r\n\r\n&lt;ol&gt;\r\n	&lt;li&gt;Mikrotik&lt;/li&gt;\r\n	&lt;li&gt;Jaringan LAN&lt;/li&gt;\r\n	&lt;li&gt;Jaringan Wireless&lt;/li&gt;\r\n	&lt;li&gt;Perakitan&lt;/li&gt;\r\n&lt;/ol&gt;\r\n', '', '1', '3', '2025-08-30 12:59:22', '2025-09-05 07:51:28', 0, 0, 3, 'Published'),
 (5, 1, 'Percobaan Course 2', 'percobaan-course-2', 'images/zero_to_hero.png', '&lt;p&gt;Selamat Datang di Kursus 2&lt;/p&gt;\r\n\r\n&lt;ol&gt;\r\n	&lt;li&gt;Mikrotik&lt;/li&gt;\r\n	&lt;li&gt;Jaringan LAN&lt;/li&gt;\r\n	&lt;li&gt;Jaringan Wireless&lt;/li&gt;\r\n	&lt;li&gt;Perakitan&lt;/li&gt;\r\n&lt;/ol&gt;\r\n', '', '1', '2', '2025-09-05 07:53:25', '2025-09-05 07:54:39', 0, 0, 0, 'Published'),
-(6, 1, 'Percobaan Course 3', 'percobaan-course-3', 'images/zero_to_hero.png', '', '', '1', '3', '2025-09-05 07:55:01', NULL, 0, 0, 0, 'Published');
+(6, 1, 'Percobaan Course 3', 'percobaan-course-3', 'images/zero_to_hero.png', '', '', '1', '3', '2025-09-05 07:55:01', '2025-09-06 07:43:52', 50000, 0, 1, 'Published');
 
 -- --------------------------------------------------------
 
@@ -383,7 +386,8 @@ CREATE TABLE `tb_lms_user_courses` (
 
 INSERT INTO `tb_lms_user_courses` (`id`, `id_user`, `id_courses`, `time`) VALUES
 (1, 4, 3, '2025-08-30 13:05:39'),
-(2, 4, 4, '2025-08-30 13:06:28');
+(2, 4, 4, '2025-08-30 13:06:28'),
+(3, 4, 6, '2025-09-06 07:54:40');
 
 -- --------------------------------------------------------
 
@@ -426,6 +430,13 @@ CREATE TABLE `tb_lms_user_payment` (
   `updated` datetime NOT NULL,
   `status` enum('Purchased','Pending','Checking','Failed') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `tb_lms_user_payment`
+--
+
+INSERT INTO `tb_lms_user_payment` (`id`, `id_user`, `id_courses`, `id_courses_user`, `type`, `amount`, `token`, `proof`, `coupon`, `time`, `updated`, `status`) VALUES
+('4C6T250906074548', 4, 6, 1, 'Manual', '50000', 'mandiri', '{\"file\":\"4C6T250906074548_confirmation_20250906074645.jpg\",\"sender\":\"YUSUF\"}', '', '2025-09-06 07:45:48', '2025-09-06 07:54:40', 'Purchased');
 
 -- --------------------------------------------------------
 
@@ -486,9 +497,9 @@ INSERT INTO `tb_site` (`type`, `data`) VALUES
 ('language', 'indonesia'),
 ('lms_free_courses_readable', 'No'),
 ('lms_limit_post', '6'),
-('meta_open_graph', '{\"app_id\":\"\",\"publisher\":\"https:\\/\\/www.facebook.com\\/muhammad.ihsanpasker\",\"author\":\"https:\\/\\/www.facebook.com\\/muhammad.ihsanpasker\",\"default_image\":\"open_graph_default_image_20200415181017.png\"}'),
-('meta_schema', '{\"type\":\"Person\",\"content\":{\"person_name\":\"Muhammad Ihsan\",\"person_alternateName\":\"Ih24n\",\"person_gender\":\"male\",\"person_height\":\"175 centimetre\",\"person_birthDate\":\"1996-05-24\",\"person_birthPlace\":\"Sukoharjo, Jawa Tengah\",\"person_nationality\":\"Indonesia\",\"person_alumniOf\":\"Universitas Sebelas Maret\",\"person_memberOf\":\"SandroidTeam\",\"person_streetAddress\":\"Banyuripan, Cabeyan, Bendosari\",\"person_addressLocality\":\"Sukoharjo\",\"person_addressRegion\":\"Indonesia\",\"person_postalCode\":\"57572\",\"person_email\":\"ih24n@smkn5sukoharjo.sch.id\",\"person_telephone\":\"+62 87812892770\",\"person_url\":\"sandroidteam.com\",\"person_sameAs\":\"https:\\/\\/github.com\\/ih24n69\",\"person_jobTitle\":\"Guru\",\"person_worksFor_name\":\"SMK Negeri 5 Sukoharjo\",\"person_worksFor_sameAs\":\"https:\\/\\/github.com\\/ih24n69\",\"organization_name\":\"SandroidTeam\",\"organization_url\":\"sandroidteam.com\",\"organization_contactPoint_telephone\":\"+62 87812892770\",\"organization_contactPoint_contactType\":\"customer service\",\"organization_sameAs\":\"sandroidteam.com\",\"organization_logo_url\":\"organization_logo_url_20250830160700.png\",\"person_image\":\"person_image_20250830160801.png\"}}'),
-('meta_twitter_card', '{\"publisher\":\"@muhammadih24n\",\"default_image\":\"twitter_card_default_image_20200415181017.png\"}'),
+('meta_open_graph', '{\"app_id\":\"\",\"publisher\":\"A\",\"author\":\"A\",\"default_image\":\"open_graph_default_image_20200415181017.png\"}'),
+('meta_schema', '{\"type\":\"Person\",\"content\":{\"person_name\":\"A\",\"person_alternateName\":\"A\",\"person_gender\":\"A\",\"person_height\":\"A\",\"person_birthDate\":\"A\",\"person_birthPlace\":\"A\",\"person_nationality\":\"A\",\"person_alumniOf\":\"A\",\"person_memberOf\":\"A\",\"person_streetAddress\":\"A\",\"person_addressLocality\":\"A\",\"person_addressRegion\":\"A\",\"person_postalCode\":\"A\",\"person_email\":\"A\",\"person_telephone\":\"A\",\"person_url\":\"A\",\"person_sameAs\":\"A\",\"person_jobTitle\":\"A\",\"person_worksFor_name\":\"A\",\"person_worksFor_sameAs\":\"A\",\"organization_name\":\"A\",\"organization_url\":\"A\",\"organization_contactPoint_telephone\":\"A\",\"organization_contactPoint_contactType\":\"A\",\"organization_sameAs\":\"A\",\"organization_logo_url\":\"organization_logo_url_20250830160700.png\",\"person_image\":\"person_image_20250830160801.png\"}}'),
+('meta_twitter_card', '{\"publisher\":\"A\",\"default_image\":\"twitter_card_default_image_20200415181017.png\"}'),
 ('no_image', 'no_image_20200408075727.jpg'),
 ('payment_method', 'Manual'),
 ('payment_midtrans', '{\"status_production\":\"No\",\"client_key\":\"\",\"server_key\":\"\"}'),
@@ -552,9 +563,22 @@ CREATE TABLE `tb_site_visitor` (
 --
 
 INSERT INTO `tb_site_visitor` (`id`, `ip`, `date`, `browser`, `os`, `country_name`, `country_code`, `hits`, `url`, `referrer`) VALUES
-(67, '::1', '2025-09-05 07:40:35', 'Chrome', 'Windows 10', 'Other', 'Other', 6, 'http://localhost:8073/smkn5skh/SkanmaLEARN/', ''),
+(67, '::1', '2025-09-05 07:40:35', 'Chrome', 'Windows 10', 'Other', 'Other', 12, 'http://localhost:8073/smkn5skh/SkanmaLEARN/', ''),
 (68, '::1', '2025-09-05 07:40:41', 'Chrome', 'Windows 10', 'Other', 'Other', 1, 'http://localhost:8073/smkn5skh/SkanmaLEARN/blog', ''),
-(69, '::1', '2025-09-05 07:52:35', 'Chrome', 'Windows 10', 'Other', 'Other', 1, 'http://localhost:8073/smkn5skh/SkanmaLEARN/courses-detail/percobaan-course', '');
+(69, '::1', '2025-09-05 07:52:35', 'Chrome', 'Windows 10', 'Other', 'Other', 1, 'http://localhost:8073/smkn5skh/SkanmaLEARN/courses-detail/percobaan-course', ''),
+(70, '::1', '2025-09-06 07:29:17', 'Chrome', 'Windows 10', 'Other', 'Other', 11, 'http://localhost:8073/smkn5skh/SkanmaLEARN/', ''),
+(71, '::1', '2025-09-06 07:29:34', 'Chrome', 'Windows 10', 'Other', 'Other', 2, 'http://localhost:8073/smkn5skh/SkanmaLEARN/blog', ''),
+(72, '::1', '2025-09-06 07:29:38', 'Chrome', 'Windows 10', 'Other', 'Other', 1, 'http://localhost:8073/smkn5skh/SkanmaLEARN/blog-post/sisi-lain-bisa-digunakan-untuk-penyampaian-informasi', ''),
+(73, '::1', '2025-09-06 07:29:47', 'Chrome', 'Windows 10', 'Other', 'Other', 1, 'http://localhost:8073/smkn5skh/SkanmaLEARN/p/help', ''),
+(74, '::1', '2025-09-06 07:29:53', 'Chrome', 'Windows 10', 'Other', 'Other', 1, 'http://localhost:8073/smkn5skh/SkanmaLEARN/p/contact', ''),
+(75, '::1', '2025-09-06 07:30:01', 'Chrome', 'Windows 10', 'Other', 'Other', 1, 'http://localhost:8073/smkn5skh/SkanmaLEARN/p/about', ''),
+(76, '::1', '2025-09-06 07:30:05', 'Chrome', 'Windows 10', 'Other', 'Other', 1, 'http://localhost:8073/smkn5skh/SkanmaLEARN/p/term-and-condition', ''),
+(77, '::1', '2025-09-06 07:30:10', 'Chrome', 'Windows 10', 'Other', 'Other', 1, 'http://localhost:8073/smkn5skh/SkanmaLEARN/p/kebijakan-privasi', ''),
+(78, '::1', '2025-09-06 07:44:03', 'Chrome', 'Windows 10', 'Other', 'Other', 2, 'http://localhost:8073/smkn5skh/SkanmaLEARN/courses-detail/percobaan-course-3', ''),
+(79, '::1', '2025-09-06 08:28:33', 'Chrome', 'Windows 10', 'Other', 'Other', 3, 'http://localhost:8074/smkn5skh/SkanmaLEARN/', ''),
+(80, '::1', '2025-09-06 08:28:45', 'Chrome', 'Windows 10', 'Other', 'Other', 2, 'http://localhost:8074/smkn5skh/SkanmaLEARN/blog', ''),
+(81, '::1', '2025-09-06 08:28:47', 'Chrome', 'Windows 10', 'Other', 'Other', 26, 'http://localhost:8074/smkn5skh/SkanmaLEARN/blog-post/sisi-lain-bisa-digunakan-untuk-penyampaian-informasi', ''),
+(82, '::1', '2025-09-06 08:46:43', 'Chrome', 'Windows 10', 'Other', 'Other', 1, 'http://localhost:8074/smkn5skh/SkanmaLEARN/p/kebijakan-privasi', '');
 
 -- --------------------------------------------------------
 
@@ -583,9 +607,9 @@ CREATE TABLE `tb_user` (
 --
 
 INSERT INTO `tb_user` (`id`, `username`, `password`, `headline`, `email`, `no_handphone`, `photo`, `grade`, `payment`, `created`, `last_login`, `status`, `namalengkap`) VALUES
-(1, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Owner', 'admin@gmail.com', '111111111111', 'user_photo_20250830161155.png', 'App', '{\"transaction\":null,\"confirmation\":null}', '0000-00-00 00:00:00', '2025-09-05 08:11:09', 'Active', 'Muhammad Ihsan'),
-(4, 'Userr', '42c210dd2fc552605570713f041ea175463086d8', 'Student', 'userr@gmail.com', '111111111111', '', 'User', '', '2025-08-30 13:01:51', '2025-09-05 08:10:52', 'Active', 'Muhammad Ihsan'),
-(5, 'Instruktur', '795a6fe8e1aef6a7f07786156a150e2be1553e5c', 'Instructor', 'instruktur@gmail.com', '11111111111', '', 'Instructor', '', '2025-08-30 16:13:32', '2025-09-05 08:10:29', 'Active', 'Muhammad Yusuf');
+(1, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Owner', 'admin@gmail.com', '111111111111', 'user_photo_20250830161155.png', 'App', '{\"transaction\":null,\"confirmation\":null}', '0000-00-00 00:00:00', '2025-09-06 07:30:39', 'Active', 'Pengguna Admin'),
+(4, 'Userr', '42c210dd2fc552605570713f041ea175463086d8', 'Student', 'userr@gmail.com', '111111111111', '', 'User', '', '2025-08-30 13:01:51', '2025-09-06 07:44:21', 'Active', 'Pengguna Biasa'),
+(5, 'Instruktur', '795a6fe8e1aef6a7f07786156a150e2be1553e5c', 'Instructor', 'instruktur@gmail.com', '11111111111', '', 'Instructor', '', '2025-08-30 16:13:32', '2025-09-05 08:35:46', 'Active', 'Pengguna Instruktur');
 
 --
 -- Indexes for dumped tables
@@ -829,7 +853,7 @@ ALTER TABLE `tb_jobs`
 -- AUTO_INCREMENT for table `tb_lms_category`
 --
 ALTER TABLE `tb_lms_category`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tb_lms_coupon`
@@ -871,7 +895,7 @@ ALTER TABLE `tb_lms_template_widget`
 -- AUTO_INCREMENT for table `tb_lms_user_courses`
 --
 ALTER TABLE `tb_lms_user_courses`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tb_lms_user_lesson`
@@ -901,7 +925,7 @@ ALTER TABLE `tb_site_pages`
 -- AUTO_INCREMENT for table `tb_site_visitor`
 --
 ALTER TABLE `tb_site_visitor`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT for table `tb_user`
