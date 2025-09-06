@@ -31,6 +31,10 @@
                 <?php if (!empty($this->input->get('redirect'))): ?>
                     <input type="hidden" name="redirect" value="<?php echo strip_tags($this->input->get('redirect')) ?>">
                 <?php endif ?>
+				
+				<?php if ($site['google_recaptcha']['status'] == 'Yes'): ?>
+					<div class="g-recaptcha u-mb-medium" data-sitekey="<?php echo $site['google_recaptcha']['site_key'] ?>" data-callback="recaptchaCallback"></div>  
+				<?php endif ?>
 
                 <input type="hidden" name="csrf_code" value="<?php echo $this->session->userdata('csrf_code') ?>">
                 <button class="c-btn c-btn--info c-btn--fullwidth" type="submit">
@@ -70,3 +74,4 @@
 </div>
 
 <?php $this->load->view('lms/default-app/_layouts/footer'); ?>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>

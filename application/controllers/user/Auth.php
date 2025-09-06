@@ -42,7 +42,22 @@ class Auth extends My_Site{
 	}
 
 	public function process_login(){
-		
+
+		// Validasi Google reCAPTCHA
+		$googlecaptcha = $this->M_Auth->googlecaptcha($this->site);
+
+		// Kalau captcha gagal, langsung balik ke halaman login
+		if ($googlecaptcha == false) {
+			$this->session->set_flashdata([
+				'message' => true,
+				'message_type' => 'danger',
+				'message_text' => $this->lang->line('invalid_recaptcha'), // pastikan ada di file bahasa
+			]);
+			redirect(base_url($this->redirect_login));
+			return;
+		}
+
+		//  Lanjut login kalau captcha valid
 		$login = $this->M_Auth->login();
 
 		if (!empty($this->input->post('redirect'))) {
@@ -72,14 +87,14 @@ class Auth extends My_Site{
 			$this->redirect_dashboard = base_url($this->redirect_dashboard);
 		}
 
+		//  Hasil login
 		if ($login == 'invalid') {
 
 			$this->session->set_flashdata([
 				'message' => true,
 				'message_type' => 'warning',
 				'message_text' => $this->lang->line('invalid_csrf'),
-				]);
-
+			]);
 			redirect(base_url($this->redirect_login));
 
 		}elseif ($login == 'success_user') {
@@ -100,11 +115,9 @@ class Auth extends My_Site{
 				'message' => true,
 				'message_type' => 'danger',
 				'message_text' => $this->lang->line('failed_login'),
-				]);
-
+			]);
 			redirect(base_url($this->redirect_login));
 		}
-
 	}
 
 	public function register(){

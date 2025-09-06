@@ -189,4 +189,12 @@ $lang['copyright'] = 'Copyright';
 |
 */
 $lang['category'] = 'Kategori';
+
+/*
+|--------------------------------------------------------------------------
+| Category
+|--------------------------------------------------------------------------
+|
+*/
+$lang['invalid_recaptcha'] = "Validasi reCAPTCHA gagal, silakan coba lagi.";
 ?>
