@@ -1,5 +1,5 @@
 <?php if ($site['page_type'] =='homepage' AND empty($this->input->get('page'))): ?>
-<?php if ($widget['featured_homepage']['status'] == 'active'): ?>
+<?php if (isset($widget['featured_homepage']['status']) && $widget['featured_homepage']['status'] == 'active'): ?>
 <!-- Begin Featured
 	================================================== -->
 	<section class="featured-posts">
