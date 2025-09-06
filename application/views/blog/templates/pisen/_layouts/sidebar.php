@@ -1,19 +1,19 @@
 <div class="col-12 col-lg-4">
     <div class="blog-detail_sidebar">
 
-        <!--  search -->
+        <!-- search -->
         <div class="blog-sidebar_block sidebar-search">
             <form action="<?php echo base_url('blog-search') ?>" method="GET">
                 <input class="input-form" type="text" name="q" placeholder="<?php echo $this->lang->line('search') ?>">
             </form>
         </div>
 
-        <?php if ($widget['ads_sidebar']['status'] == 'active'): ?>
+        <?php if (isset($widget['ads_sidebar']['status']) && $widget['ads_sidebar']['status'] == 'active'): ?>
             <?php echo html_entity_decode($widget['ads_sidebar']['content']); ?>
         <?php endif ?>
 
-        <?php if ($widget['popular_post']): ?>
-            <!--  recent post -->
+        <?php if (isset($widget['popular_post']) && is_array($widget['popular_post']) && !empty($widget['popular_post']['content'])): ?>
+            <!-- recent post -->
             <div class="blog-sidebar_block sidebar-recent-posts">
                 <h5 class="sidebar-block-title"><?php echo $widget['popular_post']['title'] ?></h5>
                 <div class="posts">
@@ -22,11 +22,10 @@
                         <?php foreach ($widget['popular_post']['content'] as $post): ?>                        
                             <div class="col-12 col-sm-6 col-lg-12">
                                 <div class="post-mini_block">
-                                    <?php if ($post['image']['thumbnail']): 
-                                    //?>
-                                    <a style="margin-right: 30px" title="<?php echo $post['title'] ?>" href="<?php echo $post['url'] ?>">
-                                        <img src="<?php echo $post['image']['thumbnail']; ?>" alt="<?php echo $post['title']; ?>">
-                                    </a>
+                                    <?php if (!empty($post['image']['thumbnail'])): ?>
+                                        <a style="margin-right: 30px" title="<?php echo $post['title'] ?>" href="<?php echo $post['url'] ?>">
+                                            <img src="<?php echo $post['image']['thumbnail']; ?>" alt="<?php echo $post['title']; ?>">
+                                        </a>
                                     <?php else: ?>                                  
                                         <a style="margin-right: 30px" title="<?php echo $post['title'] ?>" href="<?php echo $post['url'] ?>">
                                             <img src="<?php echo $post['image']['no_image']; ?>" alt="<?php echo $post['title']; ?>">
@@ -54,8 +53,8 @@
             </div>
         <?php endif ?>
 
-        <?php if ($widget['category_sidebar']['status'] == 'active'): ?>
-            <!--  category -->
+        <?php if (isset($widget['category_sidebar']['status']) && $widget['category_sidebar']['status'] == 'active'): ?>
+            <!-- category -->
             <div class="blog-sidebar_block sidebar-categories">
                 <h5 class="sidebar-block-title"><?php echo $widget['category_sidebar']['title'] ?></h5>
                 <ul>
@@ -68,7 +67,7 @@
             </div>        
         <?php endif ?>
 
-        <?php if ($widget['tags_sidebar']['status'] == 'active'): ?>
+        <?php if (isset($widget['tags_sidebar']['status']) && $widget['tags_sidebar']['status'] == 'active'): ?>
             <!-- tags -->    
             <div class="blog-sidebar_block sidebar-tags">
                 <h5 class="sidebar-block-title"><?php echo $widget['tags_sidebar']['title'] ?></h5>
