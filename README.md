@@ -1,7 +1,7 @@
 # SkanmaLEARN :trophy:
 Learning Management System use CodeIgniter3
 
-![Ih24n69](https://raw.githubusercontent.com/ih24n69/SkanmaLEARN/refs/heads/skanma/storage/assets/lms/default-app/preview.png)
+![Ih24n69](https://raw.githubusercontent.com/ih24n69/SkanmaLEARN/refs/heads/skanma/preview.png)
 
 ## Fitur Umum yang tersedia
 
